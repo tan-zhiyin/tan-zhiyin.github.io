@@ -87,8 +87,10 @@ body{
   display: inline-block;}
 
 /* main */
+.site-home-main{
+  background-color: rgb(255, 255, 255);}
+
 .site-home-content {
-  background-color: rgb(255, 255, 255);
   margin-top: 5em;
   padding-top: 5em;
   padding-bottom: 5em;
