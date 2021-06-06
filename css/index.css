@@ -88,6 +88,7 @@ body{
 
 /* main */
 .site-home-main{
+  background-color: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 0px;
