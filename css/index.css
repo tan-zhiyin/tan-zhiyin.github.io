@@ -25,14 +25,16 @@ body{
 
 .site-nav{
   display: flex;
-  padding-bottom: -1em;}
+  padding-bottom: 0em;}
 
 .site-nav-left{
   /*background-color: rgb(252, 201, 214);*/
-  flex: 9;}
+  flex: 5;}
 .site-nav-right{
   /*background-color: rgb(196, 144, 164);*/
-  flex: 1;}
+  flex: 1;
+  padding-right: 1em;
+  text-align: right;}
 
 /* left */
 .nav{
@@ -92,7 +94,7 @@ body{
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 0px;
-  margin-top: 5em;}
+  margin-top: 2em;}
 
 .site-home-main > div {
   text-align: left;}
@@ -100,7 +102,7 @@ body{
 .site-home-content {
   grid-column: 1 / 2;
   background-color: rgb(255, 255, 255);
-  padding-top: 5em;
+  padding-top: 2em;
   padding-bottom: 5em;
   padding-left: 5em;
   padding-right: 5em;}
