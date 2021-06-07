@@ -15,21 +15,24 @@ body{
   color:#313b3f;
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
   font-size:1.6rem;line-height:1.6em;font-weight:400;font-style:normal;letter-spacing:0;
-  line-height:1}
+  line-height:1;
+  margin-right:0px;
+  margin-left:0px;}
 
 
 /* header */
 .header-with-background {
   background-color: rgb(0, 0, 0);
-  padding-left: 1em;}
+  padding: 0em 0em 0em 1em;}
 
 .site-nav{
   display: flex;
-  padding-bottom: 0em;}
+  padding: 0em;}
 
 .site-nav-left{
   /*background-color: rgb(252, 201, 214);*/
-  flex: 5;}
+  flex: 5;
+  padding: 0rem;}
 .site-nav-right{
   /*background-color: rgb(196, 144, 164);*/
   flex: 1;
@@ -39,7 +42,12 @@ body{
 /* left */
 .nav{
   overflow: hidden;
-  padding: 0rem}
+  padding: 0rem;
+  overflow-x: auto;
+  white-space: nowrap;}
+
+.nav::-webkit-scrollbar {
+  display: none;}
 
 .nav li {
   border-radius: 8px;
@@ -51,10 +59,11 @@ body{
 
 .nav a{
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-decoration: none;
   padding: 0.3em 0;
   color: rgb(199, 199, 199);}
+
 .nav a.menu{
     position: relative;}
 .nav a.menu:hover:before {
