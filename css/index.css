@@ -27,12 +27,14 @@ body{
 
 .site-nav{
   display: flex;
-  padding: 0em;}
+  padding: 0em;
+  grid-template-columns: 50% auto;}
 
 .site-nav-left{
   /*background-color: rgb(252, 201, 214);*/
   flex: 5;
   padding: 0rem;}
+
 .site-nav-right{
   /*background-color: rgb(196, 144, 164);*/
   flex: 1;
@@ -83,7 +85,7 @@ body{
 /* right */
 .nav-social{
   overflow: hidden;
-  padding: 0em}
+  padding: 0em;}
 
 .nav-social li {
   display: inline;
