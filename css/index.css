@@ -101,15 +101,16 @@ body{
 .site-home-main{
   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   grid-gap: 0px;
-  margin-top: 2em;}
+  margin-top: 2em;
+  width: inherit;}
 
 .site-home-main > div {
   text-align: left;}
 
-.site-home-content {
-  grid-column: 1 / 2;
+.site-home-main {
+  grid-column: 1 / 1;
   background-color: rgb(255, 255, 255);
   padding-top: 2em;
   padding-bottom: 5em;
