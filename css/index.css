@@ -1,4 +1,5 @@
 ol,ul{list-style:none}
+a {color:rgb(137, 115, 173)}
 blockquote,q{quotes:none}
 blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}
 img{max-width:100%}
@@ -113,9 +114,6 @@ body{
 .intro {
   text-align: left;
   line-height: 1.5em;}
-
-.intro a {
-  color:rgb(137, 115, 173)}
   
 .icon{
   height: 25px;
