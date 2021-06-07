@@ -97,7 +97,7 @@ body{
   width: 25px;}
 
 /* main */
-.site-home-main{
+.site-home-main, .site-kg-main, .site-fl-main {
   background-color: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: 90% auto;
@@ -112,8 +112,9 @@ body{
   text-align: left;
   line-height: 1.5em;}
 
-.site-home-content-rightblank{
-  /*background-color: rgb(247, 222, 222);*/}
+.intro a {
+  color:rgb(137, 115, 173)}
+  
 
 /* footer */
 .site-home-footer{
