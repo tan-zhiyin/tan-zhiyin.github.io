@@ -134,13 +134,14 @@ body{
 
 .site-kg-content{
   height: 100%;
-  min-height: 100%;}
+  min-height: 100%;  }
 
 .knowledge-card{  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3em;
-  margin-top: 1em;}
+  margin-top: 1em;
+  overflow: scroll；}
   
 .knowledge-card div{
   background-color: rgb(255, 255, 255);
