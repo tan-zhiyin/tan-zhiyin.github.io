@@ -41,14 +41,14 @@ body{
   width: 100%;
   height: inherit; 
   padding-top: 0.8rem;
-  padding-bottom: 0.8rem;}
+  padding-bottom: 0.9rem;}
 
 .nav-logo{
   min-width: 4rem;
   padding-top: 0em;
   padding-bottom: 0em;
   padding-left: 1em;
-  padding-right: 5%;
+  padding-right: 3%;
   margin-top: 0em;
   margin-bottom: 0em;}
 
@@ -57,7 +57,7 @@ body{
   flex: 2;
   overflow: hidden;
   padding: 0em 0em 0em 0em;
-  margin-top: 0em;
+  margin-top: 0.2em;
   margin-bottom: 0em;
   overflow-x: auto;
   white-space: nowrap;}
@@ -71,7 +71,7 @@ body{
   position: relative;
   flex-basis: inherit;
   padding: 0rem;
-  margin-right: 5%;}
+  margin-right: 3%;}
 
 .logo {
   height: 25px;}
