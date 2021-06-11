@@ -2,7 +2,7 @@ ol,ul{list-style:none}
 a:link {text-decoration: none; color: rgb(115, 124, 173)}
 a:hover {text-decoration:underline;}
 a:visited {text-decoration: none; color:rgb(137, 115, 173)}
-::-webkit-scrollbar {display: none;}
+.nav::-webkit-scrollbar {display: none;}
 blockquote,q{quotes:none}
 blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}
 img{max-width:100%}
@@ -23,10 +23,10 @@ body{
   font-size: 1.6rem;line-height: 1.6em;font-weight: 400;font-style:normal;letter-spacing:0;
   line-height: 1;
   display: grid;
-  grid-template-rows: 3em auto 3em;
-  width: 100%;
+  grid-template-rows: 3em auto;
+  width:inherit;
   min-width: 100%;
-  height: 100%;
+  height:100%;
   min-height: 100%;
   padding-bottom: 0em 0em 0em 0em;
   margin: 0em 0em 0em 0em;}
@@ -69,8 +69,7 @@ header{
   overflow-x: auto;
   white-space: nowrap;}
 
-.nav::-webkit-scrollbar {
-  display: none;}
+
 
 .nav li {
   border-radius: 8px;
@@ -127,7 +126,9 @@ header{
   width: 25px;}
 
 /* main */
-  /* Title */
+.container{
+  overflow-y: scroll;}
+/* Title */
 main{
   background-color: rgb(255, 255, 255);
   position: relative;
@@ -139,6 +140,7 @@ main{
 
 .site-kg-main{
   background-color: rgb(224, 220, 240);
+  display:grid;
   grid-template-columns: 100% auto;
   width: inherit;
   min-height: 80%;
@@ -155,7 +157,7 @@ main{
   padding-bottom: 5em;
   padding-left: 5%;
   padding-right: 5%;
-  overflow-y: scroll;}
+  /*overflow-y: scroll;*/}
 
 .site-home-content-rightblank{
   width: auto;
@@ -178,6 +180,7 @@ main{
   margin-top: 1em;}
   
 .knowledge-card div{
+  border-radius: 6px;
   background-color: rgb(255, 255, 255);
   color:rgb(152, 149, 158);
   min-height: 3em;
@@ -189,7 +192,8 @@ main{
 /* footer */
 footer{
   text-align: center;
-  /*position:relative;
+  position:relative;
+  /*position:absolute;
   bottom: 0;*/
   width: inherit;
   min-height: 4em;
