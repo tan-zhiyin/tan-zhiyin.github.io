@@ -140,6 +140,7 @@ main{
   grid-template-columns: 90% auto;
   width: inherit;
   height: auto;
+  min-height: 600px;
   /*margin-top: 1.5em;*/}
 
 .site-kg-main{
@@ -264,3 +265,7 @@ footer{
 .text-linkedin{
   margin: 0em 0em 0em 0em;}
 
+/*back to top*/
+.to-top {
+  width: 30px;
+  height: 30px;}
