@@ -140,7 +140,7 @@ main{
   grid-template-columns: 90% auto;
   width: inherit;
   height: auto;
-  min-height: 600px;
+  min-height: 1000px;
   /*margin-top: 1.5em;*/}
 
 .site-kg-main{
@@ -148,7 +148,7 @@ main{
   display:grid;
   grid-template-columns: 100% auto;
   width: inherit;
-  min-height: 80%;
+  min-height: 1000px;
   max-height: auto;}
 
 .site-title{
