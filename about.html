@@ -1,98 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <title>Zhiyin's Intro</title>
-    <meta name="author" content="Zhiyin Tan">
-    <meta name="description" content="Personal fairyland: animation, thoughts">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8">
+        <title>Zhiyin's Intro</title>
+        <meta name="author" content="Zhiyin Tan">
+        <meta name="description" content="Personal fairyland: animation, thoughts">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:image" content="https://www.icloud.com/iclouddrive/0OuJofHg8h4NTxXeb0weLM3ng#Little_fox's_back-big" />
-    <meta property="og:description" content="Zhiyin Tan's fairyland.">
-    <meta property="og:title" content="Zhiyin's Fairyland" />
-    <meta property="og:type" content="website" />    
+        <meta property="og:image" content="https://www.icloud.com/iclouddrive/0OuJofHg8h4NTxXeb0weLM3ng#Little_fox's_back-big" />
+        <meta property="og:description" content="Zhiyin Tan's fairyland.">
+        <meta property="og:title" content="Zhiyin's Fairyland" />
+        <meta property="og:type" content="website" />    
 
-    <link rel="Shortcut Icon" href="./pic/little_fox_round.ico" type="image/x-icon">
+        <link rel="Shortcut Icon" href="./pic/little_fox_round.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/index.js" defer></script>
-  </head>
+        <link rel="stylesheet" href="./css/index.css">
+        <script src="./js/csi.js" defer></script>
+    </head>
 
-  <body class="site-ab">
-    <header class="site-home-header">
-        <nav class="site-nav-three" id="navbarResponsive" style="float:left">
-            <div class="nav-logo"  role="menu-item">
-                <a href="index.html" class="menu">
-                    <img class="logo" src="./pic/logo.ico">
-                </a>
-            </div>
-            <ul class="nav" role="menu">
-                <li class="nav-about" role="menu-item">
-                    <a href="about.html" class="menu">About</a>
-                </li>
-                <li class="nav-knowledge-base" role="menu-item">
-                    <a href="knowledgebase.html" class="menu">Knowledge Base</a>
-                </li>
-                <li class="nav-fairyland" role="menu-item">
-                    <a href="fairyland.html" class="menu">Fairyland</a>
-                </li>
-            </ul>
-            <ul class="nav-social">
-                <li class="nav-social-github">
-                    <a href="https://github.com/zhiyin121/" title="Github">
-                        <img class="icon" src="./pic/github_icon.ico" alt="github link">
+    <body class="site-ab">
+        <header data-include="navigation.html"></header>
+
+        <div class="container">
+            <main class="site-ab-main">
+                <div id="start" class="site-ab-content">          
+                    <h1 class="site-title"> About Me </h1>
+                    <p>My resume is available 
+                        <a href="https://www.visualcv.com/zhiyin_cv/"
+                        title="Curriculum Vitae">here</a>
+                    </p>
+                    <p> . </p>
+                    <p> . </p>
+                    <p> . </p>
+                </div>
+                <div style="display:block;z-index: 1000;position: fixed;right: 1px;bottom: 20%;width: 50px;opacity: 0.8;margin-right: 5px;">
+                    <a href="#start">
+                        <img class="to-top" src="./pic/top-arrow_square.ico">
                     </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="container">
-        <main class="site-ab-main">
-            <div id="start" class="site-ab-content">          
-                <h1 class="site-title"> About Me </h1>
-                <p>My resume is available 
-                    <a href="https://www.visualcv.com/zhiyin_cv/"
-                    title="Curriculum Vitae">here</a>
-                </p>
-                <p> . </p>
-                <p> . </p>
-                <p> . </p>
-            </div>
-            <div style="display:block;z-index: 1000;position: fixed;right: 1px;bottom: 20%;width: 50px;opacity: 0.8;margin-right: 5px;">
-                <a href="#start">
-                    <img class="to-top" src="./pic/top-arrow_square.ico">
-                </a>
-            </div>
-        </main>
-        
-        <footer class="site-home-footer">
-            <div class="copyright-contact">
-                <p class="copyright"> © 2021 Zhiyin Tan</p>
-                <ul class="footer-contact">
-                    <li class="contact-email">
-                        <a class="email" href="mailto:zhiyin121@gmail.com?subject=[ZYFL]%20-%20">
-                        <img class="contact-icon" src="./pic/gmail_icon.ico" alt="gmail link"> 
-                        <p class="text-email">  Email </p> 
-                        </a>
-                    </li>
-                    <li class="contact-twitter">
-                        <a class="twitter" href="https://twitter.com/zhiyin_nlp" title="Twitter">
-                        <img class="contact-icon" src="./pic/twitter_round.ico" alt="twitter link">
-                        <p class="text-twitter"> Twitter </p>
-                        </a>
-                    </li>
-                    <li class="contact-linkedin">
-                        <a class="linkedin" href="https://www.linkedin.com/in/zhiyin-tan/" title="Linkedin">
-                        <img class="contact-icon" src="./pic/linkedin.ico" alt="linkedin link">
-                        <p class="text-linkedin"> Linkedin </p>
-                        </a>
-                    </li>
-                </ul>
-                <p></p>
-            </div>
-        </footer>
-    </div>
+                </div>
+            </main>
+            
+            <footer data-include="./footer.html"></footer>
+        </div>
 
   </body>
 </html>

@@ -155,7 +155,7 @@ main{
   margin: 0}
 
 .site-title{
-  font-size: 1.7em;}
+  font-size: 1.6em;}
 
   /* Content */
 .site-home-content, .site-kg-content, .site-fl-content, .site-ab-content{
@@ -175,6 +175,7 @@ main{
   height: 25px;
   width: 25px;}
 
+/*knowledge Base*/
 .knowledge-card{  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -228,6 +229,17 @@ main{
   border-radius: 3px;
   min-width: auto;
   min-height: auto;}
+
+  /*Fishing*/
+.main-headline{
+  text-align: center;
+  height: inherit;
+  padding: 0em 2em 0em 2em;}
+
+.main-headline > .headline-image{
+  width: 600px;
+  align-items: center;
+  margin: 0em 0em 0em 0em;}
 
 /* footer */
 footer{
