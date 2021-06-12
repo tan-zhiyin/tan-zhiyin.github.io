@@ -141,8 +141,8 @@ main{
   height: auto;
   min-height: 1000px;
   padding: 0 20px 40px 20px;
-  margin-left: 5em;
-  margin-right: 5em;}
+  margin-left: 3%;
+  margin-right: 3%;}
 
 .site-kg-main{
   background-color: rgb(224, 220, 240);
@@ -150,7 +150,9 @@ main{
   grid-template-columns: 100% auto;
   width: inherit;
   min-height: 1000px;
-  max-height: auto;}
+  max-height: auto;
+  padding: 0 20px 40px 20px;
+  margin: 0}
 
 .site-title{
   font-size: 1.7em;}
@@ -161,8 +163,8 @@ main{
   height:auto;
   padding-top: 2em;
   padding-bottom: 5em;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
   /*overflow-y: scroll;*/}
 
 .intro {
@@ -183,7 +185,7 @@ main{
   
 .card{
   border-radius: 6px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(246, 245, 252);
   color:rgb(152, 149, 158);
   min-height: 3em;
   width: inherit;
@@ -198,6 +200,9 @@ main{
   grid-template-rows: 70% 30%;
   gap: 1em;
   height:inherit;}
+
+.card-title:hover {
+  text-decoration:none;}
 
 .card-title > .card-cover-image{
   height:200px;
