@@ -1,3 +1,12 @@
+function fillHeaderDOM() {
+	var header = document.getElementById("header");
+ 
+	var content = "";
+	content += "所有页面都要显示的内容，放到这里"
+ 
+	header.innerHTML = content;}
+
+
 /*
 const list = document.createElement('ul');
 const info = document.createElement('p');
@@ -54,4 +63,5 @@ html.onclick = function() {
       "description": "I&#x27;m a research scientist in the Language team at DeepMind. I blog about natural language processing, machine learning, and deep learning."
   }
 </script>
+
 */
