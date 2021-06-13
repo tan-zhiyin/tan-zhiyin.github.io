@@ -230,16 +230,66 @@ main{
   min-width: auto;
   min-height: auto;}
 
-  /*Fishing*/
-.main-headline{
-  text-align: center;
-  height: inherit;
-  padding: 0em 2em 0em 2em;}
+  /*human language*/
+  .site-kg-content h3{
+    margin-top: 3em;
+    margin-bottom: 1em;}
 
-.main-headline > .headline-image{
-  width: 600px;
-  align-items: center;
-  margin: 0em 0em 0em 0em;}
+  .cantonese-vowels{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+    align-items: flex-start;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 0em 0em;}
+  
+  .cantonese-vowels table{
+    border-style:dotted;
+    border-color: ivory;
+    text-align: center;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 0em 0em;}
+
+  .cantonese-consonants{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+    align-items: flex-start;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 0em 0em;}
+
+  .cantonese-consonants table{
+    border-style:dotted;
+    border-color: ivory;
+    text-align: center;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 0em 0em;}
+
+  .cantonese-tones{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+    align-items: flex-start;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 0em 0em;}
+
+  .cantonese-tones table{
+    border-style:dotted;
+    border-color: ivory;
+    text-align: center;
+    padding: 0em 0em 0em 0em;
+    margin: 0em 0em 0em 0em;}
+
+  /*Fishing*/
+  .main-headline{
+    text-align: center;
+    height: inherit;
+    padding: 0em 2em 0em 2em;}
+
+  .main-headline > .headline-image{
+    width: 600px;
+    align-items: center;
+    margin: 0em 0em 0em 0em;}
 
 /* footer */
 footer{
