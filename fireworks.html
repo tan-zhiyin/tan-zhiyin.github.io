@@ -40,7 +40,8 @@
     position: absolute;
     text-align: center;
     top: 0;
-    height: 50%;
+    height: 60%;
+    width: 100%;
     }
 
   </style>
@@ -161,8 +162,8 @@
             const color = colors[i % colors.length];
             const startX = canvas.width / 2;
             const startY = canvas.height * (9 / 10);
-            const targetX = canvas.width / 2 + Math.cos(angleStep * i) * (150 + Math.random() * 200);
-            const targetY = canvas.height * (6 / 10) + Math.sin(angleStep * i) * (100 + Math.random() * 200);
+            const targetX = canvas.width / 2 + Math.cos(angleStep * i) * (100 + Math.random() * 200);
+            const targetY = canvas.height * (5 / 10) + Math.sin(angleStep * i) * (100 + Math.random() * 100);
 
             setTimeout(() => {
             fireworks.push(new Firework(startX, startY, targetX, targetY, color));
