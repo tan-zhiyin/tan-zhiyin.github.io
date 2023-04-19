@@ -19,6 +19,7 @@
 
     #container {
     position: relative;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -40,7 +41,8 @@
     position: absolute;
     text-align: center;
     top: 0;
-    height: 50%;
+    height: 60%;
+    width:90%;
     }
 
   </style>
@@ -140,7 +142,7 @@
             if (this.message) {
             ctx.font = "50px Arial";
             ctx.fillStyle = this.color;
-            ctx.fillText(this.message, canvas.width / 2 - 100, canvas.height * 2 / 3);
+            ctx.fillText(this.message, canvas.width / 2 - 150, canvas.height * 2 / 3);
             }
         }
 
@@ -154,15 +156,15 @@
         }
 
         function createFireworks() {
-        const colors = ["violet", "indigo"]; <!--, "blue", "green", "yellow", "orange", "red"-->
+        const colors = ["violet", "indigo"]; //"blue", "green", "yellow", "orange", "red"
         const angleStep = (Math.PI * 2) / 20;
 
         for (let i = 0; i < 20; i++) { // Reduce the number of particles generated
             const color = colors[i % colors.length];
             const startX = canvas.width / 2;
             const startY = canvas.height * (9 / 10);
-            const targetX = canvas.width / 2 + Math.cos(angleStep * i) * (100 + Math.random() * 200);
-            const targetY = canvas.height * (6 / 10) + Math.sin(angleStep * i) * (100 + Math.random() * 100);
+            const targetX = canvas.width / 2 + Math.cos(angleStep * i) * (150 + Math.random() * 200);
+            const targetY = canvas.height * (3 / 10) + Math.sin(angleStep * i) * (150 + Math.random() * 50);
 
             setTimeout(() => {
             fireworks.push(new Firework(startX, startY, targetX, targetY, color));
@@ -214,12 +216,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
