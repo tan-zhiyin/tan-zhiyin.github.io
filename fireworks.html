@@ -42,7 +42,7 @@
     text-align: center;
     top: 0;
     height: 60%;
-    width:90%;
+    width:100%;
     }
 
   </style>
@@ -140,9 +140,9 @@
             this.draw();
             }
             if (this.message) {
-            ctx.font = "50px Arial";
+            ctx.font = "30px Arial narrow"; 
             ctx.fillStyle = this.color;
-            ctx.fillText(this.message, canvas.width / 2 - 150, canvas.height * 2 / 3);
+            ctx.fillText(this.message, canvas.width / 2 - 130, canvas.height * 2 / 3);
             }
         }
 
@@ -156,7 +156,7 @@
         }
 
         function createFireworks() {
-        const colors = ["violet", "indigo"]; //"blue", "green", "yellow", "orange", "red"
+        const colors = ["violet", "indigo", "Moccasin"]; //"blue", "green", "yellow", "orange", "red"
         const angleStep = (Math.PI * 2) / 20;
 
         for (let i = 0; i < 20; i++) { // Reduce the number of particles generated
@@ -169,7 +169,7 @@
             setTimeout(() => {
             fireworks.push(new Firework(startX, startY, targetX, targetY, color));
             if (i === 5) {
-                fireworks.push(new Firework(startX, startY, targetX, targetY, "yellow", "琳，生日快乐!"));
+                fireworks.push(new Firework(startX, startY, targetX, targetY, "Moccasin", "Lyn, Happy Birthday!"));
                 }
                 }, i * (300 + Math.random() * 1000)); // Increase the multiplier here (e.g., from 150 to 300)
             }
@@ -179,7 +179,7 @@
 
         function animate() {
             ctx.globalAlpha = 1;
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillStyle = "rgba(0, 0, 0, 0.08)";  //0.05
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             fireworks.forEach((firework, index) => {
