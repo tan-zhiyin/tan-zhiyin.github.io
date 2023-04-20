@@ -11,7 +11,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,8 +20,8 @@
 
     #container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +42,7 @@
     position: absolute;
     text-align: center;
     top: 0;
-    height: 55%;
+    height: 50%;
     width:100%;
     }
 
@@ -59,11 +60,11 @@
         let fireworks = [];
 
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.height = window.innerHeight * 0.5;
 
         function resizeCanvas() {
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.height = window.innerHeight * 0.5;
         }
 
         class Particle {
@@ -74,7 +75,7 @@
                 this.vx = speed * Math.cos(angle);
                 this.vy = speed * Math.sin(angle);
                 this.alpha = 1;
-                this.size = Math.random() * 2 + 1.5; // Decrease the size range of the particles
+                this.size = Math.random() * 2 + 0.5; // Decrease the size range of the particles
                 this.lifetime = 60; // Add a lifetime property (in frames)
                 this.decay = 1 / this.lifetime; // Calculate the decay rate based on the lifetime
             }
@@ -144,7 +145,7 @@
                 this.draw();
                 }
                 if (this.message) {
-                ctx.font = "30px Arial narrow"; 
+                ctx.font = "30px Arial"; 
                 ctx.fillStyle = "Moccasin";
                 ctx.fillText(this.message, canvas.width / 2 - 130, canvas.height * 2 / 3);
                 }
@@ -154,7 +155,7 @@
                 ctx.globalAlpha = 1;
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2); // Reduce the size of the firework launcher
+                ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2); // Reduce the size of the firework launcher
                 ctx.fill();
             }
         }
@@ -163,18 +164,18 @@
         const colors = ["violet", "indigo", "Moccasin"]; //"blue", "green", "yellow", "orange", "red"
         const angleStep = (Math.PI * 2) / 20;
 
-        for (let i = 0; i < 15; i++) { // Reduce the number of particles generated
+        for (let i = 0; i < 20; i++) { // Reduce the number of particles generated
             const color = colors[i % colors.length];
             const startX = canvas.width / 2;
-            const startY = canvas.height * (9 / 10);
-            const targetX = canvas.width / 2 + Math.cos(angleStep * i) * (150 + Math.random() * 200);
-            const targetY = canvas.height * (3 / 10) + Math.sin(angleStep * i) * (150 + Math.random() * 50);
+            const startY = canvas.height * (10 / 10);
+            const targetX = canvas.width / 2 + Math.cos(angleStep * i * Math.random()) * (100 + Math.random() * 200);
+            const targetY = canvas.height * (4 / 10) + Math.sin(angleStep * i * Math.random()) * (100 + Math.random() * 5);
             const timeout = 2000 + Math.random() * 3000; // Change this line to control the duration of individual fireworks
 
             setTimeout(() => {
                 const message = (i === 12) ? "Lyn, Happy Birthday!" : null; // Add a message for the last firework
                 fireworks.push(new Firework(startX, startY, targetX, targetY, color, message)); // Include the message
-            }, i * (300 + Math.random() * 1000)); // Increase the multiplier here (e.g., from 150 to 300)
+            }, i * (400 + Math.random() * 1000)); // Increase the multiplier here (e.g., from 150 to 300)
         }
     }
 
