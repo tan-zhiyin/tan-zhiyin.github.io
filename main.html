@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <title>CV</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        color: #000;
+        background-color: #fff;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        }
+
+    header {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    }
+
+    h1 {
+    font-size: 1.5em;
+    margin: 0px 0 10px;
+    }
+
+    h2 {
+    font-size: 1em;
+    margin: 10px 0 10px;
+    }
+
+    h3 {
+    font-size: 0.8em;
+    margin: 4px 0 0px;
+    }
+
+    p {
+    font-size: 0.8em;
+    line-height: 1.2em;
+    margin: 2px 0 10px;
+    }
+
+    section {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    }
+
+    button {
+    display: block;
+    margin: 20px auto;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="cv">
+    <header>
+      <h1>Zhiyin Tan</h1>
+      <p>Email: <a href="mailto:your.email@example.com">zhiyin121@gmail.com</a></p>
+      <!-- <p>Phone: +1 123 456 7890</p> -->
+    </header>
+    
+    <section>
+      <h2>Education</h2>
+      <div>
+        <h3>MSc, Computational Linguistics</h3>
+        <p>University of Stuttgart, Stuttgart, Baden-Württemberg, Germany, 2018 - 2023</p>
+      </div>
+      <div>
+        <h3>MA, Chinese Linguistics</h3>
+        <p>University of Macau, Taipa, Macau, China, 2016 - 2018</p>
+      </div>
+      <div>
+        <h3>BA, Chinese Language and Literature</h3>
+        <p>Wuyi University, Jiangmen, Guangdong, China, 2012 - 2016</p>
+      </div>
+    </section>
+
+    <section>
+        <h2>Publications and Projects</h2>
+        <div>
+          <h3>Applied Contrastive Learning to Fine-grained Entity Type Classification</h3>
+          <p>A dataset of 32,062 entity descriptions labeled with 228 fine-grained types and 27 coarse-grained types 
+            was developed to examine the effectiveness of gain of contrastive learning in classifying entity types 
+            across different models with a maximum gain of 17% in accuracy for fine-grained typing, Master thesis, 2023</p>
+        </div>
+        <div>
+            <h3>Text-based Classification of Personality Types</h3>
+            <p>A dataset of 22,647 anonymous posts tagged with the author's MBTI type was developed and used to 
+                train the DistilBERT model, yielding an average accuracy of 73.25% for binary classification 
+                in each of four dimensions, MLSS, 2021</p>
+          </div>
+        <div>
+          <h3>The use of Cantonese Discourse Markers by Legislative Council Members in Hong Kong and Macau</h3>
+          <p>A spoken Cantonese corpus of 360,000 Chinese characters was developed to explore the correlation between 
+            the use of discourse markers and the social background of the speaker (gender, age, education, etc.), 
+            Master thesis, WICL-4, 2018</p>
+        </div>
+        <div>
+          <h3>A Comparative Study of Mandarin Pitch Range in Northern and Central Taiwan</h3>
+          <p>Analyzed phonetic data of single words from three men and three women with Praat, revealed Taiwanese Mandarin 
+            in Taipei and Taichung can be distinguished by pitch range, NTU Research Program, 2017</p>
+        </div>
+    </section>   
+
+    <section>
+      <h2>Experience</h2>
+      <div>
+        <h3>R&D Computational Linguist</h3>
+        <p>Cerence GmbH, Aachen, Nordrhein-Westfalen, Germany, 2020 - 2022<br />
+            Pre-processed training and test data for in-car intelligent speech assistant's language understanding projects, 
+            including user demand type and entity type sorting, specification and generation of language variants.
+            </p>
+      </div>
+      <div>
+        <h3>AITalents Competition</h3>
+        <p>TechQuartier, Europe, 2020 - 2021<br />
+            Group collaborated to build a platform for real-time analysis of ESG signals in the supply chain to help buyers choose suppliers. 
+            In charged of crawling news and performing sentiment polarity analysis, building graphs using Cypher connected to Neo4j, and 
+            creating animated videos of pitching.</p>
+      </div>
+      <div>
+        <h3>IBM Female Mentoring Program</h3>
+        <p>IBM, Stuttgart, Baden-Württemberg, Germany, 2020<br />
+            IBM Germany provided a nine-month training program for 12 selected female students on topics including artificial intelligence, 
+            data science and technology consulting.</p>
+      </div>
+      <div>
+        <h3>Marketing Analyst</h3>
+        <p>TINNO Mobile, Shenzhen, Guangdong, China, 2019</p>
+      </div>
+      <div>
+        <h3>Teaching Assistant</h3>
+        <p>University of Macao, Taipa, Macao, China, 2017</p>
+      </div>
+      <!--
+      <div>
+        <h3>Public Opinion Analysis Researcher</h3>
+        <p>e-Research & Solutions, Macao, China, 2016 - 2017</p>
+      </div>
+    -->
+    </section>
+    
+
+  </div>
+  
+  <button onclick="downloadPDF()">Download as PDF</button>
+
+  <script>
+    function downloadPDF() {
+        const element = document.getElementById("cv");
+        
+        const opt = {
+            margin: 0.5,
+            filename: "CV.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
+  </script>
+</body>
+</html>

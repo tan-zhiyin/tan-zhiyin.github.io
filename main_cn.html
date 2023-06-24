@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <title>CV</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        color: #000;
+        background-color: #fff;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        }
+
+    header {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    }
+
+    h1 {
+    font-size: 1.5em;
+    margin: 0px 0 5px;
+    }
+
+    h2 {
+    font-size: 1em;
+    margin: 12px 0 5px;
+    }
+
+    h3 {
+    font-size: 0.8em;
+    margin: 5px 0 0px;
+    }
+
+    p {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin: 2px 0 0px;
+    }
+
+    section {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    }
+
+    button {
+    display: block;
+    margin: 20px auto;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="cv">
+    <header>
+      <h1>谭芷茵</h1>
+      <p>邮箱: <a href="mailto:your.email@example.com">zhiyin121@gmail.com</a></p>
+      <!-- <p>Phone: +1 123 456 7890</p> -->
+    </header>
+    
+    <section>
+      <h2>教育背景</h2>
+      <div>
+        <h3>计算语言学，理学硕士，斯图加特大学</h3>
+        <p>德国巴登-符腾堡州斯图加特，2018 - 2023</p>
+      </div>
+      <div>
+        <h3>汉语语言学，文学硕士，澳门大学</h3>
+        <p>中国澳门氹仔，2016 - 2018</p>
+      </div>
+      <div>
+        <h3>汉语言文学（师范），文学学士，五邑大学</h3>
+        <p>中国广东江门，2012 - 2016</p>
+      </div>
+    </section>
+
+    <section>
+        <h2>研究和论文</h2>
+        <div>
+          <h3>Applied Contrastive Learning to Fine-grained Entity Type Classification</h3>
+          <p>将对比性学习应用于细粒度实体类型分类，理学硕士论文，2023<br />
+            开发了一个由32,062个实体描述组成的数据集，标注了228个细粒度类型和27个粗粒度类型，
+            以检验对比学习在不同模型中对实体类型分类的增益效果，其中细粒度类型分类准确度的最大增益为17%。
+            </p>
+        </div>
+        <div>
+            <h3>Text-based Classification of Personality Types</h3>
+            <p>基于文本的人格类型分类研究，MLSS，2021<br />
+              开发了一个由22,647个标有作者的MBTI类型的匿名帖子组成的数据集，用于训练DistilBERT模型，
+              在四个维度中的每一个维度获得了73.25%的二元分类平均准确率。</p>
+          </div>
+        <div>
+          <h3>The use of Cantonese Discourse Markers by Legislative Council Members in Hong Kong and Macau</h3>
+          <p>港澳粤语话语标记语用研究，文学硕士论文，WICL-4，2018<br />
+            开发了一个包含360,000个中文字的粤语口语语料库，研究话语标记的使用与说话人的社会背景（性别、年龄、教育程度等）之间的相关性。 
+            </p>
+        </div>
+        <div>
+          <h3>A Comparative Study of Mandarin Pitch Range in Northern and Central Taiwan</h3>
+          <p>台湾北部和中部的普通话音域比较研究，国立台湾大学暑期研究项目，2017<br />
+            用Praat分析了三男三女的单字语音数据，发现台北和台中的台湾普通话可以通过音域不同来区分。</p>
+        </div>
+    </section>   
+
+    <section>
+      <h2>工作和项目</h2>
+      <div>
+        <h3>研发部门 - 计算语言学顾问</h3>
+        <p>Cerence GmbH，德国北莱茵-威斯特法伦州亚琛，2020 - 2022<br />
+          在车载智能语音助手的细分类语言理解项目中负责训练和测试数据的预处理，包括用户需求类型和实体类型的规范、语言变体的纠正和生成等。
+            </p>
+      </div>
+      <div>
+        <h3>AITalents 比赛</h3>
+        <p>TechQuartier，欧洲，2020 - 2021<br />
+          小组合作建立了一个平台，对供应链中的ESG信号进行实时分析，以帮助买家选择供应商。主要负责抓取新闻并进行情感极性分析，
+          使用Cypher连接Neo4j构建图谱，以及制作推广视频。</p>
+      </div>
+      <div>
+        <h3>IBM 女性指导计划</h3>
+        <p>IBM，德国巴登-符腾堡州斯图加特，2020<br />
+          参与德国IBM公司为12名选定的女学生提供了为期9个月的培训计划，主题包括人工智能、 数据科学和技术咨询。</p>
+      </div>
+      <div>
+        <h3>市场部门 - 数据分析</h3>
+        <p>天珑移动，中国广东深圳，2019</p>
+      </div>
+      <div>
+        <h3>教学助理</h3>
+        <p>澳门大学，中国澳门氹仔，2017</p>
+      </div>
+      <!--
+      <div>
+        <h3>舆论分析研究员</h3>
+        <p>易研方案，中国澳门，2016 - 2017</p>
+      </div>
+      -->
+    </section>
+    
+
+  </div>
+  
+  <button onclick="downloadPDF()">Download as PDF</button>
+
+  <script>
+    function downloadPDF() {
+        const element = document.getElementById("cv");
+        
+        const opt = {
+            margin: 0.5,
+            filename: "CV.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
+  </script>
+</body>
+</html>
