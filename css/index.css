@@ -47,7 +47,7 @@ main{
   position: relative;
   width: inherit;
   height: auto;
-  min-height: 1000px;
+  min-height: 100%;
   padding: 0 20px 40px 20px;
   margin-left: 0;
   margin-right: 0;}
@@ -57,7 +57,7 @@ main{
   display:grid;
   grid-template-columns: 100% auto;
   width: inherit;
-  min-height: 1000px;
+  min-height: 100%;
   max-height: auto;
   padding: 0 20px 40px 20px;
   margin: 0}
