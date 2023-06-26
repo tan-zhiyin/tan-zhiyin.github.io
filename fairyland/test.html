@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .moveElement {
+            transition: all 1s ease-in-out;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="movingElement" style="background:red;width:50px;height:50px;position:absolute;">Move me</div>
+
+    <script>
+        const element = document.getElementById('movingElement');
+
+        let positions = [
+            { top: '100px', left: '100px' }, // 1st position
+            { top: '300px', left: '100px' }, // 2nd position
+            { top: '500px', left: '700px' }, // 3rd position
+            { top: '700px', left: '800px' }  // Destination position
+        ];
+
+        let index = 0;
+
+        function moveElement() {
+            element.style.top = positions[index].top;
+            element.style.left = positions[index].left;
+
+            // Move to the next position, cycling back to 0 after the last position
+            index = (index + 1) % positions.length;
+            
+            // If we're back at the start, wait longer before the next move
+            let delay = index === 0 ? 6000 : 2000;  // Wait 120 seconds if we're back at the start
+
+            setTimeout(moveElement, delay);
+            }
+
+            // Start the movement
+            moveElement();
+
+    </script>
+        
+</body>
+</html>

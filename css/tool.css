@@ -93,7 +93,7 @@ footer{
   /*position:absolute;
   bottom: 0;*/
   width: inherit;
-  min-height: 8em;
+  min-height: 10vw;
   padding:3% 0em 3% 0em;
   color:rgb(204, 204, 204);
   background:#090a0b;}
