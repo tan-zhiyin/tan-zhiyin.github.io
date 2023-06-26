@@ -7,7 +7,7 @@
   <style>
     body {
     margin: 0;
-    background-image: url("background_four_girl.png");
+    background-image: url("../pic/background_four_girl.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@
     <div id="container">
         <canvas id="fireworksCanvas"></canvas>
     </div>
-    <button id="wishButton">Make a wish!</button>
+    <button id="wishButton">Start the fireworks!</button>
     <script>
         const canvas = document.getElementById("fireworksCanvas");
         const ctx = canvas.getContext("2d");
@@ -145,9 +145,9 @@
                 this.draw();
                 }
                 if (this.message) {
-                ctx.font = "30px Arial"; 
+                ctx.font = "20px Arial"; 
                 ctx.fillStyle = "Moccasin";
-                ctx.fillText(this.message, canvas.width / 2 - 130, canvas.height * 2 / 3);
+                ctx.fillText(this.message, canvas.width / 2 - 180, canvas.height * 2 / 3);
                 }
             }
 
@@ -173,7 +173,7 @@
             const timeout = 2000 + Math.random() * 3000; // Change this line to control the duration of individual fireworks
 
             setTimeout(() => {
-                const message = (i === 12) ? "Lyn, Happy Birthday!" : null; // Add a message for the last firework
+                const message = (i === 12) ? "Let life be beautiful like summer flowers!" : null; // Add a message for the last firework
                 fireworks.push(new Firework(startX, startY, targetX, targetY, color, message)); // Include the message
             }, i * (400 + Math.random() * 1000)); // Increase the multiplier here (e.g., from 150 to 300)
         }

@@ -35,9 +35,6 @@ body{
 
 /* main */
 .container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: inherit;
   padding: 0em 0em 0em 0em;
   margin: 0em 0em 0em 0em;
@@ -47,8 +44,7 @@ body{
 main{
   background-color: rgb(255, 255, 255);
   position: relative;
-  width: inherit;
-  max-width: 80em;
+  width: auto;
   height: auto;
   min-height: 100%;
   padding: 0 20px 40px 20px;
@@ -62,9 +58,9 @@ main{
   /* Content */
 .site-home-content, .site-kg-content, .site-fl-content, .site-re-content{
   width: auto;
-  height:auto;
+  height: auto;
   padding-top: 10%;
-  padding-bottom: 5em;
+  padding-bottom: 5vw;
   padding-left: 5vw;
   padding-right: 5vw;
   /*overflow-y: scroll;*/}
