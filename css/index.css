@@ -35,6 +35,9 @@ body{
 
 /* main */
 .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: inherit;
   padding: 0em 0em 0em 0em;
   margin: 0em 0em 0em 0em;
@@ -45,6 +48,7 @@ main{
   background-color: rgb(255, 255, 255);
   position: relative;
   width: inherit;
+  max-width: 80em;
   height: auto;
   min-height: 100%;
   padding: 0 20px 40px 20px;
@@ -61,18 +65,10 @@ main{
   height:auto;
   padding-top: 10%;
   padding-bottom: 5em;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 5vw;
+  padding-right: 5vw;
   /*overflow-y: scroll;*/}
-
-.intro {
-  text-align: left;
-  line-height: 1.5em;}
   
-.icon{
-  height: 25px;
-  width: 25px;}
-
 
 /*back to top*/
 .to-top {
