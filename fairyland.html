@@ -25,9 +25,9 @@
             <main class="site-fl-main">
                 <div id="start" class="site-fl-content">          
                     <h1 class="site-title"> Fairyland </h1>
-                        <p>Make a wish   
-                            <a class="card-title" href="/fairyland/fireworks.html">here</a>
-                            , you lovely one.
+                        <p style="line-height: 1.6em;">Doors and windows conceal mysteries
+                            <br>
+                            Creatures knocking on the silent thing
                         </p>
                 </div>
 
@@ -40,11 +40,55 @@
                     <div id="tree-house-pic" style="position:relative; width: 100%; min-width: 800px;">
                         <img class="tree-house-pic" title="tree house" src="./pic/tree_house_1.png" 
                             style=" position:inherit; width: 100%; min-width: 800px;">
-                    
+                        
+                        <!--top window, light the fireworks-->
+                        <div id="top-window-close" style="background:None; width:5%; height:5%; position:absolute; left:49.8%; top:19.8%; 
+                                                            display: block; transition: transform 0.05s;" 
+                                                            onmouseover="increaseSize()" onmouseout="resetSize()"onclick="openWindow()">
+                            <img title="top window" src="./pic/tree_house_1_top_window_close.png"
+                                style="width:80%;height:80%;">
+                        </div>
+                        <div id="top-window-open" style="background:None; width:5%; height:5%; position:absolute; left:49.8%; top:19.8%; 
+                                                        display: none; display: none;" onclick="closeWindow()">
+                            <img title="top window" src="./pic/tree_house_1_top_window_open.png"
+                                style="width:80%;height:80%;">
+                        </div>
+                        <div id="top-window-fireworks" style="background:None; width:4%; height:4%; position:absolute; left:47.5%; top:20%; 
+                                                            display: none; " onclick="redirectToLink()">
+                            <img title="top window" src="./pic/fireworks_mortars.png"
+                                style="width:100%;height:100%;">
+                        </div>
 
-                        <div id="rabbit-1"  style="background:None;width:3vw;height:3vw;position:absolute;">
+                        <script>
+                            function increaseSize() {
+                                document.getElementById('top-window-close').style.transform = "scale(1.1)";
+                            }
+
+                            function resetSize() {
+                                document.getElementById('top-window-close').style.transform = "scale(1)";
+                            
+                            }
+                            function openWindow() {
+                                document.getElementById('top-window-close').style.display = 'none';
+                                document.getElementById('top-window-open').style.display = 'block';
+                                document.getElementById('top-window-fireworks').style.display = 'block';
+                            }
+                            
+                            function closeWindow() {
+                                document.getElementById('top-window-close').style.display = 'block';
+                                document.getElementById('top-window-open').style.display = 'none';
+                                document.getElementById('top-window-fireworks').style.display = 'none';
+                            }
+                            
+                            function redirectToLink() {
+                                window.location.href = "./fairyland/fireworks.html"; // Replace with your URL
+                            }
+                        </script>
+
+                        <!--rabbit-->
+                        <div id="rabbit-1"  style="background:None;width:3%;height:3%;position:absolute;">
                             <img class="rabbit-1" title="rabbit-1" src="./pic/rabbit_1.png" 
-                                                style="width:2vw;height:2vw;position:absolute;">
+                                style="width:50%;height:50%;">
                         </div>
                         <style>
                             .moveElement {
