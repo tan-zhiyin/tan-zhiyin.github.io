@@ -57,26 +57,59 @@
                 
                             let positions = [
                                 { top: '46.8%', left: '63%' }, // 1st position
-                                { top: '46.3%', left: '62%' }, // 2nd position
+                                { top: '46.3%', left: '62%' }, // 2nd position * jump
                                 { top: '46.5%', left: '61%' }, // 3rd position
                                 { top: '47%', left: '60.5%' },  // 4th position
                                 { top: '48%', left: '60.5%' }, // 5th position
-                                { top: '48.3%', left: '60.5%' }, // 6th position
-                                { top: '48%', left: '59%' }, // 7th position
+                                { top: '48.3%', left: '60.5%' }, // 6th position * jump
+                                { top: '48%', left: '59%' }, // 7th position 
                                 { top: '48.3%', left: '58%' },  // 8th position
                                 { top: '48.3%', left: '58%' }, // 9th position
                                 { top: '48.3%', left: '58%' }, // 10th position
                                 { top: '48.3%', left: '58%' }, // 11th position
                                 { top: '48.3%', left: '58%' }, // 12th position
-                                { top: '48.3%', left: '59%' }, // 13th position
-                                { top: '48%', left: '60%' }, // 12th position
-                                { top: '48%', left: '61%' }, // 13th position
-                                { top: '48%', left: '61%' }, // 14th position
-                                { top: '47.8%', left: '62%' }, // 15th position
-                                { top: '47.5%', left: '61%' }, // 13th position
-                                { top: '47.3%', left: '61%' }, // 14th position
-                                { top: '47%', left: '62%' }, // 15th position
-                                { top: '46.8%', left: '63%' }  // Destination position
+                                { top: '48.3%', left: '58%' }, // 13th position
+                                { top: '48.3%', left: '58%' }, // 14th position
+                                { top: '48.3%', left: '58%' }, // 15th position
+                                { top: '48.3%', left: '58%' }, // 16th position
+                                { top: '48.3%', left: '58%' }, // 17th position
+                                { top: '48.3%', left: '58%' }, // 18th position
+                                { top: '48.3%', left: '58%' }, // 19th position
+                                { top: '48.3%', left: '58%' }, // 20th position
+                                { top: '48.3%', left: '58%' }, // 21th position
+                                { top: '48.3%', left: '58%' }, // 22th position
+                                { top: '48.3%', left: '58%' }, // 23th position
+                                { top: '48.3%', left: '58%' }, // 24th position
+                                { top: '48.3%', left: '58%' }, // 25th position * change
+                                { top: '47.5%', left: '59.5%' }, // 26th position * jump
+                                { top: '48%', left: '61%' }, // 27th position
+                                { top: '48%', left: '61%' }, // 28th position
+                                { top: '48%', left: '61%' }, // 29th position
+                                { top: '48%', left: '61%' }, // 30th position
+                                { top: '48%', left: '61%' }, // 31st position
+                                { top: '48%', left: '61%' }, // 32nd position
+                                { top: '48%', left: '61%' }, // 33rd position
+                                { top: '48%', left: '61%' }, // 34th position
+                                { top: '48%', left: '61%' }, // 35th position
+                                { top: '48%', left: '61%' }, // 36th position
+                                { top: '48%', left: '61%' }, // 37th position
+                                { top: '48%', left: '61%' }, // 38th position
+                                { top: '48%', left: '61%' }, // 39th position
+                                { top: '48%', left: '61%' }, // 41st position
+                                { top: '48%', left: '61%' }, // 42nd position
+                                { top: '48%', left: '61%' }, // 43rd position
+                                { top: '48%', left: '61%' }, // 44th position
+                                { top: '48%', left: '61%' }, // 45th position * change
+                                { top: '47%', left: '61.5%' }, // 46th position * jump
+                                { top: '47.8%', left: '62%' }, // 47th position
+                                { top: '47.8%', left: '62%' }, // 48th position
+                                { top: '47%', left: '62.5%' }, // 49th position * jump
+                                { top: '47.8%', left: '62.5%' }, // 50th position
+                                { top: '47.8%', left: '62.5%' }, // 51st position
+                                { top: '47.8%', left: '62.5%' }, // 52nd position
+                                { top: '46.5%', left: '63%' }, // 53rd position * jump
+                                { top: '47%', left: '64%' }, // 54th position
+                                { top: '47%', left: '64%' }  // Destination position
                             ];
                 
                             let index = 0;
@@ -86,11 +119,11 @@
                                 element.style.left = positions[index].left;
                                 
                                 // If we are at the 10th position or beyond, change the img
-                                if (index >= 12 && index < 15) { // index starts from 0, so 12 is the 13th position
+                                if (index >= 24 && index < 44) { // index starts from 0, so 15 is the 13th position
                                     element.querySelector('.rabbit-1').src = './pic/rabbit_1.2.png';
                                     // Ensure the image is visible
                                     element.querySelector('.rabbit-1').style.visibility = 'visible';
-                                } else if (index >= 15 && index < positions.length - 1) { // If it's the 16th position
+                                } else if (index >= 44 && index < positions.length - 1) { // If it's the 16th position
                                     // Hide the image
                                     element.querySelector('.rabbit-1').src = './pic/rabbit_1.3.png';
                                     // Ensure the image is visible
@@ -109,7 +142,7 @@
                                 index = (index + 1) % positions.length;
                                 
                                 // If we're back at the start, wait longer before the next move
-                                let delay = index === 0 ? 3000 : 100;  // Wait 120 seconds if we're back at the start
+                                let delay = index === 0 ? 6000 : 100;  // Wait 120 seconds if we're back at the start
                 
                                 setTimeout(moveElement, delay);
                                 }
