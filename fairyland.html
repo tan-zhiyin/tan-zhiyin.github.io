@@ -37,8 +37,96 @@
                         justify-content: start;
                         overflow: auto;">
 
-                    <img class="tree-house-pic" title="tree house" src="./pic/tree_house_1.png" 
-                            style="width: 100%; min-width: 800px;">
+                    <div id="tree-house-pic" style="position:relative; width: 100%; min-width: 800px;">
+                        <img class="tree-house-pic" title="tree house" src="./pic/tree_house_1.png" 
+                            style=" position:inherit; width: 100%; min-width: 800px;">
+                    
+
+                        <div id="rabbit-1"  style="background:None;width:3vw;height:3vw;position:absolute;">
+                            <img class="rabbit-1" title="rabbit-1" src="./pic/rabbit_1.png" 
+                                                style="width:2vw;height:2vw;position:absolute;">
+                        </div>
+                        <style>
+                            .moveElement {
+                                transition: all 1s ease-in-out;
+                            }
+                        </style>
+                        <script>
+                            const element = document.getElementById('rabbit-1');
+                            const parent = document.getElementById('tree-house-pic');
+                
+                            let positions = [
+                                { top: '46.8%', left: '63%' }, // 1st position
+                                { top: '46.3%', left: '62%' }, // 2nd position
+                                { top: '46.5%', left: '61%' }, // 3rd position
+                                { top: '47%', left: '60.5%' },  // 4th position
+                                { top: '48%', left: '60.5%' }, // 5th position
+                                { top: '48.3%', left: '60.5%' }, // 6th position
+                                { top: '48%', left: '59%' }, // 7th position
+                                { top: '48.3%', left: '58%' },  // 8th position
+                                { top: '48.3%', left: '58%' }, // 9th position
+                                { top: '48.3%', left: '58%' }, // 10th position
+                                { top: '48.3%', left: '58%' }, // 11th position
+                                { top: '48.3%', left: '58%' }, // 12th position
+                                { top: '48.3%', left: '59%' }, // 13th position
+                                { top: '48%', left: '60%' }, // 12th position
+                                { top: '48%', left: '61%' }, // 13th position
+                                { top: '48%', left: '61%' }, // 14th position
+                                { top: '47.8%', left: '62%' }, // 15th position
+                                { top: '47.5%', left: '61%' }, // 13th position
+                                { top: '47.3%', left: '61%' }, // 14th position
+                                { top: '47%', left: '62%' }, // 15th position
+                                { top: '46.8%', left: '63%' }  // Destination position
+                            ];
+                
+                            let index = 0;
+                
+                            function moveElement() {
+                                element.style.top = positions[index].top;
+                                element.style.left = positions[index].left;
+                                
+                                // If we are at the 10th position or beyond, change the img
+                                if (index >= 12 && index < 15) { // index starts from 0, so 12 is the 13th position
+                                    element.querySelector('.rabbit-1').src = './pic/rabbit_1.2.png';
+                                    // Ensure the image is visible
+                                    element.querySelector('.rabbit-1').style.visibility = 'visible';
+                                } else if (index >= 15 && index < positions.length - 1) { // If it's the 16th position
+                                    // Hide the image
+                                    element.querySelector('.rabbit-1').src = './pic/rabbit_1.3.png';
+                                    // Ensure the image is visible
+                                    element.querySelector('.rabbit-1').style.visibility = 'visible';
+                                } else if (index === positions.length - 1) { // If it's the last position
+                                    // Hide the image
+                                    element.querySelector('.rabbit-1').style.visibility = 'hidden';
+                                } else {
+                                    // For all positions before the 7th, we make sure it's the rabbit image
+                                    element.querySelector('.rabbit-1').src = './pic/rabbit_1.png';
+                                    // Ensure the image is visible
+                                    element.querySelector('.rabbit-1').style.visibility = 'visible';
+                                }
+
+                                // Move to the next position, cycling back to 0 after the last position
+                                index = (index + 1) % positions.length;
+                                
+                                // If we're back at the start, wait longer before the next move
+                                let delay = index === 0 ? 3000 : 100;  // Wait 120 seconds if we're back at the start
+                
+                                setTimeout(moveElement, delay);
+                                }
+                
+                                // Start the movement
+                                moveElement();
+
+                                // Adjust the rabbit's position when the tree-house is scrolled
+                                document.querySelector('.tree-house').onscroll = function(e) {
+                                    const scrollLeft = e.target.scrollLeft;
+                                    const scrollTop = e.target.scrollTop;
+                                    
+                                    element.style.left = `calc(${positions[index].left} + ${scrollLeft}px)`;
+                                    element.style.top = `calc(${positions[index].top} + ${scrollTop}px)`;
+                                    };
+                        </script> 
+                    </div>
                 </div>
 
                 
