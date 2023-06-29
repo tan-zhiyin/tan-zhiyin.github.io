@@ -27,7 +27,7 @@
                     <h1 class="site-title"> Fairyland </h1>
                         <p style="line-height: 1.6em;">Doors and windows conceal mysteries
                             <br>
-                            Creatures knocking on the silent thing
+                            Creatures knocking on the silent things
                         </p>
                 </div>
 
@@ -202,7 +202,40 @@
                                     element.style.left = `calc(${positions[index].left} + ${scrollLeft}px)`;
                                     element.style.top = `calc(${positions[index].top} + ${scrollTop}px)`;
                                     };
-                        </script> 
+                        </script>
+                        
+                        <!--1st floor left door-->
+                        <div id="1st-floor-left-door-close" style="background:None; width:7.2%; height:7.2%; position:absolute; left:33.1%; top:86.1%; 
+                                                            display: block; transition: transform 0.05s;" 
+                                                            onmouseover="increaseDoorSize()" onmouseout="resetDoorSize()"onclick="openDoor()">
+                            <img title="1st floor left door" src="./pic/tree_house_1_1st_floor_left_door_close.png"
+                                style="width:90%;height:90%;">
+                        </div>
+                        <div id="1st-floor-left-door-open" style="background:None; width:7.2%; height:7.2%; position:absolute; left:33.1%; top:86.1%;  
+                                                        display: none; display: none;" onclick="closeDoor()">
+                            <img title="1st floor left door" src="./pic/tree_house_1_1st_floor_left_door_open.png"
+                                style="width:90%;height:90%;">
+                        </div>
+                        <script>
+                            function increaseDoorSize() {
+                                document.getElementById('1st-floor-left-door-close').style.transform = "scale(1.05)";
+                            }
+
+                            function resetDoorSize() {
+                                document.getElementById('1st-floor-left-door-close').style.transform = "scale(1)";
+                            
+                            }
+
+                            function openDoor() {
+                                document.getElementById('1st-floor-left-door-close').style.display = 'none';
+                                document.getElementById('1st-floor-left-door-open').style.display = 'block';
+                            }
+                            
+                            function closeDoor() {
+                                document.getElementById('1st-floor-left-door-close').style.display = 'block';
+                                document.getElementById('1st-floor-left-door-open').style.display = 'none';
+                            }
+                        </script>
                     </div>
                 </div>
 
