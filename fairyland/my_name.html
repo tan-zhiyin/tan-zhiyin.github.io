@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Zhiyin's Name</title>
+    <meta name="author" content="Zhiyin Tan">
+    <meta name="description" content="Personal knowledge record fairyland: natural language processing(nlp), animation, thoughts">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="https://www.icloud.com/iclouddrive/0OuJofHg8h4NTxXeb0weLM3ng#Little_fox's_back-big" />
+    <meta property="og:description" content="Zhiyin Tan's fairyland.">
+    <meta property="og:title" content="Zhiyin's Fairyland" />
+    <meta property="og:type" content="website" />    
+
+    <link rel="Shortcut Icon" href="./pic/little_fox_round.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/">
+    <script src="./js/" defer></script>
+    <style>
+
+
+        .scene {
+        display: flex;
+        justify-content: center;
+        height: 100vh; /* Use 100% of the view height */
+        margin: 8vw auto auto auto;
+        }
+
+        
+
+        .mat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        background-color: #94766c; /* This is a brown color */
+        background: linear-gradient(328deg, #815844, #ba9e8f);
+        width: 50%; /* On a computer or iPad, the mat will take up 50% of the page width */
+        height: 80%; /* The mat is 10% from the top and 20% from the bottom, thus its height is 70% */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* This creates some shadow under the mat */
+        border-radius: 0.5%;
+        border-bottom: #402819;
+        }
+
+        .paper-stack {
+        position: absolute; /* This allows you to place the paper stack on top of the mat */
+        width: 95%; /* You can adjust these numbers to suit your design */
+        height: 95%;
+        margin:0 0 0 1%;
+        }
+
+        .paper {
+        background-color: rgb(244, 244, 238);
+        border: 1px solid #ddd; /* A light border to show the edges of the paper */
+        box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.2); /* This creates some shadow under the paper */
+        width: 100%; /* These papers fill up the entire paper stack */
+        height: 99%; /* Adjust the height for overlap */
+        position: absolute; /* This allows you to overlap the papers */
+        }
+
+        .paper:nth-child(2) {
+        top: -0.8%; /* This moves the second paper down a bit so it overlaps the first */
+        right:0.8%;
+        height: 100%;
+        }
+
+        /* You can use media queries to adjust the size and positioning for different devices */
+        @media screen and (max-width: 768px) { /* For mobile */
+        .mat {
+            width: 90%; /* For mobile, the mat will take up 90% of the page width */
+        }
+        }
+
+        /* You can use media queries to adjust the size and positioning for different devices */
+        @media screen and (max-width: 768px) { /* For mobile */
+        .paper-stack {
+            width: 93%; /* For mobile, the mat will take up 90% of the page width */
+        }
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="scene">
+        <div class="mat">
+            <div class="paper-stack">
+            <div class="paper"></div>
+            <div class="paper"></div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
