@@ -1,0 +1,89 @@
+const door_sign = document.getElementById('door-sign');
+                                const tree_house_for_door_sign = document.getElementById('tree-house-pic');
+                    
+                                let door_sign_positions = [
+                                    { top: '86%', left: '57%' }, // 1st position
+                                    { top: '86%', left: '57%' }, // 2nd position
+                                    { top: '86%', left: '57%' }, // 3rd position
+                                    { top: '86%', left: '57%' }, // 4th position
+                                    { top: '86%', left: '57%' }, // 5th position
+                                    { top: '86%', left: '57%' }, // 6th position
+                                    { top: '86%', left: '57%' }, // 7th position
+                                    { top: '86%', left: '57%' }, // 8th position
+                                    { top: '86%', left: '57%' }, // 9th position
+                                    { top: '86%', left: '57%' }, // 10th position
+                                    { top: '86%', left: '57%' }, // 11st position
+                                    { top: '86%', left: '57%' }, // 12nd position
+                                    { top: '86%', left: '57%' }, // 13rd position
+                                    { top: '86%', left: '57%' }, // 14th position
+                                    { top: '86%', left: '57%' }, // 15th position
+                                    { top: '86%', left: '57%' }, // 16th position
+                                    { top: '86%', left: '57%' }, // 17th position
+                                    { top: '86%', left: '57%' }, // 18th position
+                                    { top: '86%', left: '57%' }, // 19th position
+                                    { top: '86%', left: '57%' }  // Destination position
+                                ];
+                    
+                                let door_sign_index = 0;
+                    
+                                function moveDoorSign() {
+                                    door_sign.style.top = door_sign_positions[door_sign_index].top;
+                                    door_sign.style.left = door_sign_positions[door_sign_index].left;
+                                    
+                                    // If we are at the 10th position or beyond, change the img
+                                    if (door_sign_index >= 0 && door_sign_index < 1) { // index starts from 0, so 15 is the 13th position
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_curled_1.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    } else if (door_sign_index >= 1 && door_sign_index < 9) { // If it's the 16th position
+                                        // Hide the image
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_curled_2.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    } else if (door_sign_index >= 9 && door_sign_index < 12) { // If it's the 16th position
+                                        // Hide the image
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_flat.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    } else if (door_sign_index >= 12 && door_sign_index < 13) { // If it's the 16th position
+                                        // Hide the image
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_curled_1.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    } else if (door_sign_index >= 13 && door_sign_index < 16) { // If it's the 16th position
+                                        // Hide the image
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_curled_2.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    } else if (door_sign_index >= 16 && door_sign_index < door_sign_positions.length - 1) { // If it's the 16th position
+                                        // Hide the image
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_curled_1.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    } else {
+                                        // For all positions before the 7th, we make sure it's the rabbit image
+                                        door_sign.querySelector('.door-sign').src = './pic/door_sign_flat.png';
+                                        // Ensure the image is visible
+                                        door_sign.querySelector('.door-sign').style.visibility = 'visible';
+                                    }
+
+                                    // Move to the next position, cycling back to 0 after the last position
+                                    door_sign_index = (door_sign_index + 1) % door_sign_positions.length;
+                                    
+                                    // If we're back at the start, wait longer before the next move
+                                    let delay = door_sign_index === 0 ? 6000 : 50;  // Wait 120 seconds if we're back at the start
+                    
+                                    setTimeout(moveDoorSign, delay);
+                                    }
+                    
+                                    // Start the movement
+                                    moveDoorSign();
+
+                                    // Adjust the rabbit's position when the tree-house is scrolled
+                                    document.querySelector('.tree-house').onscroll = function(e) {
+                                        const scrollLeft = e.target.scrollLeft;
+                                        const scrollTop = e.target.scrollTop;
+                                        
+                                        door_sign.style.left = `calc(${door_sign_positions[door_sign_index].left} + ${scrollLeft}px)`;
+                                        door_sign.style.top = `calc(${door_sign_positions[door_sign_index].top} + ${scrollTop}px)`;
+                                        };
