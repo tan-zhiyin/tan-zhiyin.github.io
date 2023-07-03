@@ -331,22 +331,23 @@
                                     justify-content: center;
                                     align-items: center;
                                     position:absolute;
-                                    top: 15%;
+                                    top: 25%;
                                     left: 25%;
                                     background-color: #94766c;
                                     background: linear-gradient(328deg, #815844, #ba9e8f);
-                                    width: 50%;
-                                    height: 60%;
+                                    width: 40%;
+                                    height: 50%;
                                     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-                                    border-radius: 0.5%;
+                                    border-radius: 2%;
                                     border-bottom: #402819;
+                                    padding:1.8%;
                                 }
 
                                 .paper-stack {
                                     position: absolute; /* This allows you to place the paper stack on top of the mat */
-                                    width: 95%; /* You can adjust these numbers to suit your design */
-                                    height: 95%;
-                                    margin:0 0 0 1%;
+                                    width:90%; /* You can adjust these numbers to suit your design */
+                                    height:90%;
+                                    margin:0;
                                 }
 
                                 .paper {
@@ -362,6 +363,23 @@
                                     top: -0.8%; /* This moves the second paper down a bit so it overlaps the first */
                                     right:0.8%;
                                     height: 100%;
+                                }
+
+
+                                .close-name-intro-card {
+                                position: absolute; /* Absolute position relative to the .paper-stack */
+                                top: 100%; /* Adjust these values as needed */
+                                left: 50%;
+                                color: #aaa;
+                                font-size: 28px;
+                                font-weight: bold;
+                                }
+
+                                .close-name-intro-card:hover,
+                                .close-name-intro-card:focus {
+                                color: rgb(115, 114, 114);
+                                text-decoration: none;
+                                cursor: pointer;
                                 }
 
                                 /* You can use media queries to adjust the size and positioning for different devices */
@@ -381,11 +399,11 @@
 
                             <div id="name-intro" class="name-intro">
                                 <div class="name-intro-card">
-                                    <span id="close-name-intro-card" class="close-name-intro-Card"
-                                            style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+                                    
                                     <div class="paper-stack">
                                         <div class="paper"></div>
                                         <div class="paper"></div>
+                                        <span id="close-name-intro-card" class="close-name-intro-card">&times;</span>
                                     </div>
                                 </div>
                             </div>
