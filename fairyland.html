@@ -47,7 +47,7 @@
                             <style>
                                 #top-window-close:hover,
                                 #top-window-open:hover,
-                                #top-window-fireworks
+                                #top-window-fireworks:hover
                                  {
                                 cursor: pointer;
                                 }
@@ -59,7 +59,7 @@
                                     style="width:80%;height:80%;">
                             </div>
                             <div id="top-window-open" style="background:None; width:5%; height:5%; position:absolute; left:49.8%; top:19.8%; 
-                                                            display: none; display: none;" onclick="closeWindow()">
+                                                             display: none;" onclick="closeWindow()">
                                 <img title="top window" src="./pic/tree_house_1_top_window_open.png"
                                     style="width:80%;height:80%;">
                             </div>
@@ -92,6 +92,150 @@
                                 
                                 function redirectToLink() {
                                     window.location.href = "./fairyland/fireworks.html"; // Replace with your URL
+                                }
+                            </script>
+                        </div>
+
+                        <!--6th floor right 1st window-->
+                        <div>
+                            <style>
+                                #sixth-floor-right-1-window-close:hover,
+                                #sixth-floor-thrown-sketchbook-open-pic:hover
+                                {
+                                    cursor: pointer;
+                                }
+                            </style>
+                            <div id="sixth-floor-right-1-window-close" style="background:None; width:2.8%; height:2.8%; position:absolute; left:56.15%; top:36.8%; 
+                                display: block; transition: transform 0.05s;" onclick="openSixRightWindow()">
+                                <img id="sixth-floor-right-1-window-close-pic" title="6st floor right window" src="./pic/6th_floor_right_1_window_close.png"
+                                    style="width:90%;height:90%;">
+                            </div>
+
+                            <div id="sixth-floor-thrown-sketchbook" style="background:None; width:4.8%; height:5.2%; position:absolute; left:60.15%; top:36.9%; 
+                                 display:none; transition: transform 0.05s;">
+                                <img id="sixth-floor-thrown-sketchbook-pic" title="6st floor thrown sketchbook" 
+                                src="./pic/6th_floor_thrown_sketchbook.png"
+                                    style="width:100%;height:100%;">
+                            </div>
+
+                            <div id="sixth-floor-thrown-sketchbook-open" style="background:None; width:4.8%; height:5.2%; position:absolute; left:60.15%; top:36.9%; 
+                                 display:none; transform: 0.05s;" >
+                                <img id="sixth-floor-thrown-sketchbook-open-pic" title="6st floor thrown sketchbook" 
+                                src="./pic/6th_floor_thrown_sketchbook.png"
+                                    style="width:100%;height:100%;" onclick="redirectToGallery()">
+                            </div>
+
+                            <script>
+                                function redirectToGallery() {
+                                    window.location.href = "./fairyland/fireworks.html"; // Replace with your URL
+                                }
+
+                                function openSixRightWindow() {
+                                    var sixthFloorRightWindow = document.getElementById('sixth-floor-right-1-window-close-pic');
+
+                                    var sixthFloorRightWindowImage = [
+                                        './pic/6th_floor_right_1_window_close_50p.png',
+                                        './pic/6th_floor_right_1_window_close_40p.png',
+                                        './pic/6th_floor_right_1_window_close_30p.png',
+                                        './pic/6th_floor_right_1_window_close_20p.png',
+                                        './pic/6th_floor_right_1_window_close_20p_talking_1.png',
+                                        './pic/6th_floor_right_1_window_close_20p_talking_2.png',
+                                        './pic/6th_floor_right_1_window_close_50p.png',
+                                        './pic/6th_floor_right_1_window_close.png'
+                                    ];
+
+                                    // Change to the second image
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[0];
+                                    }, 50);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[1];
+                                    }, 800);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[2];
+                                    }, 850);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[3];
+                                    }, 900);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[4];
+                                    }, 1800);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[5];
+                                    }, 2600);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[6];
+                                    }, 4050);
+
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[7];
+                                    }, 4100);
+
+
+                                    setTimeout(function() {
+                                        document.getElementById('sixth-floor-thrown-sketchbook').style.display = 'block';
+                                    }, 4110);
+
+                                    var sixthFloorThrownSketchbook = document.getElementById('sixth-floor-thrown-sketchbook-pic');
+
+                                    var sixthFloorThrownSketchbookImage = [
+                                        './pic/6th_floor_thrown_sketchbook.png',
+                                        './pic/6th_floor_thrown_sketchbook_1.png',
+                                        './pic/6th_floor_thrown_sketchbook_2.png',
+                                        './pic/6th_floor_thrown_sketchbook_3.png'
+                                    ];
+
+                                    setTimeout(function() {
+                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[0];
+                                    }, 4400);
+
+                                    setTimeout(function() {
+                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[1];
+                                    }, 4500);
+
+                                    setTimeout(function() {
+                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[2];
+                                    }, 4600);
+
+                                    setTimeout(function() {
+                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[3];
+                                    }, 4700);
+
+
+                                    
+                                    setTimeout(function() {
+                                        document.getElementById('sixth-floor-thrown-sketchbook-open').style.display = 'block';
+                                    }, 4720);
+                                    
+
+                                    var sixthFloorThrownSketchbookOpen = document.getElementById('sixth-floor-thrown-sketchbook-open-pic');
+
+                                    var sixthFloorThrownSketchbookOpenImage = [
+                                        './pic/6th_floor_thrown_sketchbook_4.png',
+                                        './pic/6th_floor_thrown_sketchbook.png'
+                                    ]
+
+                                    setTimeout(function() {
+                                        sixthFloorThrownSketchbookOpen.src = sixthFloorThrownSketchbookOpenImage[0];
+                                    }, 4800);
+                                    
+                                    setTimeout(function() {
+                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[7];
+                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[0];
+                                        sixthFloorThrownSketchbookOpen.src = sixthFloorThrownSketchbookOpenImage[1];
+                                    }, 11999);
+
+
+                                    setTimeout(function() {
+                                        document.getElementById('sixth-floor-thrown-sketchbook-open').style.display = 'none';
+                                        document.getElementById('sixth-floor-thrown-sketchbook').style.display = 'none';
+                                    }, 12000)
                                 }
                             </script>
                         </div>
@@ -335,7 +479,7 @@
                                 // Start the image changing cycle
                                 runImageCycle();
 
-                                // Adjust the rabbit's position when the tree-house is scrolled
+                                // Adjust the element's position when the tree-house is scrolled
                                 document.querySelector('.tree-house').onscroll = function(e) {
                                 const scrollLeft = e.target.scrollLeft;
                                 const scrollTop = e.target.scrollTop;
