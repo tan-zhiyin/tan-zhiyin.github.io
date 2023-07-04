@@ -100,28 +100,21 @@
                         <div>
                             <style>
                                 #sixth-floor-right-1-window-close:hover,
-                                #sixth-floor-thrown-sketchbook-open-pic:hover
+                                #seventh-floor-door-open:hover
                                 {
                                     cursor: pointer;
                                 }
                             </style>
                             <div id="sixth-floor-right-1-window-close" style="background:None; width:2.8%; height:2.8%; position:absolute; left:56.15%; top:36.8%; 
                                 display: block; transition: transform 0.05s;" onclick="openSixRightWindow()">
-                                <img id="sixth-floor-right-1-window-close-pic" title="6st floor right window" src="./pic/6th_floor_right_1_window_close.png"
+                                <img id="sixth-floor-right-1-window-close-pic" title="6th floor right window" src="./pic/6th_floor_right_1_window_close.png"
                                     style="width:90%;height:90%;">
                             </div>
 
-                            <div id="sixth-floor-thrown-sketchbook" style="background:None; width:4.8%; height:5.2%; position:absolute; left:60.15%; top:36.9%; 
-                                 display:none; transition: transform 0.05s;">
-                                <img id="sixth-floor-thrown-sketchbook-pic" title="6st floor thrown sketchbook" 
-                                src="./pic/6th_floor_thrown_sketchbook.png"
-                                    style="width:100%;height:100%;">
-                            </div>
-
-                            <div id="sixth-floor-thrown-sketchbook-open" style="background:None; width:4.8%; height:5.2%; position:absolute; left:60.15%; top:36.9%; 
-                                 display:none; transform: 0.05s;" >
-                                <img id="sixth-floor-thrown-sketchbook-open-pic" title="6st floor thrown sketchbook" 
-                                src="./pic/6th_floor_thrown_sketchbook.png"
+                            <div id="seventh-floor-door-open" style="background:None; width:6.93%; height:8.1%; position:absolute; left:60.36%; top:25.74%; 
+                                 display: none; transform: 0.05s;" >
+                                <img id="seventh-floor-door-open-pic" title="7th floor door open" 
+                                src="./pic/7th_floor_door_grass_100p.png"
                                     style="width:100%;height:100%;" onclick="redirectToGallery()">
                             </div>
 
@@ -151,91 +144,141 @@
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[1];
-                                    }, 800);
+                                    }, 200);
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[2];
-                                    }, 850);
+                                    }, 250);
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[3];
-                                    }, 900);
+                                    }, 300);
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[4];
-                                    }, 1800);
+                                    }, 1200);
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[5];
-                                    }, 2600);
+                                    }, 3000);
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[6];
-                                    }, 4050);
+                                    }, 4200);
 
                                     setTimeout(function() {
                                         sixthFloorRightWindow.src = sixthFloorRightWindowImage[7];
-                                    }, 4100);
+                                    }, 4250);
 
 
                                     setTimeout(function() {
-                                        document.getElementById('sixth-floor-thrown-sketchbook').style.display = 'block';
-                                    }, 4110);
+                                        document.getElementById('seventh-floor-door-open').style.display = 'block';
+                                    }, 4300);
 
-                                    var sixthFloorThrownSketchbook = document.getElementById('sixth-floor-thrown-sketchbook-pic');
+                                    var seventhFloorDoor = document.getElementById('seventh-floor-door-open-pic');
 
-                                    var sixthFloorThrownSketchbookImage = [
-                                        './pic/6th_floor_thrown_sketchbook.png',
-                                        './pic/6th_floor_thrown_sketchbook_1.png',
-                                        './pic/6th_floor_thrown_sketchbook_2.png',
-                                        './pic/6th_floor_thrown_sketchbook_3.png'
+                                    var seventhFloorDoorImage = [
+                                        './pic/7th_floor_door_grass_100p.png',
+                                        './pic/7th_floor_door_grass_80p.png',
+                                        './pic/7th_floor_door_grass_50p.png',
+                                        './pic/7th_floor_door_grass_20p.png',
+                                        './pic/7th_floor_door_grass_0p.png',
+                                        './pic/7th_floor_door_grass_0p_step_30p.png',
+                                        './pic/7th_floor_door_grass_0p_step_70p.png',
+                                        './pic/7th_floor_door_grass_0p_step_100p.png',
+                                        './pic/7th_floor_door_grass_0p_step_100p_door_20p.png',
+                                        './pic/7th_floor_door_grass_0p_step_100p_door_60p.png',
+                                        './pic/7th_floor_door_grass_0p_step_100p_door_100p.png'
                                     ];
 
                                     setTimeout(function() {
-                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[0];
-                                    }, 4400);
-
-                                    setTimeout(function() {
-                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[1];
+                                        seventhFloorDoor.src = seventhFloorDoorImage[0];
                                     }, 4500);
 
                                     setTimeout(function() {
-                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[2];
-                                    }, 4600);
+                                        seventhFloorDoor.src = seventhFloorDoorImage[1];
+                                    }, 4750);
 
                                     setTimeout(function() {
-                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[3];
-                                    }, 4700);
+                                        seventhFloorDoor.src = seventhFloorDoorImage[2];
+                                    }, 4900);
 
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[3];
+                                    }, 5050);
 
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[4];
+                                    }, 5200);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[5];
+                                    }, 6000);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[6];
+                                    }, 6200);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[7];
+                                    }, 6400);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[8];
+                                    }, 7200);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[9];
+                                    }, 7250);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[10];
+                                    }, 7300);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[9];
+                                    }, 13000);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[8];
+                                    }, 13100);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[7];
+                                    }, 13200);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[6];
+                                    }, 13300);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[5];
+                                    }, 13400);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[4];
+                                    }, 13500);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[3];
+                                    }, 13800);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[2];
+                                    }, 13900);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[1];
+                                    }, 14200);
+
+                                    setTimeout(function() {
+                                        seventhFloorDoor.src = seventhFloorDoorImage[0];
+                                    }, 14300);
                                     
-                                    setTimeout(function() {
-                                        document.getElementById('sixth-floor-thrown-sketchbook-open').style.display = 'block';
-                                    }, 4720);
-                                    
-
-                                    var sixthFloorThrownSketchbookOpen = document.getElementById('sixth-floor-thrown-sketchbook-open-pic');
-
-                                    var sixthFloorThrownSketchbookOpenImage = [
-                                        './pic/6th_floor_thrown_sketchbook_4.png',
-                                        './pic/6th_floor_thrown_sketchbook.png'
-                                    ]
 
                                     setTimeout(function() {
-                                        sixthFloorThrownSketchbookOpen.src = sixthFloorThrownSketchbookOpenImage[0];
-                                    }, 4800);
-                                    
-                                    setTimeout(function() {
-                                        sixthFloorRightWindow.src = sixthFloorRightWindowImage[7];
-                                        sixthFloorThrownSketchbook.src = sixthFloorThrownSketchbookImage[0];
-                                        sixthFloorThrownSketchbookOpen.src = sixthFloorThrownSketchbookOpenImage[1];
-                                    }, 11999);
-
-
-                                    setTimeout(function() {
-                                        document.getElementById('sixth-floor-thrown-sketchbook-open').style.display = 'none';
-                                        document.getElementById('sixth-floor-thrown-sketchbook').style.display = 'none';
-                                    }, 12000)
+                                        document.getElementById('seventh-floor-door-open').style.display = 'none';
+                                    }, 14400)
                                 }
                             </script>
                         </div>
