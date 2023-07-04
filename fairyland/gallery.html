@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Zhiyin's Name</title>
+    <meta name="author" content="Zhiyin Tan">
+    <meta name="description" content="Personal knowledge record fairyland: natural language processing(nlp), animation, thoughts">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="https://www.icloud.com/iclouddrive/0OuJofHg8h4NTxXeb0weLM3ng#Little_fox's_back-big" />
+    <meta property="og:description" content="Zhiyin Tan's fairyland.">
+    <meta property="og:title" content="Zhiyin's Fairyland" />
+    <meta property="og:type" content="website" />    
+
+    <link rel="Shortcut Icon" href="./pic/little_fox_round.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/">
+    <style>
+        html, body{
+            background-color: rgb(255, 255, 255);
+            color: #313b3f;
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+            font-size: 1.6rem;line-height: 1.6em;font-weight: 400;font-style:normal;letter-spacing:0;
+            height: 100%;
+            overflow: auto;
+            padding: 0;
+            margin: 0;
+        }
+
+        #seventh-floor {
+            position: relative;
+            background: url('../pic/7th_floor_interior.png') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <script>
+        window.onload = window.onresize = function() {
+            var imageWidth = 1536; // image's width
+            var imageHeight = 1024; // image's height
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            var viewportAspectRatio = viewportWidth / viewportHeight;
+            var imageAspectRatio = imageWidth / imageHeight;
+
+            var backgroundDiv = document.getElementById('seventh-floor');
+
+            if (viewportAspectRatio > imageAspectRatio) {
+                backgroundDiv.style.width = viewportWidth + 'px';
+                backgroundDiv.style.height = (viewportWidth / imageAspectRatio) + 'px';
+            } else {
+                backgroundDiv.style.height = viewportHeight + 'px';
+                backgroundDiv.style.width = (viewportHeight * imageAspectRatio) + 'px';
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div id="seventh-floor">
+        <div id="paint-1">
+        </div>
+        <div id="paint-2">
+        </div>
+    </div>
+  </body>
+</html>
+
+
+
