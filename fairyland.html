@@ -16,6 +16,103 @@
 
         <link rel="stylesheet" href="./css/index.css">
         <script src="./js/csi.js" defer></script>
+        <style>
+            .name-intro {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                position:absolute;
+                top: 25%;
+                left: 25%;
+                background-color: #94766c;
+                background: linear-gradient(328deg, #815844, #ba9e8f);
+                width: 40%;
+                height: 50%;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+                border-radius: 2%;
+                border-bottom: #402819;
+                padding:1.8%;
+            }
+
+            .paper-stack {
+                position: absolute; /* This allows you to place the paper stack on top of the mat */
+                width:90%; /* You can adjust these numbers to suit your design */
+                height:90%;
+                margin:0;
+            }
+
+            .paper {
+                background-color: rgb(230, 226, 212);
+                border: 1px solid #ddd; /* A light border to show the edges of the paper */
+                box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.2); /* This creates some shadow under the paper */
+                width: 100%; /* These papers fill up the entire paper stack */
+                height: 99%; /* Adjust the height for overlap */
+                position: absolute; /* This allows you to overlap the papers */
+            }
+
+            .paper:nth-child(2) {
+                top: -0.8%; /* This moves the second paper down a bit so it overlaps the first */
+                right:0.8%;
+                height: 100%;
+            }
+
+
+            .close-name-intro-card {
+                position: absolute; /* Absolute position relative to the .paper-stack */
+                top: 100%; /* Adjust these values as needed */
+                left: 50%;
+                color: #aaa;
+                font-size: 3vh;
+                font-weight: bold;
+            }
+
+            .close-name-intro-card:hover,
+            .close-name-intro-card:focus {
+            color: rgb(115, 114, 114);
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+            /* You can use media queries to adjust the size and positioning for different devices */
+            @media screen and (max-width: 768px) { /* For mobile */
+            .mat {
+                width: 90%; /* For mobile, the mat will take up 90% of the page width */
+            }
+            }
+
+            /* You can use media queries to adjust the size and positioning for different devices */
+            @media screen and (max-width: 768px) { /* For mobile */
+            .paper-stack {
+                width: 93%; /* For mobile, the mat will take up 90% of the page width */
+            }
+            }
+
+            #top-window-close:hover,
+            #top-window-open:hover,
+            #top-window-fireworks:hover
+                {
+            cursor: pointer;
+            }
+
+            #sixth-floor-right-1-window-close:hover,
+            #seventh-floor-door-open:hover
+            {
+                cursor: pointer;
+            }
+
+            .moveRabbit_1 {
+                transition: all 1s ease-in-out;
+            }
+
+            #first-floor-left-door-close:hover,
+            #first-floor-left-door-open:hover {
+                cursor: pointer;
+            }
+
+            #door-sign:hover {
+                cursor: pointer;
+            }
+        </style>
     </head>
 
     <body class="site-fl">
@@ -44,14 +141,6 @@
                         
                         <!--top window, light the fireworks-->
                         <div class="top_window">
-                            <style>
-                                #top-window-close:hover,
-                                #top-window-open:hover,
-                                #top-window-fireworks:hover
-                                 {
-                                cursor: pointer;
-                                }
-                            </style>
                             <div id="top-window-close" style="background:None; width:5%; height:5%; position:absolute; left:49.8%; top:19.8%; 
                                                                 display: block; transition: transform 0.05s;" 
                                                                 onmouseover="increaseSize()" onmouseout="resetSize()"onclick="openWindow()">
@@ -97,14 +186,7 @@
                         </div>
 
                         <!--6th floor right 1st window / 7th floor-->
-                        <div>
-                            <style>
-                                #sixth-floor-right-1-window-close:hover,
-                                #seventh-floor-door-open:hover
-                                {
-                                    cursor: pointer;
-                                }
-                            </style>
+                        <div class="6th_floor">
                             <div id="sixth-floor-right-1-window-close" style="background:None; width:2.8%; height:2.8%; position:absolute; left:56.15%; top:36.8%; 
                                 display: block; transition: transform 0.05s;" onclick="openSixRightWindow()">
                                 <img id="sixth-floor-right-1-window-close-pic" title="6th floor right window" src="./pic/6th_floor_right_1_window_close.png"
@@ -289,11 +371,7 @@
                                 <img class="rabbit-1" title="rabbit 1" src="./pic/rabbit_1.png" 
                                     style="width:50%;height:50%;">
                             </div>
-                            <style>
-                                .moveRabbit_1 {
-                                    transition: all 1s ease-in-out;
-                                }
-                            </style>
+                            
                             <script>
                                 const rabbit_1 = document.getElementById('rabbit-1');
                                 const tree_house_for_rabbit_1 = document.getElementById('tree-house-pic');
@@ -405,14 +483,7 @@
                         </div>
                         
                         <!--1st floor left door-->
-                        <div class="1st-floor-left-door">
-                            <style>
-                                #first-floor-left-door-close:hover,
-                                #first-floor-left-door-open:hover {
-                                    cursor: pointer;
-                                }
-                            </style>
-
+                        <div class="1st_floor_left_door">
                             <div id="first-floor-left-door-close" style="background:None; width:7.2%; height:7.2%; position:absolute; left:33.1%; top:86.1%; 
                             display: block; transition: transform 0.05s;" 
                             onmouseover="increaseDoorSize()" onmouseout="resetDoorSize()"onclick="openDoor()">
@@ -450,11 +521,6 @@
 
                         <!--door sign-->
                         <div class="door_sign">
-                            <style>
-                                #door-sign:hover {
-                                cursor: pointer;
-                                }
-                            </style>
                             <div  id="door-sign" style="background:None;width:3%;height:3%;position:absolute;
                                                         top: 86%; left: 57%;">
                                 <img id="door-sign-pic" class="door-sign" title="door sign" src="" 
@@ -536,77 +602,7 @@
 
                         <!--name intro-->
                         <div class="name_intro">
-                            <style>
-                                .name-intro {
-                                    display: none;
-                                    justify-content: center;
-                                    align-items: center;
-                                    position:absolute;
-                                    top: 25%;
-                                    left: 25%;
-                                    background-color: #94766c;
-                                    background: linear-gradient(328deg, #815844, #ba9e8f);
-                                    width: 40%;
-                                    height: 50%;
-                                    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-                                    border-radius: 2%;
-                                    border-bottom: #402819;
-                                    padding:1.8%;
-                                }
-
-                                .paper-stack {
-                                    position: absolute; /* This allows you to place the paper stack on top of the mat */
-                                    width:90%; /* You can adjust these numbers to suit your design */
-                                    height:90%;
-                                    margin:0;
-                                }
-
-                                .paper {
-                                    background-color: rgb(230, 226, 212);
-                                    border: 1px solid #ddd; /* A light border to show the edges of the paper */
-                                    box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.2); /* This creates some shadow under the paper */
-                                    width: 100%; /* These papers fill up the entire paper stack */
-                                    height: 99%; /* Adjust the height for overlap */
-                                    position: absolute; /* This allows you to overlap the papers */
-                                }
-
-                                .paper:nth-child(2) {
-                                    top: -0.8%; /* This moves the second paper down a bit so it overlaps the first */
-                                    right:0.8%;
-                                    height: 100%;
-                                }
-
-
-                                .close-name-intro-card {
-                                position: absolute; /* Absolute position relative to the .paper-stack */
-                                top: 100%; /* Adjust these values as needed */
-                                left: 50%;
-                                color: #aaa;
-                                font-size: 3vh;
-                                font-weight: bold;
-                                }
-
-                                .close-name-intro-card:hover,
-                                .close-name-intro-card:focus {
-                                color: rgb(115, 114, 114);
-                                text-decoration: none;
-                                cursor: pointer;
-                                }
-
-                                /* You can use media queries to adjust the size and positioning for different devices */
-                                @media screen and (max-width: 768px) { /* For mobile */
-                                .mat {
-                                    width: 90%; /* For mobile, the mat will take up 90% of the page width */
-                                }
-                                }
-
-                                /* You can use media queries to adjust the size and positioning for different devices */
-                                @media screen and (max-width: 768px) { /* For mobile */
-                                .paper-stack {
-                                    width: 93%; /* For mobile, the mat will take up 90% of the page width */
-                                }
-                                }
-                            </style>
+                            
 
                             <div id="name-intro" class="name-intro">
                                 <div class="name-intro-card">
@@ -646,11 +642,6 @@
                             </script>
                         </div>
                     </div>
-
-                    
-
-                    
-
 
                 </div>
 

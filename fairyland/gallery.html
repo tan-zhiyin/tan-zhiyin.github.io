@@ -2,7 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <title>Zhiyin's Name</title>
+    <title>Seventh Floor Painting Gallery</title>
     <meta name="author" content="Zhiyin Tan">
     <meta name="description" content="Personal knowledge record fairyland: natural language processing(nlp), animation, thoughts">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,6 @@
     <meta property="og:type" content="website" />    
 
     <link rel="Shortcut Icon" href="./pic/little_fox_round.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="../css/">
     <style>
         html, body{
             background-color: rgb(255, 255, 255);
@@ -34,6 +32,111 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        .enlarged_painting {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+            background: linear-gradient(328deg, rgba(59, 30, 14, 0.85), rgba(155, 106, 82, 0.65));
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 2%;
+            border-bottom: #402819;
+            padding:4vw 4vw 4vw 4vw;
+            margin:0;
+        }
+
+        .enlarged_painting > .enlarged_painting_pic {
+            position:relative;
+            display:grid;
+            justify-content: center;
+            align-content: stretch;
+            gap: 3%;
+            width:100%;
+            height: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin:0;
+        }
+
+        .enlarged_painting_pic > .painting_pic{
+            padding:0; 
+            margin:0;
+        }
+
+        .painting_pic img{
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .enlarged_painting_pic > .painting_intro {
+            height: 100%;
+            overflow: auto;
+            padding: 0;
+            margin: 0;
+        }
+
+        .painting_intro h6 {
+            text-align: center;
+            color: antiquewhite;
+            font-size: 2vh;
+            line-height: 2vh;
+            margin:0 0 2vw 0; 
+        }
+
+        .painting_intro p {
+            text-align: center;
+            color:rgb(201, 188, 171);
+            font-size: 1.8vh;
+            font-weight: bold;
+            line-height: 2.4vh;
+            margin:0 0 1vw 0;
+        }
+
+        /* The main scrollbar */
+        ::-webkit-scrollbar {
+            width: 1vh; /* width of the entire scrollbar */
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgba(59, 30, 14, 0.5); /* color of the tracking area */
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: antiquewhite; /* color of the scroll handle */
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(192, 166, 152, 0.8); /* color of the scroll handle on hover*/
+        }
+
+        .close_icon {
+            position: absolute; 
+            background-color: #402819;
+            shape-outside: margin-box;
+            top: 100%; 
+            left: 50%; 
+            height: 5%;      
+            color: #aaa; 
+            font-size: 3vh; 
+            font-weight: bold; 
+            padding: 0; 
+            margin: 0;
+        }
+                   
+        #painting-two-cats-pic:hover {
+            cursor: pointer;
+        }
+
+        .close_icon:hover,
+        .close_icon:focus {
+            color: rgb(115, 114, 114);
+            text-decoration: none;
+            cursor: pointer;
+        };
     </style>
 
     <script>
@@ -60,13 +163,59 @@
 
   <body>
     <div id="seventh-floor">
-        <div id="paint-1">
+        <!--small painting-->
+        <div id="paint-two-cats">
+            <div id="painting-two-cats-pic" style="position:absolute; background: url('../pic/two_cats.jpeg') no-repeat;
+                                                    background-size: 100%; top: 60.85%; left: 36.3%; width:3.2%; height:6%;">
+                <div id="painting-two-cats-pic-mask" style="position: absolute; background: rgba(136, 57, 0, 0.3);
+                                                            top: 0; left: 0; width: 100%; height: 100%;"></div>
+            </div>
         </div>
-        <div id="paint-2">
+
+        <!--enlarged painting-->
+        <div class="enlarged_painting" id="enlarged-painting-two-cats" style="top: 18%; left: 24%; width: 23%; height: 50%;">
+            <div class="enlarged_painting_pic" id="enlarged-painting-two-cats-pic" style="grid-template-rows: 75% 1fr;">
+                <div class="painting_pic">
+                    <img src="../pic/two_cats.jpeg" style="width:100%; height: 100%;">
+                </div>
+                <div class="painting_intro">
+                    <h6>The Midnight Gaze</h6>
+                    <p>Author: Zhiyin Tan
+                        <br>Date: 03 Jun 2023
+                    </p>
+                    <p style="text-align: left;">Introduction: <br>Awakening one midnight, I was greeted by the enchanting sight of two cats, 
+                        Qing Bu Liang, a delightful blend of Neva Masquerade Siberian and Ragdoll, 
+                        and his charming elder brother, Bai Tang Gao. 
+                        <br><br>Their curious gazes, 
+                        alternating between me and the insects drawn to the light, 
+                        brought unexpected warmth and companionship to the midnight hour. 
+                        <br><br>This serene, nocturnal tableau brings a comforting ease that lingers even as dawn breaks.
+                    </p>
+                </div>
+            </div>
+            <span id="close-enlarged-painting-two-cats-pic" class="close_icon">&times;</span>
         </div>
+
+        <script>
+            var smallFrame = document.getElementById("painting-two-cats-pic");
+            var frame = document.getElementById("enlarged-painting-two-cats");
+            var span = document.getElementById("close-enlarged-painting-two-cats-pic");
+
+            // When the user clicks on the div, open the frame
+            smallFrame.onclick = function() {
+                frame.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the frame
+            span.onclick = function() {
+                frame.style.display = "none";
+            }
+        </script>
+
     </div>
   </body>
 </html>
+
 
 
 
