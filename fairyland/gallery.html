@@ -14,6 +14,27 @@
 
     <link rel="Shortcut Icon" href="./pic/little_fox_round.ico" type="image/x-icon">
     <style>
+        /* The main scrollbar */
+        ::-webkit-scrollbar {
+            width: 1vh; /* width of the entire scrollbar */
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgba(59, 30, 14, 0.5); /* color of the tracking area */
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: antiquewhite; /* color of the scroll handle */
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(192, 166, 152, 0.8); /* color of the scroll handle on hover*/
+        }
+
+    
         html, body{
             background-color: rgb(255, 255, 255);
             color: #313b3f;
@@ -38,7 +59,7 @@
             justify-content: center;
             align-items: center;
             position:relative;
-            background: linear-gradient(328deg, rgba(59, 30, 14, 0.85), rgba(155, 106, 82, 0.65));
+            background: linear-gradient(328deg, rgb(68 26 2 / 96%), rgb(223 165 136 / 61%));
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
             border-radius: 2%;
             border-bottom: #402819;
@@ -79,52 +100,49 @@
         .painting_intro h6 {
             text-align: center;
             color: antiquewhite;
-            font-size: 2vh;
+            font:italic 2.5vh "Fira Sans", serif;
+            font-size: 3vh;
             line-height: 2vh;
-            margin:0 0 2vw 0; 
+            margin:1vh 0 2vh 0; 
         }
 
         .painting_intro p {
             text-align: center;
             color:rgb(201, 188, 171);
+            font:italic 1.8vh "Fira Sans", sans-serif;
             font-size: 1.8vh;
             font-weight: bold;
             line-height: 2.4vh;
             margin:0 0 1vw 0;
         }
-
-        /* The main scrollbar */
-        ::-webkit-scrollbar {
-            width: 1vh; /* width of the entire scrollbar */
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: rgba(59, 30, 14, 0.5); /* color of the tracking area */
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: antiquewhite; /* color of the scroll handle */
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(192, 166, 152, 0.8); /* color of the scroll handle on hover*/
+        
+        .close_icon_border {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:rgb(59 21 0 / 87%);
+            top: calc(100% + 3vw); /* 100% of the container height plus 3vw */
+            left: 50%;
+            width:4vh;
+            height:4vh;
+            transform: translateX(-50%); /* Center the element horizontally */
+            border-radius: 50%; /* Make the border round */
+            box-sizing: content-box;
+            padding: 0;
+            margin: 0;
         }
 
         .close_icon {
-            position: absolute; 
-            background-color: #402819;
-            shape-outside: margin-box;
-            top: 100%; 
-            left: 50%; 
-            height: 5%;      
-            color: #aaa; 
+            display: inline-block;
+            width: 80%;
+            height: 80%;
             font-size: 3vh; 
             font-weight: bold; 
-            padding: 0; 
-            margin: 0;
+            color: #f1d7b5;
+            text-align: center;
+            line-height: 3vh;
+            padding: 0;
         }
                    
         #painting-two-cats-pic:hover {
@@ -133,7 +151,7 @@
 
         .close_icon:hover,
         .close_icon:focus {
-            color: rgb(115, 114, 114);
+            color: rgba(192, 166, 152, 0.8);
             text-decoration: none;
             cursor: pointer;
         };
@@ -193,7 +211,10 @@
                     </p>
                 </div>
             </div>
-            <span id="close-enlarged-painting-two-cats-pic" class="close_icon">&times;</span>
+            
+            <div class="close_icon_border" id="close-enlarged-painting-two-cats-pic">
+                <span class="close_icon">&times;</span>
+            </div>
         </div>
 
         <script>
