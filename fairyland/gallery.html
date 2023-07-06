@@ -54,6 +54,11 @@
             background-repeat: no-repeat;
         }
 
+        #painting-gongbi-fan-pic {
+            transform: rotateX(329deg) rotateY(342deg) rotateZ(348deg);
+            transition: transform 1s; /* Change happens over 2 seconds */
+        }
+
         .enlarged_painting {
             display: none;
             justify-content: center;
@@ -72,6 +77,7 @@
             display:grid;
             justify-content: center;
             align-content: stretch;
+            justify-items: center;
             gap: 3%;
             width:100%;
             height: 100%;
@@ -99,6 +105,7 @@
 
         .painting_intro h6 {
             text-align: center;
+            white-space: nowrap;
             color: antiquewhite;
             font:italic 2.5vh "Fira Sans", serif;
             font-size: 3vh;
@@ -145,11 +152,9 @@
             padding: 0;
         }
                    
-        #painting-two-cats-pic:hover {
-            cursor: pointer;
-        }
-
-        #painting-a-girl-pic:hover {
+        #painting-two-cats-pic:hover,
+        #painting-a-girl-pic:hover,
+        #painting-gongbi-fan-pic:hover {
             cursor: pointer;
         }
 
@@ -198,6 +203,14 @@
             <div id="painting-a-girl-pic" style="position:absolute; background: url('../pic/painting_a_girl.jpeg') no-repeat;
                                                     background-size: 100%; top: 44.15%; left: 30.05%; width:2.82%; height:4.3%;">
                 <div id="painting-a-girl-pic-mask" style="position: absolute; background: rgba(136, 57, 0, 0.3);
+                                                            top: 0; left: 0; width: 100%; height: 100%;"></div>
+            </div>
+        </div>
+
+        <div id="paint-gongbi_fan">
+            <div id="painting-gongbi-fan-pic" style="position:absolute; background: url('../pic/painting_gongbi_fan.png') no-repeat;
+                                                    background-size: 100%; top: 48.1%; left: 21.8%; width:2%; height:6%; perspective: 1000px;">
+                <div id="painting-gongbi-fan-pic-mask" style="position: absolute; background: rgba(136, 57, 0, 0.02);
                                                             top: 0; left: 0; width: 100%; height: 100%;"></div>
             </div>
         </div>
@@ -265,6 +278,36 @@
             </div>
         </div>
 
+        <div class="enlarged_painting" id="enlarged-painting-gongbi-fan" 
+                                        style="top: 12%; left: 18%; width: 23%; height: 50%;">
+            <div class="enlarged_painting_pic" id="enlarged-painting-gongbi-fan-pic" 
+                                                style="grid-template-rows: 75% 1fr;">
+                <div class="painting_pic">
+                    <img src="../pic/painting_gongbi_fan.png" style="width:100%; height: 100%;">
+                </div>
+                <div class="painting_intro">
+                    <h6>Orchids by the Water</h6>
+                    <p>Author: Zhiyin Tan
+                        <br>Date: 17 Nov 2017
+                    </p>
+                    <p style="text-align: left;">Introduction: <br>
+                        Marking the artist's initial exploration of silk fan Gongbi painting, 
+                        this memorable work, complished in a postgraduate activity at the University of Macau, 
+                        is adorned with orchids, symbols of gentlemanly virtues. 
+                        <br><br>
+                        The choice of the orchid resonates deeply with the artist, 
+                        as it mirrors a flower linked to her name and signifies an individual of great character 
+                        and humility in traditional Chinese literature.
+                     
+                    </p>
+                </div>
+            </div>
+            
+            <div class="close_icon_border" id="close-enlarged-painting-gongbi-fan-pic">
+                <span class="close_icon">&times;</span>
+            </div>
+        </div>
+
         <script>
             var smallFrameTwoCats = document.getElementById("painting-two-cats-pic");
             var frameTwoCats = document.getElementById("enlarged-painting-two-cats");
@@ -284,6 +327,7 @@
                 }
             }
 
+
             var smallFrameAGirl = document.getElementById("painting-a-girl-pic");
             var frameAGirl = document.getElementById("enlarged-painting-a-girl");
             var spanAGirl = document.getElementById("close-enlarged-painting-a-girl-pic");
@@ -299,6 +343,25 @@
             window.onclick = function(event) {
                 if (event.target == frameAGirl) {
                     frameAGirl.style.display = "none";
+                }
+            }
+
+           
+            var smallFrameGongbiFan = document.getElementById("painting-gongbi-fan-pic");
+            var frameGongbiFan = document.getElementById("enlarged-painting-gongbi-fan");
+            var spanGongbiFan = document.getElementById("close-enlarged-painting-gongbi-fan-pic");
+
+            smallFrameGongbiFan.onclick = function() {
+                frameGongbiFan.style.display = "block";
+            }
+
+            spanGongbiFan.onclick = function() {
+                frameGongbiFan.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == frameGongbiFan) {
+                    frameGongbiFan.style.display = "none";
                 }
             }
         </script>
