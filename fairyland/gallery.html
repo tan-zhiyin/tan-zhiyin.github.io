@@ -59,6 +59,11 @@
             transition: transform 1s; /* Change happens over 2 seconds */
         }
 
+        #writing-letter-pic {
+            transform: rotateX(310deg) rotateY(299deg) rotateZ(305deg);
+            transition: transform 1s; /* Change happens over 2 seconds */
+        }
+
         .enlarged_painting {
             display: none;
             justify-content: center;
@@ -123,6 +128,54 @@
             margin:0 0 1vw 0;
         }
         
+        .enlarged_writing {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+            background: rgba(0, 0, 0, 0.0);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.0);
+            border-radius: 2%;
+            border-bottom: #402819;
+            padding:1vh 1vh 1vh 0.4vh;
+            margin:0;
+        }
+
+        .enlarged_writing > .enlarged_writing_pic {
+            position:relative;
+            background-size: contain;
+            background-repeat: no-repeat;
+            display:grid;
+            justify-content: center;
+            align-content: stretch;
+            justify-items: center;
+            gap: 3%;
+            width:100%;
+            height: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;box-sizing: border-box;
+        }
+
+        .enlarged_writing > .enlarged_writing_pic > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* You can also use 'cover' if you want the image to fully cover the div */
+        }
+
+        .enlarged_writing > .enlarged_writing_pic > h5, p {
+            position: absolute;
+            font:italic 2.6vh "Fira Sans", serif;
+            transform: translate(-50%, -40%);
+            color: #68321b;
+            font-size: 2.6vh;
+            line-height: 3.2vh;
+            text-align: center;
+            width: 70%;
+            height: 70%;
+            overflow: auto;
+        }
+
         .close_icon_border {
             position: absolute;
             display: flex;
@@ -154,7 +207,8 @@
                    
         #painting-two-cats-pic:hover,
         #painting-a-girl-pic:hover,
-        #painting-gongbi-fan-pic:hover {
+        #painting-gongbi-fan-pic:hover,
+        #writing-letter-pic:hover {
             cursor: pointer;
         }
 
@@ -212,6 +266,17 @@
                                                     background-size: 100%; top: 48.1%; left: 21.8%; width:2%; height:6%; perspective: 1000px;">
                 <div id="painting-gongbi-fan-pic-mask" style="position: absolute; background: rgba(136, 57, 0, 0.02);
                                                             top: 0; left: 0; width: 100%; height: 100%;"></div>
+            </div>
+        </div>
+
+        <div id="writing-letter">
+            <div id="writing-letter-pic" style="position:absolute; background: url('../pic/letterhead.png') no-repeat;
+                                                    background-size: 100%; top: 60%; left: 3%; width:8%; height:8%; perspective: 1000px;
+                                                    font-size: 3vh; font:italic 3vh 'Fira Sans', serif; line-height: 8vh;
+                                                    text-align: center; box-shadow: #402819;">
+                                                    Guides
+                <div id="writing-letter-pic-mask" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+                                                        background:linear-gradient(12deg, rgb(98 38 0 / 89%), rgb(145 128 120 / 33%));"></div>
             </div>
         </div>
 
@@ -308,6 +373,33 @@
             </div>
         </div>
 
+        <div class="enlarged_writing" id="enlarged-writing-letter" 
+                                        style="top: 10%; left: 2%; width: 30%; height: 66%;">
+            <div class="enlarged_writing_pic" id="enlarged-writing-letter-pic">
+                <img src='../pic/letterhead.png' style="width:100%; height: 100%;">
+                <h5 style="top: 8%; left: 50%; width: 90%; height: 10%; 
+                            text-align:center; font-size: 3vh;">Guides</h5>
+                <p style="top: 45%; left: 50%;">
+                    Welcome to Seventh Floor Art Museum.
+                    <br><br>
+                    Embark on a journey through a diverse collection of paintings and calligraphic works, 
+                    each echoing the artist's years of creative growth. 
+                    <br><br>
+                    Engage more intimately with the pieces - simply click to examine an enlarged view, 
+                    reveal the title, artist's name, and an enlightening brief description. 
+                    Revel in your exploration.
+                    <br><br>
+                    Cordially,<br>
+                    <span style="float: center;">Seventh Floor Art Museum</span>
+                    <br><br>
+                </p>
+            </div>
+
+            <div class="close_icon_border" id="close-enlarged-writing-letter-pic">
+                <span class="close_icon">&times;</span>
+            </div>
+        </div>
+
         <script>
             var smallFrameTwoCats = document.getElementById("painting-two-cats-pic");
             var frameTwoCats = document.getElementById("enlarged-painting-two-cats");
@@ -362,6 +454,25 @@
             window.onclick = function(event) {
                 if (event.target == frameGongbiFan) {
                     frameGongbiFan.style.display = "none";
+                }
+            }
+
+
+            var smallFrameLetter = document.getElementById("writing-letter-pic");
+            var frameLetter = document.getElementById("enlarged-writing-letter");
+            var spanLetter = document.getElementById("close-enlarged-writing-letter-pic");
+
+            smallFrameLetter.onclick = function() {
+                frameLetter.style.display = "block";
+            }
+
+            spanLetter.onclick = function() {
+                frameLetter.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == frameLetter) {
+                    frameLetter.style.display = "none";
                 }
             }
         </script>
