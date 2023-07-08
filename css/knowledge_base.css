@@ -4,11 +4,15 @@
     display:grid;
     grid-template-columns: 100% auto;
     width: inherit;
-    min-height: 100%;
+    min-height: 95%;
     max-height: auto;
     padding: 0 20px 40px 20px;
     margin: 0}
-    
+
+.site-kg-content h3{
+  margin-top: 3em;
+  margin-bottom: 1em;}
+
 .knowledge-card{  
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -24,6 +28,7 @@
     min-height: 3em;
     width: inherit;
     height: 300px;
+    box-shadow: 2px 5px 13px rgb(179 178 194);
     margin-top: 0em;
     margin-bottom: 0em;
     padding: 8px;
@@ -64,55 +69,7 @@
     min-height: auto;}
   
     
-    /*human language*/
-    .site-kg-content h3{
-      margin-top: 3em;
-      margin-bottom: 1em;}
-  
-    .cantonese-vowels{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2em;
-      align-items: flex-start;
-      padding: 0em 0em 0em 0em;
-      margin: 0em 0em 0em 0em;}
     
-    .cantonese-vowels table{
-      border-style:dotted;
-      border-color: ivory;
-      text-align: center;
-      padding: 0em 0em 0em 0em;
-      margin: 0em 0em 0em 0em;}
-  
-    .cantonese-consonants{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2em;
-      align-items: flex-start;
-      padding: 0em 0em 0em 0em;
-      margin: 0em 0em 0em 0em;}
-  
-    .cantonese-consonants table{
-      border-style:dotted;
-      border-color: ivory;
-      text-align: center;
-      padding: 0em 0em 0em 0em;
-      margin: 0em 0em 0em 0em;}
-  
-    .cantonese-tones{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2em;
-      align-items: flex-start;
-      padding: 0em 0em 0em 0em;
-      margin: 0em 0em 0em 0em;}
-  
-    .cantonese-tones table{
-      border-style:dotted;
-      border-color: ivory;
-      text-align: center;
-      padding: 0em 0em 0em 0em;
-      margin: 0em 0em 0em 0em;}
   
     /*Fishing*/
     .main-headline{
