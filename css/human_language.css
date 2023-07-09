@@ -26,12 +26,11 @@
     border-radius: 10%;
     box-shadow: 2px 5px 13px rgb(179 178 194);
     color:rgb(152, 149, 158);
-    width: 100%;
+    width: 300px;
+    height: 300px;
     max-width: 90%;
     padding: 2vh;
     margin:0;
-    height:0;
-    padding-bottom: 100%;
     }
 
 
@@ -50,6 +49,8 @@
     position: absolute;
     display: grid;
     grid-template-rows: 5fr 1fr;
+    align-items: stretch;
+    justify-items: stretch;
     gap: 2vh;
     top: 2vh; 
     left: 52%; 
