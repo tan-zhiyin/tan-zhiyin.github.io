@@ -74,7 +74,7 @@
 .box {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     overflow:hidden;
     background-color: rgb(253, 253, 255);
@@ -140,8 +140,6 @@
 .enlarged_language {
     position:absolute;
     display: none;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(328deg, rgb(232 230 245), rgb(232 230 245));
     box-shadow: 2px 5px 12px rgb(183 180 199);
     border-radius: 10%;
@@ -155,11 +153,33 @@
 
 .enlarged_language_content {
     position: absolute;
+    top: 50%; /* center */
+    left: 50.2%; /* center */
+    transform: translate(-50%, -50%); /* center */
     width: 90%;
     height: 90%;
-    overflow: scroll;
+    overflow-y: scroll;
     padding:0vh;
     margin:0;
+}
+
+::-webkit-scrollbar {
+    width: 0.5vh; /* width of the entire scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(232 230 245); /* color of the tracking area */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255 255 255); /* color of the scroll handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 217, 233, 0.8); /* color of the scroll handle on hover*/
 }
 
 .close_icon_border {
@@ -195,6 +215,10 @@
 .close_icon:focus {
     color: rgba(84, 83, 93, 0.8);
     text-decoration: none;
+    cursor: pointer;
+}
+
+.box:hover {
     cursor: pointer;
 }
 
