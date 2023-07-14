@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Zhiyin's Childhood</title>
+        <meta name="author" content="Zhiyin Tan">
+        <meta name="description" content="Fishing with dad was the best time of my childhood to enjoy nature.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:image" content="https://www.icloud.com/iclouddrive/0OuJofHg8h4NTxXeb0weLM3ng#Little_fox's_back-big" />
+        <meta property="og:description" content="Zhiyin Tan's fairyland">
+        <meta property="og:title" content="Zhiyin's Fairyland" />
+        <meta property="og:type" content="website" />    
+
+        <link rel="Shortcut Icon" href="../pic/little_fox_round.ico" type="image/x-icon">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <style>
+            .site-main {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            #menuButton {
+                display: none;
+                order: 1;
+            }
+
+            #sidebar {
+                position: relative;
+                background-color: white;
+                border: 1px solid black;
+                width: 25%;
+                height: 100%;
+                position: fixed;
+                z-index: 1;
+                overflow-x: hidden;
+                flex-basis: 30%;
+                transition: flex-basis 0.5s ease;
+                order: 2;
+            }
+
+            #content {
+                position: relative;
+                width: 75%;
+                left: 0%;
+                flex-basis: 70%;
+                order: 3;
+            }
+
+            .submenu {
+                display: none;
+            }
+
+            #backButton {
+                display: none;
+            }
+
+
+            @media screen and (max-width: 500px) {
+                .site-main {
+                    flex-direction: column;  /* Stack elements horizontally for large screen */
+                }
+                
+                #menuButton {
+                    display: inline;
+                    color:black;
+                    font-size: 22px;
+                    z-index: 2;
+                    cursor: pointer;
+                }
+
+                #sidebar {
+                    flex: none;
+                    width: 92%;
+                    height: auto;
+                    z-index: 1;
+                    transform: translateY(-100%);
+                    transition: transform 3s ease;
+                    order: 1;
+                }
+                #sidebar.active {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    
+                    transform: translateY(0);
+                }
+
+                #content {
+                    flex: none;
+                    width: 100%;
+                    height:auto;
+                    order: 2;
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+
+        <script>
+            function openSubMenu(id, element) {
+            document.getElementById('backButton').style.display = 'block';
+            document.getElementById('primaryMenu').style.display = 'none';
+
+            let submenus = document.getElementsByClassName('submenu');
+            for(let i = 0; i < submenus.length; i++) {
+                submenus[i].style.display = 'none';
+            }
+
+            let clonedElement = element.cloneNode(true);
+            clonedElement.onclick = null;
+            document.getElementById(id).prepend(clonedElement);
+            document.getElementById(id).style.display = 'block';
+            }
+
+            function back() {
+                document.getElementById('backButton').style.display = 'none';
+                document.getElementById('primaryMenu').style.display = 'block';
+
+                let submenus = document.getElementsByClassName('submenu');
+                for(let i = 0; i < submenus.length; i++) {
+                    if(submenus[i].children.length > 2) {
+                        submenus[i].removeChild(submenus[i].children[0]);
+                    }
+                    submenus[i].style.display = 'none';
+                }
+            }
+
+            function openMenu() {
+                var sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('active');
+            }
+
+            function closeMenu() {
+                var sidebar = document.getElementById('sidebar');
+                sidebar.classList.remove('active');
+            }
+
+
+            function openContent(id, element) {
+                let contents = document.getElementsByClassName('content-item');
+                for(let i = 0; i < contents.length; i++) {
+                    contents[i].style.display = 'none';
+                }
+
+                document.getElementById(id).style.display = 'block';
+            }
+        </script>
+    </head>
+
+    <body class="site-home">  
+        <header data-include="../tool/navigation.html"></header>
+
+        <div class="container">
+            <main class="site-main" id="container">
+
+                <button id="menuButton" onclick="openMenu()">&#9776;</button> 
+
+                <div id="sidebar">
+                    <button id="backButton" onclick="back()">Back</button>
+                    <div id="menuContainer">
+                        <div id="primaryMenu">
+                            <div onclick="openSubMenu('submenu1', this)">Research 1</div>
+                            <div onclick="openSubMenu('submenu2', this)">Research 2</div>
+                        </div>
+                        <div id="submenu1" class="submenu">
+                            <div onclick="openContent('content1', this); closeMenu();">Research 1-Method</div>
+                            <div onclick="openContent('content2', this); closeMenu();">Research 1-Result</div>
+                        </div>
+                        <div id="submenu2" class="submenu">
+                            <div onclick="openContent('content3', this); closeMenu();">Research 2-Method</div>
+                            <div onclick="openContent('content4', this); closeMenu();">Research 2-Result</div>
+                        </div>                        
+                    </div>
+                </div>
+
+                
+                
+                <!-- Content Section -->
+                <div id="content">
+                    <div id="content1" class="content-item" style="display: none;">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Research 1-Method Content
+                                        </button>
+                                    </h5>
+                                </div>
+                
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Content for Zone 1
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Zone 2
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Content for Zone 2
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Zone 3
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Content for Zone 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="content2" class="content-item" style="display: none;">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Research 1-Result Content
+                                        </button>
+                                    </h5>
+                                </div>
+                
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Content for Zone 1
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Zone 2
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Content for Zone 2
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Zone 3
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Content for Zone 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </main>
+
+            <footer data-include="../tool/footer.html"></footer>
+        </div>
+    </body>
+</html>
