@@ -14,29 +14,38 @@
 
         <link rel="Shortcut Icon" href="../pic/little_fox_round.ico" type="image/x-icon">
 
-        <link rel="stylesheet" href="../css/index.css">
-        <script src="../js/csi.js" defer></script>
-
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+        <script src="../js/csi.js" defer></script>
+        <link rel="stylesheet" href="../css/index.css">
+
         <style>
+            .container{
+                width:100%;
+                padding: 0;
+            }
+
+            .site-cl-main {
+                padding: 0 20px 40px 20px;
+            }
+
             .site-cl-content{
                 width: auto;
                 height: auto;
-                padding: 5vw 5vw 5vw 5vw;
+                padding: 0vw 5vw 5vw 5vw;
             }
 
             .site-title {
                 position:relative;
                 background-color: rgb(255, 255, 255);
                 align-items: center;
-                height:15vh;
-                font-size: 2.5em;
+                height:5vh;
+                font-size: 1.6em;
                 font-weight: bold;
                 z-index: 3;
-                margin: 0;
+                margin: 0 0 3vh 0;
             }
 
             .site-main {
@@ -52,6 +61,10 @@
                 align-items: center;
             }
 
+            .menubox{
+                margin: 1vh 0 1vh 0;
+            }
+
             #menuButton {
                 display: none;
                 z-index: 3;
@@ -60,8 +73,9 @@
             #sidebar {
                 position: relative;
                 border-radius: 1vh;
-                background-color: white;
+                background-color: rgb(255, 255, 255);
                 border: 1px solid rgb(255, 255, 255);
+                box-shadow: inset 0px 0px 7px 0px rgb(50, 50, 50);
                 width: 100%;
                 height: 100%;
                 font-size: 2vh;
@@ -73,7 +87,8 @@
 
             #content {
                 position: relative;
-                font-size: 2vh;
+                font-size: 1.8rem;
+                line-height: 1.5em;
                 padding: 0 0 0 2vh;
             }
 
@@ -130,7 +145,7 @@
 
             @media screen and (max-width: 1000px) {
                 .site-title{
-                    font-size: 2em;
+                    font-size: 1.6em;
                     z-index: 3;
                 }
 
@@ -142,6 +157,8 @@
                 #menuButton {
                     display: inline;
                     border-radius: 1vh;
+                    border: none;
+                    box-shadow: none;
                     height:40px;
                     color:black;
                     font-size: 22px;
@@ -154,23 +171,24 @@
                 .site-main > #sidebar {
                     position: absolute;
                     flex: none;
-                    top: 40px;
-                    left: 20px;
+                    justify-items: center;
+                    top: 20px;
+                    left: 0;
                     right: 0;
-                    width: calc(100% - 40px);
-                    height: auto;
+                    width: 90%;
+                    height: 0;
                     box-sizing: border-box;
                     z-index: 2;
-                    transform: translateY(-100%);
+                    transform: translateY(-50%);
                     transition: transform 0.5s ease;
                     order: 1;
                 }
                 .site-main > #sidebar.active {
                     position: absolute;
                     top: 40px;
-                    left: 20px;
+                    left: 0;
                     right: 0;
-                    width: calc(100% - 40px);
+                    width: 100%;
                     height: auto;
                     box-sizing: border-box;
                     transform: translateY(0);
@@ -245,11 +263,13 @@
 
     <body class="site-home">  
         <header data-include="../tool/navigation.html"></header>
-        <div class="container">
+        <div class="contain">
             <main class="site-cl-main">
-                <div id="start" class="site-cl-content"></div>
+                <div id="start" class="site-cl-content">
                     <h1 class="site-title"> Computational Linguistics </h1>
+    
                     <div class="site-main"> 
+                    
                     <button id="menuButton" onclick="openMenu()">&#9776;</button> 
 
                     <div id="sidebar">
@@ -257,17 +277,17 @@
                         <div id="menuHeader">
                             <button id="backButton" onclick="back()">&#60&#60</button>
                             <div id="primaryMenu">
-                                <div onclick="openSubMenu('submenu1', this)">Research 1</div>
-                                <div onclick="openSubMenu('submenu2', this)">Research 2</div>
+                                <div class="menubox" onclick="openSubMenu('submenu1', this)">Grammar</div>
+                                <div class="menubox" onclick="openSubMenu('submenu2', this)">Parsing</div>
                             </div>                 
                         </div>
                         <div id="submenu1" class="submenu">
-                            <div onclick="openContent('content1', this); closeMenu();">Research 1-Method</div>
-                            <div onclick="openContent('content2', this); closeMenu();">Research 1-Result</div>
+                            <div class="menubox" onclick="openContent('content1', this); closeMenu();">Constituency Grammar</div>
+                            <div class="menubox" onclick="openContent('content2', this); closeMenu();">Dependency Grammar</div>
                         </div>
                         <div id="submenu2" class="submenu">
-                            <div onclick="openContent('content3', this); closeMenu();">Research 2-Method</div>
-                            <div onclick="openContent('content4', this); closeMenu();">Research 2-Result</div>
+                            <div class="menubox" onclick="openContent('content3', this); closeMenu();">Constituency Parsing</div>
+                            <div class="menubox" onclick="openContent('content4', this); closeMenu();">Dependency Parsing</div>
                         </div>  
                     </div>
 
@@ -390,7 +410,6 @@
                             </div>
                         </div>
                     </div>                
-                    </div>
                     
                     <div style="display:block; z-index: 1000; position: fixed;
                         right: 5vw;bottom: 20%; opacity: 0.8; margin: 0;">
