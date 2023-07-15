@@ -22,9 +22,12 @@
         <link rel="stylesheet" href="../css/index.css">
 
         <style>
-            .container{
+            .contain{
                 width:100%;
+                height: inherit;
                 padding: 0;
+                margin: 0;
+                overflow-y: scroll;
             }
 
             .site-cl-main {
@@ -34,18 +37,18 @@
             .site-cl-content{
                 width: auto;
                 height: auto;
-                padding: 0vw 5vw 5vw 5vw;
+                padding: 10vw 5vw 5vw 5vw;
             }
 
             .site-title {
                 position:relative;
                 background-color: rgb(255, 255, 255);
                 align-items: center;
-                height:5vh;
+                height: 8vh;
                 font-size: 1.6em;
                 font-weight: bold;
                 z-index: 3;
-                margin: 0 0 3vh 0;
+                margin: 0;
             }
 
             .site-main {
@@ -146,6 +149,7 @@
             @media screen and (max-width: 1000px) {
                 .site-title{
                     font-size: 1.6em;
+                    height: 12vh;
                     z-index: 3;
                 }
 
