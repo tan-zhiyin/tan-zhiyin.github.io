@@ -36,8 +36,8 @@ body{
 /* main */
 .container{
   height: inherit;
-  padding: 0em 0em 0em 0em;
-  margin: 0em 0em 0em 0em;
+  padding: 0;
+  margin: 0;
   overflow-y: scroll;
 }
 

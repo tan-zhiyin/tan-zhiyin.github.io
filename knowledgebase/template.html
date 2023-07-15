@@ -14,41 +14,82 @@
 
         <link rel="Shortcut Icon" href="../pic/little_fox_round.ico" type="image/x-icon">
 
+        <link rel="stylesheet" href="../css/index.css">
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
         <style>
             .site-main {
-                display: flex;
-                flex-direction: row;
+                display: grid; 
+                grid-template-columns: 30% 70%;
+                height:100%;
+                width: inherit;
             }
             
+            #menuHeader {
+                display: flex;
+                align-items: center;
+            }
+
             #menuButton {
                 display: none;
-                order: 1;
             }
 
             #sidebar {
                 position: relative;
+                border-radius: 1vh;
                 background-color: white;
-                border: 1px solid black;
-                width: 25%;
+                border: 1px solid rgb(255, 255, 255);
+                width: 100%;
                 height: 100%;
-                position: fixed;
-                z-index: 1;
-                overflow-x: hidden;
-                flex-basis: 30%;
+                font-size: 2vh;
+                overflow-x: scroll;
                 transition: flex-basis 0.5s ease;
-                order: 2;
+                padding: 1vh;
             }
 
             #content {
                 position: relative;
-                width: 75%;
-                left: 0%;
-                flex-basis: 70%;
-                order: 3;
+                font-size: 2vh;
+                padding: 0 0 0 2vh;
+            }
+
+            #main-content{
+                padding: 1vh;
+            }
+
+            .card{
+                border-radius: 1vh;
+                margin-bottom: 1vh;
+                border-color: rgba(245,245,247,1);
+            }
+            
+            .card-header {
+                padding: 0.75rem 1.25rem;
+                margin-bottom: 0;
+                background-color: rgba(245,245,247,1);
+                border-bottom: 1px solid rgba(245,245,247,.125);
+                border-radius: 1vh 1vh 0vh 0vh;
+            }
+
+            .card-body{
+                background-color: rgba(240,233,212,1);
+                border-radius: 0vh 0vh 1vh 1vh;
+            }
+
+            .btn.btn-link {
+                width:100%; 
+                text-align: left;
+                color: #000000;  /* color of the text*/
+                font-size: 2vh;  /* font size of the text*/
+                text-decoration: none;  /* Removes the underline from the text */
+                
+            }
+
+            .btn.btn-link:hover {
+                color: rgb(85, 74, 118);  /* Changes the color of the text to green when hovered */
             }
 
             .submenu {
@@ -57,45 +98,65 @@
 
             #backButton {
                 display: none;
+                background-color: white;
+                border-color: white;
+                border: none;
+                box-shadow: none;
+                line-height: 2vh;
+                margin:0 2vh 0 0;
             }
 
 
-            @media screen and (max-width: 500px) {
+            @media screen and (max-width: 1000px) {
                 .site-main {
-                    flex-direction: column;  /* Stack elements horizontally for large screen */
-                }
-                
-                #menuButton {
-                    display: inline;
-                    color:black;
-                    font-size: 22px;
-                    z-index: 2;
-                    cursor: pointer;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 40px 90%;
                 }
 
-                #sidebar {
+                #menuButton {
+                    display: inline;
+                    border-radius: 1vh;
+                    height:40px;
+                    color:black;
+                    font-size: 22px;
+                    z-index: 3;
+                    cursor: pointer;
+                    padding:0;
+                    margin:0;
+                }
+
+                .site-main > #sidebar {
+                    position: absolute;
                     flex: none;
-                    width: 92%;
+                    top: 40px;
+                    left: 20px;
+                    right: 0;
+                    width: calc(100% - 40px);
                     height: auto;
-                    z-index: 1;
+                    box-sizing: border-box;
+                    z-index: 2;
                     transform: translateY(-100%);
-                    transition: transform 3s ease;
+                    transition: transform 0.5s ease;
                     order: 1;
                 }
-                #sidebar.active {
-                    position: relative;
-                    width: 100%;
+                .site-main > #sidebar.active {
+                    position: absolute;
+                    top: 40px;
+                    left: 20px;
+                    right: 0;
+                    width: calc(100% - 40px);
                     height: auto;
-                    
+                    box-sizing: border-box;
                     transform: translateY(0);
                 }
 
                 #content {
-                    flex: none;
                     width: 100%;
                     height:auto;
+                    margin-left: 0%; 
                     order: 2;
-                    flex-basis: 100%;
+                    z-index: 1;
+                    padding: 2vh 0 0 0;
                 }
             }
         </style>
@@ -112,7 +173,7 @@
 
             let clonedElement = element.cloneNode(true);
             clonedElement.onclick = null;
-            document.getElementById(id).prepend(clonedElement);
+            document.getElementById('menuHeader').appendChild(clonedElement);
             document.getElementById(id).style.display = 'block';
             }
 
@@ -126,6 +187,11 @@
                         submenus[i].removeChild(submenus[i].children[0]);
                     }
                     submenus[i].style.display = 'none';
+                }
+                //Remove cloned element from 'menuHeader'
+                let menuHeader = document.getElementById('menuHeader');
+                if (menuHeader.children.length > 2) {
+                    menuHeader.removeChild(menuHeader.children[2]);
                 }
             }
 
@@ -145,7 +211,7 @@
                 for(let i = 0; i < contents.length; i++) {
                     contents[i].style.display = 'none';
                 }
-
+                document.getElementById('main-content').style.display = 'none';
                 document.getElementById(id).style.display = 'block';
             }
         </script>
@@ -160,27 +226,35 @@
                 <button id="menuButton" onclick="openMenu()">&#9776;</button> 
 
                 <div id="sidebar">
-                    <button id="backButton" onclick="back()">Back</button>
-                    <div id="menuContainer">
+                    
+                    <div id="menuHeader">
+                        <button id="backButton" onclick="back()">&#60&#60</button>
                         <div id="primaryMenu">
                             <div onclick="openSubMenu('submenu1', this)">Research 1</div>
                             <div onclick="openSubMenu('submenu2', this)">Research 2</div>
-                        </div>
-                        <div id="submenu1" class="submenu">
-                            <div onclick="openContent('content1', this); closeMenu();">Research 1-Method</div>
-                            <div onclick="openContent('content2', this); closeMenu();">Research 1-Result</div>
-                        </div>
-                        <div id="submenu2" class="submenu">
-                            <div onclick="openContent('content3', this); closeMenu();">Research 2-Method</div>
-                            <div onclick="openContent('content4', this); closeMenu();">Research 2-Result</div>
-                        </div>                        
+                        </div>                 
                     </div>
+                    <div id="submenu1" class="submenu">
+                        <div onclick="openContent('content1', this); closeMenu();">Research 1-Method</div>
+                        <div onclick="openContent('content2', this); closeMenu();">Research 1-Result</div>
+                    </div>
+                    <div id="submenu2" class="submenu">
+                        <div onclick="openContent('content3', this); closeMenu();">Research 2-Method</div>
+                        <div onclick="openContent('content4', this); closeMenu();">Research 2-Result</div>
+                    </div>  
                 </div>
 
                 
                 
                 <!-- Content Section -->
                 <div id="content">
+                    <div id="main-content">
+                        hhhhhhdi d isdjfjf
+                        <br><br>
+                        vfdd dfcaioh sdo ds
+                        <br><br>
+                        vfdd dfcaioh sdo ds
+                    </div>
                     <div id="content1" class="content-item" style="display: none;">
                         <div id="accordion">
                             <div class="card">
