@@ -39,7 +39,6 @@ body{
   height: inherit;
   padding: 0;
   margin: 0;
-  overflow-y: scroll;
 }
 
 /* Title */
@@ -49,8 +48,10 @@ main{
   width: auto;
   height: 100%;
   min-height: 95%;
+  overflow-y: scroll;
   padding: 0 20px 40px 20px;
-  margin: 0;}
+  margin: 0;
+}
 
 
 .site-title{
