@@ -17,18 +17,18 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+        
         <script src="../js/csi.js" defer></script>
         <link rel="stylesheet" href="../css/index.css">
 
         <style>
             .contain{
                 width:100%;
-                height: inherit;
-                padding: 0;
+                height: 100%;
+                padding: 0px;
                 margin: 0;
-                overflow-x: hidden;
-                overflow-y: hidden;
+                /*overflow-x: hidden;
+                overflow-y: hidden;*/
             }
 
             .site-cl-main {
@@ -63,8 +63,8 @@
                 grid-template-columns: 30% 70%;
                 height:90%;
                 width: inherit;
-                overflow-y: scroll;
-                overflow-x: hidden;
+                /*overflow-y: scroll;
+                overflow-x: hidden;*/
             }
 
             #sidebar {
@@ -74,9 +74,10 @@
                 height: 100%;
                 font-size: 1.6rem;
                 overflow-x: hidden;
+                overflow-y: hidden;
                 transition: flex-basis 0.5s ease;
                 z-index: 2;
-                padding: 15px;
+                padding: 20px 20px;
             }
 
             #menuButton {
@@ -96,16 +97,17 @@
 
             .menubox{
                 width: 100%;
-                padding: 1vh;
+                padding: 1vh 2vh;
                 flex: 1.3;
                 transition: all 0.3s ease-out 0s;
-                box-shadow: 0px 1px 5px rgb(159 155 187 / 50%);
+                box-shadow: 0px 0px 5px rgb(159 155 187 / 30%);
                 margin-bottom: 1vh;
                 border-radius: 1vh;
             }
 
             .submenu {
                 display: none;
+                height: inherit;
             }
 
             #backButton {
@@ -114,18 +116,17 @@
                 border-color: rgba(255, 255, 255, 0);
                 border: none;
                 box-shadow: none;
-                height:30px;
+                height: 30px;
                 flex: 1;
                 transition: all 0.5s linear 0s;
                 margin:0;
             }
 
-            
             #content {
                 position: relative;
                 font-size: 1.6rem;
                 line-height: 1.5em;
-                padding: 0 0 0 2vh;
+                padding: 15px;
             }
 
             #main-content{
@@ -135,14 +136,15 @@
             .card{
                 border-radius: 1vh;
                 margin-bottom: 1vh;
-                border-color: rgba(245,245,247,1);
+                border-color: rgba(232 230 245);
             }
             
             .card-header {
                 padding: 0.75rem 1.25rem;
                 margin-bottom: 0;
                 background-color: rgba(154, 154, 195,1);
-                border-bottom: 1px solid rgba(245,245,247,.125);
+                border-color: rgba(232 230 245);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.125);
                 border-radius: 1vh 1vh 0vh 0vh;
             }
 
@@ -152,7 +154,11 @@
 
             .card-body{
                 background-color: rgba(240,234,230,1);
+                border-left: solid rgb(255, 255, 255, 0.5);
+                border-right: solid rgb(255, 255, 255, 0.5);
+                border-bottom: solid rgb(255, 255, 255, 0.5);
                 border-radius: 0vh 0vh 1vh 1vh;
+                padding: 2rem;
             }
 
             .btn.btn-link {
@@ -160,7 +166,8 @@
                 text-align: left;
                 color: #f0f0f0;  /* color of the text*/
                 text-shadow: 0px 0.5px #68689d;
-                font-size: 2vh;  /* font size of the text*/
+                font-size: 1.8rem;  /* font size of the text*/
+                font-weight: bold;
                 text-decoration: none;  /* Removes the underline from the text */
                 transition: all 0.5s ease-in 0s;
             }
@@ -169,11 +176,10 @@
                 color: rgb(85, 74, 118);  /* Changes the color of the text to green when hovered */
             }
 
-            
             .menubox:hover,
             #backButton:hover {
                 cursor: pointer;
-                background-color: rgb(240, 238, 248);
+                background-color: rgb(243, 241, 249);
                 border-radius: 1vh;
             }
 
@@ -192,7 +198,7 @@
                 #menuButton {
                     display: inline;
                     background-color: rgb(219, 216, 229);
-                    box-shadow: 0px 0.5px 2px rgb(159 155 187 / 50%);
+                    box-shadow: 0px 1px 1px rgb(218 216 229 / 50%);
                     border-radius: 1vh;
                     border: none;
                     box-shadow: none;
@@ -208,10 +214,10 @@
                 .site-main > #sidebar {
                     position: absolute;
                     background-color: rgb(253, 253, 253);
-                    box-shadow: inset 0px 0px 4px 0px rgb(50, 50, 50);
+                    box-shadow: inset 0px 0px 10px 3px rgb(218 216 229);
                     flex: none;
                     justify-items: center;
-                    top: 10px;
+                    top: 4px;
                     left: 0;
                     right: 0;
                     width: 100%;
@@ -251,18 +257,23 @@
 
         <script>
             function openSubMenu(id, element) {
-            document.getElementById('backButton').style.display = 'block';
-            document.getElementById('primaryMenu').style.display = 'none';
+                let contentId = element.getAttribute('data-contentid');
+                
+                // Open content before displaying the submenu
+                openContent(contentId, element);
 
-            let submenus = document.getElementsByClassName('submenu');
-            for(let i = 0; i < submenus.length; i++) {
-                submenus[i].style.display = 'none';
-            }
+                document.getElementById('backButton').style.display = 'block';
+                document.getElementById('primaryMenu').style.display = 'none';
 
-            let clonedElement = element.cloneNode(true);
-            clonedElement.onclick = null;
-            document.getElementById('menuHeader').appendChild(clonedElement);
-            document.getElementById(id).style.display = 'block';
+                let submenus = document.getElementsByClassName('submenu');
+                for(let i = 0; i < submenus.length; i++) {
+                    submenus[i].style.display = 'none';
+                }
+
+                let clonedElement = element.cloneNode(true);
+                clonedElement.onclick = function() { openContent(contentId, this); }; // assign onclick event to the cloned element
+                document.getElementById('menuHeader').appendChild(clonedElement);
+                document.getElementById(id).style.display = 'block';
             }
 
             function back() {
@@ -271,9 +282,9 @@
 
                 let submenus = document.getElementsByClassName('submenu');
                 for(let i = 0; i < submenus.length; i++) {
-                    if(submenus[i].children.length > 2) {
-                        submenus[i].removeChild(submenus[i].children[0]);
-                    }
+                    //if(submenus[i].children.length > 2) {
+                    //    submenus[i].removeChild(submenus[i].children[0]);
+                    //}
                     submenus[i].style.display = 'none';
                 }
                 //Remove cloned element from 'menuHeader'
@@ -299,14 +310,30 @@
                 for(let i = 0; i < contents.length; i++) {
                     contents[i].style.display = 'none';
                 }
-                document.getElementById('main-content').style.display = 'none';
-                document.getElementById(id).style.display = 'block';
+                document.getElementById('content-main-intro').style.display = 'none';
+
+                let filepath = element.getAttribute('data-filepath');
+                if(filepath) {
+                    $.get(filepath, function(data) {
+                        // Parse the HTML string to find the element with the corresponding ID
+                        let parser = new DOMParser();
+                        let htmlDoc = parser.parseFromString(data, 'text/html');
+                        let content = htmlDoc.getElementById(id);
+
+                        // Replace the inner HTML of the content div with the fetched content
+                        $(`#${id}`).html(content.innerHTML);
+                        document.getElementById(id).style.display = 'block';
+                    });
+                } else {
+                    document.getElementById(id).style.display = 'block';
+                }
             }
+
         </script>
     </head>
 
     <body class="site-home">  
-        <header data-include="../tool/navigation.html"></header>
+        <header class="nav" data-include="../tool/navigation.html" style="height: 50px;"></header>
         <div class="contain">
             <main class="site-cl-main">
                 <div id="start" class="site-cl-content">
@@ -321,17 +348,20 @@
                         <div id="menuHeader">
                             <button id="backButton" onclick="back()">&#60&#60</button>
                             <div id="primaryMenu">
-                                <div class="menubox" onclick="openSubMenu('submenu1', this)">Grammar</div>
-                                <div class="menubox" onclick="openSubMenu('submenu2', this)">Parsing</div>
+                                <div class="menubox" onclick="openContent('content-main-intro', this)">Main</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this);">Grammar & Parsing</div>
+                                <div class="menubox" onclick="openSubMenu('submenu2', this);">Embedding</div>
                             </div>                 
                         </div>
                         <div id="submenu1" class="submenu">
-                            <div class="menubox" onclick="openContent('content1', this); closeMenu();">Constituency Grammar</div>
-                            <div class="menubox" onclick="openContent('content2', this); closeMenu();">Dependency Grammar</div>
+                            <div class="menubox" data-contentid="content-constituency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-constituency-grammar', this); closeMenu();">Constituency Grammar</div>
+                            <div class="menubox" data-contentid="content-dependency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-dependency-grammar', this); closeMenu();">Dependency Grammar</div>
+                            <div class="menubox" onclick="openContent('content-constituency-grammar-parsing', this); closeMenu();">Constituency Grammar Parsing</div>
+                            <div class="menubox" onclick="openContent('content-dependency-grammar-parsing', this); closeMenu();">Dependency Grammar Parsing</div>
                         </div>
                         <div id="submenu2" class="submenu">
-                            <div class="menubox" onclick="openContent('content3', this); closeMenu();">Constituency Parsing</div>
-                            <div class="menubox" onclick="openContent('content4', this); closeMenu();">Dependency Parsing</div>
+                            <div class="menubox" onclick="openContent('content3', this); closeMenu();">Constituency Grammar Parsing</div>
+                            <div class="menubox" onclick="openContent('content4', this); closeMenu();">Dependency Grammar Parsing</div>
                         </div>  
                     </div>
 
@@ -339,7 +369,7 @@
                     
                     <!-- Content Section -->
                     <div id="content">
-                        <div id="main-content">
+                        <div id="content-main-intro">
                             <p>
                                 Welcome to Computational Linguistics 101 - a online hub for the study of Natural language processing.
                                 <br><br>
@@ -350,105 +380,13 @@
                                 Let's make computational linguistics understandable for everyone, together.
                             </p>
                         </div>
-                        <div id="content1" class="content-item" style="display: none;">
-                            <div id="accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Key Terms
-                                            </button>
-                                        </h5>
-                                    </div>
-                    
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Constituents: These are groups of words that function as a single unit within a hierarchical structure. Constituents can be a single word ("dogs") or a group of words ("the big red ball"). The concept of a constituent is central to the theory of Constituency Grammar. It is often tested through movement, substitution, and coordination tests.
-                                            <br><br>
-                                            Phrases: A phrase is a type of constituent that contains one or more words. There are different types of phrases in English, such as noun phrases (NP), verb phrases (VP), and adjective phrases (AP), among others. Each phrase has a head, which is the word that determines the type of the phrase. For example, in a noun phrase, the head word is a noun.
-                                            <br><br>
-                                            Nodes: In tree diagrams that represent constituency grammars, nodes are points that connect lines representing relationships between different constituents. Each node represents a constituent. The topmost node, or root, represents the entire sentence.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Tree Diagrams
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Tree diagrams are a pivotal tool in Constituency Grammar, illustrating the hierarchical organization of sentences. At the top, or root, of the tree is the entire sentence. This branches out into constituents and sub-constituents, visualizing their nested, hierarchical relationships. For example, in the sentence "John ate the apple", the tree diagram would first divide this into a noun phrase "John" and a verb phrase "ate the apple", further breaking down the verb phrase into the verb "ate" and the noun phrase "the apple". These diagrams clarify the syntactic roles of different sentence components, making Constituency Grammar more accessible.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Definition & Origins
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Constituency Grammar, also known as Phrase Structure Grammar, is a syntax framework that dissects sentences into constituent parts or 'phrases'. Each phrase, ranging from a single word to a group of words, belongs to a specific grammatical category and plays a distinct role in the sentence. Originating from the mid-20th century linguistic theories of Noam Chomsky, Constituency Grammar lays the groundwork for transformational grammar, pioneering a new way to understand and analyze language structure. Its enduring impact is visible in various applications including modern computational linguistics and natural language processing.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <div id="content-constituency-grammar-intro" class="content-item" style="display: none;">
+                            introduction of constituency grammar
                         </div>
 
-                        <div id="content2" class="content-item" style="display: none;">
-                            <div id="accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Research 1-Result Content
-                                            </button>
-                                        </h5>
-                                    </div>
-                    
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Content for Zone 1
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Zone 2
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Content for Zone 2
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Zone 3
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Content for Zone 3
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="content-constituency-grammar" class="content-item" style="display: none;"></div>
+                        <div id="content-dependency-grammar" class="content-item" style="display: none;"></div>
                     </div>                
                     
                     <div style="display:block; z-index: 1000; position: fixed;

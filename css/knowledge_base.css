@@ -22,7 +22,7 @@
     margin-top: 3em;}
     
   .card{
-    border-radius: 4px;
+    border-radius: 20px;
     background-color: rgb(253, 253, 255);
     color:rgb(152, 149, 158);
     min-height: 3em;
@@ -47,6 +47,7 @@
   
   .card-title > .card-cover-image{
     height:180px;
+    border-radius: 15px 15px 0px 0px;
     z-index: 1;
     overflow: hidden;
     padding: 0em 0em 0em 0em;}
@@ -61,8 +62,11 @@
     margin: 0em 0em 0em 0em;}
   
   .card-title h4{
-    margin: 0em 0em 0em 0em;}
+    margin: 0;}
   
+  .card-title h5{
+    margin: 0;}
+
   .cover-image{
     border-radius: 3px;
     min-width: auto;

@@ -13,3 +13,12 @@ window.onload=function(){
     var b,c=document.getElementsByTagName("*");
     for(b in c)c[b].hasAttribute&&c[b].hasAttribute("data-include")&&a(c[b],c[b].getAttribute("data-include"))
 };
+
+var timer;
+        document.addEventListener('scroll', function(e){
+            clearTimeout(timer);
+            document.body.classList.remove('site-home');
+            timer = setTimeout(function(){
+                document.body.classList.add('site-home');
+            }, 1000);
+        }, true);
