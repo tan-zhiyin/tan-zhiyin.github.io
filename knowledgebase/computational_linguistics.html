@@ -60,7 +60,7 @@
             .site-main {
                 position:relative;
                 display: grid; 
-                grid-template-columns: 30% 70%;
+                grid-template-columns: 40% 60%;
                 height:90%;
                 width: inherit;
                 /*overflow-y: scroll;
@@ -239,8 +239,9 @@
                     left: 0;
                     right: 0;
                     width: 100%;
-                    height: auto;
+                    height: 320px;
                     box-sizing: border-box;
+                    overflow-y: scroll;
                     transform: translateY(0);
                 }
 
@@ -393,9 +394,23 @@
                         <div id="menuHeader">
                             <button id="backButton" onclick="back()">&#60&#60</button>
                             <div id="primaryMenu">
-                                <div class="menubox" onclick="openContent('content-main-intro', this); toggleActive(this);">Main</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Grammar & Parsing</div>
-                                <div class="menubox" onclick="openSubMenu('submenu2', this); toggleActive(this);">Embedding</div>
+                                <div class="menubox" onclick="openContent('content-main-intro', this); toggleActive(this);">Main Page</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">History and Challenges</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Linguistics Basics</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Text Preprocessing</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Word Senses</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Syntax, Grammar, Parsing</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Statistical Foundations</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Vector Semantics</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Evaluation Methods</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Machine Learning</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Unsupervised Learning</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Semi-Supervised Learning</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Deep Learning</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Ethics in NLP</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Interpretability</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Future Directions</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Tools & Libraries</div>
                             </div>                 
                         </div>
                         <div id="submenu1" class="submenu">
@@ -416,13 +431,15 @@
                     <div id="content">
                         <div id="content-main-intro">
                             <p>
-                                Welcome to Computational Linguistics 101 - a online hub for the study of Natural language processing.
+                                Explore the captivating realm of Natural Language Processing (NLP)! This groundbreaking field merges language and technology, revolutionizing our digital landscape. NLP empowers computers to understand, analyze, and generate human language, enabling a vast array of applications.
                                 <br><br>
-                                This hub aims to simplifies complex computational linguistics topics, from syntax, semantics, embedding 
-                                and deep learning to recent advancements, into accessible, multimodal content.
+                                From comprehending language to enabling translation, summarization, and facilitating engaging conversations, NLP transforms the way people interact with technology. However, NLP extends beyond language understanding—it also encompasses ethics, ensuring responsible development and addressing issues like bias, fairness, privacy, and security.
                                 <br><br>
-                                Collaboration is encouraged - reach out via email or GitHub to suggest improvements or discuss ideas. 
-                                Let's make computational linguistics understandable for everyone, together.
+                                Interpretability and explainability are paramount in NLP. The goal is to make AI transparent and trustworthy, fostering understanding and trust in the decisions made by these systems.
+                                <br><br>
+                                This webpage is your gateway to NLP foundations. Delve into linguistic fundamentals, text processing techniques, statistical models, and cutting-edge advancements in deep learning. Unleash the tools and knowledge to analyze text, extract insights, and build intelligent NLP applications.
+                                <br><br>
+                                Join this exciting journey to unravel the intricacies of language processing and harness the incredible potential of NLP. Whether you're a student, researcher, or simply curious, together we'll navigate the dynamic world of NLP and uncover its transformative impact on communication and comprehension. Let's embark on this thrilling adventure!
                             </p>
                         </div>
 
