@@ -97,12 +97,13 @@
 
             .menubox{
                 width: 100%;
-                padding: 1vh 2vh;
+                box-shadow: 0px 0px 5px rgb(159 155 187 / 30%);
+                border-radius: 1vh;
+                background-color: transparent;
                 flex: 1.3;
                 transition: all 0.3s ease-out 0s;
-                box-shadow: 0px 0px 5px rgb(159 155 187 / 30%);
                 margin-bottom: 1vh;
-                border-radius: 1vh;
+                padding: 1vh 2vh;
             }
 
             .submenu {
@@ -183,6 +184,10 @@
                 border-radius: 1vh;
             }
 
+            .menubox.active {
+                background-color: rgb(243, 241, 249);
+            }
+
             @media screen and (max-width: 1000px) {
                 .site-title{
                     font-size: 1.6em;
@@ -258,20 +263,27 @@
         <script>
             function openSubMenu(id, element) {
                 let contentId = element.getAttribute('data-contentid');
-                
-                // Open content before displaying the submenu
                 openContent(contentId, element);
 
                 document.getElementById('backButton').style.display = 'block';
                 document.getElementById('primaryMenu').style.display = 'none';
 
+                // Clone the menubox and set its onclick event to show its content and toggle active status.
+                let clonedElement = element.cloneNode(true);
+                clonedElement.onclick = function() { 
+                    openContent(contentId, this);
+                    toggleActive(this);
+                };
+
+                // Make sure the cloned menubox is in active state.
+                clonedElement.classList.add('active');
+
                 let submenus = document.getElementsByClassName('submenu');
-                for(let i = 0; i < submenus.length; i++) {
+                for (let i = 0; i < submenus.length; i++) {
                     submenus[i].style.display = 'none';
                 }
 
-                let clonedElement = element.cloneNode(true);
-                clonedElement.onclick = function() { openContent(contentId, this); }; // assign onclick event to the cloned element
+                // Append the cloned menubox to the menu header.
                 document.getElementById('menuHeader').appendChild(clonedElement);
                 document.getElementById(id).style.display = 'block';
             }
@@ -281,17 +293,26 @@
                 document.getElementById('primaryMenu').style.display = 'block';
 
                 let submenus = document.getElementsByClassName('submenu');
-                for(let i = 0; i < submenus.length; i++) {
-                    //if(submenus[i].children.length > 2) {
-                    //    submenus[i].removeChild(submenus[i].children[0]);
-                    //}
+                for (let i = 0; i < submenus.length; i++) {
                     submenus[i].style.display = 'none';
                 }
-                //Remove cloned element from 'menuHeader'
+
+                // Remove the cloned menuboxes when going back.
                 let menuHeader = document.getElementById('menuHeader');
-                if (menuHeader.children.length > 2) {
-                    menuHeader.removeChild(menuHeader.children[2]);
+                let activeMenuItem;
+                while (menuHeader.children.length > 2) {
+                    activeMenuItem = menuHeader.children[2];
+                    menuHeader.removeChild(activeMenuItem);
                 }
+
+                // Find the related primary menu item.
+                activeMenuItem = document.querySelector('.menubox[data-contentid="'+ activeMenuItem.getAttribute('data-contentid') + '"]');
+                
+                // Set active state to the related primary menu item.
+                toggleActive(activeMenuItem);
+
+                // Open the content of the related primary menu item.
+                openContent(activeMenuItem.getAttribute('data-contentid'), activeMenuItem);
             }
 
             function openMenu() {
@@ -304,32 +325,56 @@
                 sidebar.classList.remove('active');
             }
 
-
             function openContent(id, element) {
                 let contents = document.getElementsByClassName('content-item');
-                for(let i = 0; i < contents.length; i++) {
+                for (let i = 0; i < contents.length; i++) {
                     contents[i].style.display = 'none';
                 }
                 document.getElementById('content-main-intro').style.display = 'none';
 
                 let filepath = element.getAttribute('data-filepath');
-                if(filepath) {
+                if (filepath) {
                     $.get(filepath, function(data) {
-                        // Parse the HTML string to find the element with the corresponding ID
                         let parser = new DOMParser();
                         let htmlDoc = parser.parseFromString(data, 'text/html');
                         let content = htmlDoc.getElementById(id);
 
-                        // Replace the inner HTML of the content div with the fetched content
                         $(`#${id}`).html(content.innerHTML);
                         document.getElementById(id).style.display = 'block';
                     });
                 } else {
                     document.getElementById(id).style.display = 'block';
                 }
+
+                // Toggle active status for the related menuboxes (original or cloned).
+                if (element.parentNode.id !== 'primaryMenu') {
+                    let menuHeader = document.getElementById('menuHeader');
+                    for (let i = 0; i < menuHeader.children.length; i++) {
+                        menuHeader.children[i].classList.remove('active');
+                    }
+                }
+                toggleActive(element);
             }
 
+            function toggleActive(element) {
+                let allMenuboxes = document.getElementsByClassName('menubox');
+                for (let i = 0; i < allMenuboxes.length; i++) {
+                    allMenuboxes[i].classList.remove('active');
+                }
+
+                // Find and set active status for the related menuboxes (original or cloned).
+                let menuHeader = document.getElementById('menuHeader');
+                for (let i = 0; i < menuHeader.children.length; i++) {
+                    if (menuHeader.children[i].getAttribute('data-contentid') === element.getAttribute('data-contentid')) {
+                        menuHeader.children[i].classList.add('active');
+                    }
+                }
+
+                element.classList.add('active');
+            }
         </script>
+
+        
     </head>
 
     <body class="site-home">  
@@ -348,14 +393,14 @@
                         <div id="menuHeader">
                             <button id="backButton" onclick="back()">&#60&#60</button>
                             <div id="primaryMenu">
-                                <div class="menubox" onclick="openContent('content-main-intro', this)">Main</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this);">Grammar & Parsing</div>
-                                <div class="menubox" onclick="openSubMenu('submenu2', this);">Embedding</div>
+                                <div class="menubox" onclick="openContent('content-main-intro', this); toggleActive(this);">Main</div>
+                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">Grammar & Parsing</div>
+                                <div class="menubox" onclick="openSubMenu('submenu2', this); toggleActive(this);">Embedding</div>
                             </div>                 
                         </div>
                         <div id="submenu1" class="submenu">
-                            <div class="menubox" data-contentid="content-constituency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-constituency-grammar', this); closeMenu();">Constituency Grammar</div>
-                            <div class="menubox" data-contentid="content-dependency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-dependency-grammar', this); closeMenu();">Dependency Grammar</div>
+                            <div class="menubox" data-contentid="content-constituency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-constituency-grammar', this); toggleActive(this); closeMenu();">Constituency Grammar</div>
+                            <div class="menubox" data-contentid="content-dependency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-dependency-grammar', this); toggleActive(this); closeMenu();">Dependency Grammar</div>
                             <div class="menubox" onclick="openContent('content-constituency-grammar-parsing', this); closeMenu();">Constituency Grammar Parsing</div>
                             <div class="menubox" onclick="openContent('content-dependency-grammar-parsing', this); closeMenu();">Dependency Grammar Parsing</div>
                         </div>

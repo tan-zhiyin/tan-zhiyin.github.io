@@ -3,8 +3,7 @@
     display:grid;
     grid-template-columns: 100%;
     width: inherit;
-    min-height: 95%;
-    max-height: auto;
+    min-height: 100%;
     padding: 0 20px 40px 20px;
     margin: 0}
     
@@ -54,7 +53,7 @@
     justify-items: stretch;
     gap: 15px;
     top: 2vh; 
-    left: 52%; 
+    left: 55%; 
     right: 2vh; 
     bottom: 2vh;
     }
@@ -72,7 +71,7 @@
 }
 
 .card-right-column .card-right-bottom .box {
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .box {
@@ -83,10 +82,11 @@
     flex-direction: column;
     overflow:hidden;
     background-color: rgb(253, 253, 255);
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 1px 4px 12px rgb(199, 198, 213);
     height: 100%;
     width: 100%;
+    font-size: 2vh;
     margin: 0;
     flex: 1;
 }
