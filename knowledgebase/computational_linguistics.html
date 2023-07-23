@@ -73,6 +73,7 @@
                 width: 100%;
                 height: 100%;
                 font-size: 1.6rem;
+                line-height: 1.5em;;
                 overflow-x: hidden;
                 overflow-y: hidden;
                 transition: flex-basis 0.5s ease;
@@ -89,6 +90,7 @@
                 display: flex;
                 align-items: center;
                 width: 100%;
+                height: auto;
             }
 
             #primaryMenu {
@@ -97,13 +99,13 @@
 
             .menubox{
                 width: 100%;
-                box-shadow: 0px 0px 5px rgb(159 155 187 / 30%);
+                box-shadow: 0px 4px 8px rgb(159 155 187 / 10%);
                 border-radius: 1vh;
                 background-color: transparent;
                 flex: 1.3;
                 transition: all 0.3s ease-out 0s;
-                margin-bottom: 1vh;
-                padding: 1vh 2vh;
+                margin-bottom: 0vh;
+                padding: 1.5vh 2vh;
             }
 
             .submenu {
@@ -111,8 +113,19 @@
                 height: inherit;
             }
 
+            #backButton_div{
+                position:relative; 
+                height:inherit; 
+                display: grid;
+                align-items: center;
+                top:0;
+                bottom: 0;
+                flex: 0.5;
+            }
+
             #backButton {
                 display: none;
+                position: relative;
                 background-color: rgba(255, 255, 255, 0);
                 border-color: rgba(255, 255, 255, 0);
                 color:black;
@@ -183,6 +196,15 @@
                 cursor: pointer;
                 background-color: rgb(243, 241, 249);
                 border-radius: 1vh;
+                border: none;
+                border-color: rgba(255, 255, 255, 0);
+                box-shadow: none;
+            }
+
+            #backButton:active,
+            #backButton:focus {
+                outline: 0px dotted;
+                outline: 0px auto -webkit-focus-ring-color;
             }
 
             .menubox.active {
@@ -393,26 +415,26 @@
                     <div id="sidebar">
                         
                         <div id="menuHeader">
-                            <button id="backButton" onclick="back()">&#60&#60</button>
+                            <div id="backButton_div">
+                                <button id="backButton" onclick="back()">&#60&#60</button>
+                            </div>
+                            
                             <div id="primaryMenu">
                                 <div class="menubox" onclick="openContent('content-main-intro', this); toggleActive(this);">Main Page</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu1', this); toggleActive(this);">History and Challenges</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu2', this); toggleActive(this);">Linguistics Basics</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu3', this); toggleActive(this);">Text Preprocessing</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu4', this); toggleActive(this);">Word Senses</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu5', this); toggleActive(this);">Syntax, Grammar, Parsing</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu6', this); toggleActive(this);">Statistical Foundations</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu7', this); toggleActive(this);">Vector Semantics</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu8', this); toggleActive(this);">Evaluation Methods</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu9', this); toggleActive(this);">Statistical Machine Learning</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu10', this); toggleActive(this);">Model Types and Taxonomy</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu12', this); toggleActive(this);">Deep Learning</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu13', this); toggleActive(this);">Interpretability & Ethics</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu14', this); toggleActive(this);"></div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu15', this); toggleActive(this);">Future Directions</div>
-                                <div class="menubox" data-contentid="content-constituency-grammar-intro" onclick="openSubMenu('submenu16', this); toggleActive(this);">Tools & Libraries</div>
+                                <div class="menubox" data-contentid="content-foundations-of-NLP" onclick="openSubMenu('submenu1', this); toggleActive(this);">Foundations of NLP</div>
+                                <div class="menubox" data-contentid="content-text-processing-and-understanding" onclick="openSubMenu('submenu2', this); toggleActive(this);">Text Processing & Understanding</div>
+                                <div class="menubox" data-contentid="content-language-representation" onclick="openSubMenu('submenu3', this); toggleActive(this);">Language Representation: From Syntax to Semantics</div>
+                                <div class="menubox" data-contentid="content-statistical-foundations" onclick="openSubMenu('submenu4', this); toggleActive(this);">Statistical Foundations for NLP</div>
+                                <div class="menubox" data-contentid="content-evaluation" onclick="openSubMenu('submenu8', this); toggleActive(this);">Evaluation & Applications</div>
+                                <div class="menubox" data-contentid="content-statistical-machine-learning" onclick="openSubMenu('submenu9', this); toggleActive(this);">Statistical Machine Learning</div>
+                                <div class="menubox" data-contentid="content-model-types-and-taxonomy" onclick="openSubMenu('submenu10', this); toggleActive(this);">Model Types & Taxonomy</div>
+                                <div class="menubox" data-contentid="content-deep-learning" onclick="openSubMenu('submenu12', this); toggleActive(this);">Deep Learning</div>
+                                <div class="menubox" data-contentid="content-interpretability-and-ethics" onclick="openSubMenu('submenu13', this); toggleActive(this);">Interpretability & Ethics</div>
+                                <div class="menubox" data-contentid="content-future-directions" onclick="openSubMenu('submenu15', this); toggleActive(this);">Future Directions</div>
+                                <div class="menubox" data-contentid="content-tools-and-libraries" onclick="openSubMenu('submenu16', this); toggleActive(this);">Tools & Libraries</div>
                             </div>                 
                         </div>
+
                         <div id="submenu1" class="submenu">
                             <div class="menubox" data-contentid="content-constituency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-constituency-grammar', this); toggleActive(this); closeMenu();">Constituency Grammar</div>
                             <div class="menubox" data-contentid="content-dependency-grammar" data-filepath="./cl/grammar.html" onclick="openContent('content-dependency-grammar', this); toggleActive(this); closeMenu();">Dependency Grammar</div>
@@ -443,9 +465,75 @@
                             </p>
                         </div>
 
-                        <div id="content-constituency-grammar-intro" class="content-item" style="display: none;">
-                            introduction of constituency grammar
+                        <div id="content-foundations-of-NLP" class="content-item" style="display: none;">
+                            Introduction to Natural Language Processing: History, Applications, Challenges
+                            
                         </div>
+
+                        <div id="content-text-processing-and-understanding" class="content-item" style="display: none;">
+                            'Text Preprocessing'
+                            Text Preprocessing and Normalization: Regular Expressions, Text Encoding,  Tokenization, Text Normalization, Stop Words, Part-of-Speech (POS) Tagging
+                            
+                            'Word Senses'
+                            Coreference Resolution, Word Senses and WordNet: Homonyms, Homographs, Homophones
+                            
+                            'Syntax&Grammar&Parsing'
+                            Context-Free Grammars (CFG), Constituency Parsing, Dependency Parsing (Semantic Role Labelling, NER), Parsing Algorithms (CKY, Earley, etc.)
+                        </div>
+
+                        <div id="content-language-representation" class="content-item" style="display: none;">
+
+                            'Semantic Representation and Modeling'
+
+                            Vector Space Models: 	High Dimensional Vectors, Measures of Distance and Similarity, Sparse and Dense Vectors, Word Embeddings, Dimensionality Reduction Techniques
+                        </div>
+
+                        <div id="content-statistical-foundations" class="content-item" style="display: none;">
+                            'Probability and Statistic'
+                            'Probability Distributions, Joint, Marginal and Conditional Probability, Independent and Dependent Events, Bayes’ Theorem (Concept, Applications in NLP), Binary Independence Model, TF-IDF
+                            
+                            'Information Theory'
+                            Entropy, Mutual Information, Conditional Entropy
+
+                            'N-gram Language Models'
+                            Unigrams, Bigrams, Trigrams, Smoothing Techniques for Language Models'
+                        </div>
+
+                        <div id="content-evaluation" class="content-item" style="display: none;">
+                            Precision, Recall, F-score, ROC Curve, Precision-Recall Curve, Mean Average Precision (MAP), NDCG
+                        </div>
+
+                        <div id="content-statistical-machine-learning" class="content-item" style="display: none;">
+                            Linear Regression and Regularization Techniques, Logistic Regression and Multinomial Logistic Regression, Naive Bayes Classification, 
+                            Decision Trees and Random Forests, Support Vector Machines and Kernel Methods
+                        </div>
+
+                        <div id="content-model-types-and-taxonomy" class="content-item" style="display: none;">
+                            
+                        </div>
+
+                        <div id="content-deep-learning" class="content-item" style="display: none;">
+                            Feedforward Neural Networks, CNN, RNN, LSTM, Attention Mechanisms and Transformer Models, Word and Sentence Embeddings, 
+                            Contextual Embeddings, Transfer Learning in NLP, Generative Adversarial Networks and Autoencoders,
+                        </div>
+
+                        <div id="content-interpretability-and-ethics" class="content-item" style="display: none;">
+                            ethics
+                            Biases, Fairness, Privacy and Security, Ethical Guidelines for AI research, Ethics in Language Generation, Future of Ethics in NLP
+                            
+                            Interpretable AI and Explainability in NLP
+                            interpretable AI, Explainability in NLP, Interpretability Techniques in Machine Learning, Explanation Methods in NLP, Post-hoc and Ante-hoc Interpretability
+                        </div>
+
+                        <div id="content-future-directions" class="content-item" style="display: none;">
+                            Multilingual and Low-Resource Language, Cross-modal and Multimodal NLP, NLP in Healthcare, finance, or legal and Other Industries,
+                        </div>
+
+                        <div id="content-tools-and-libraries" class="content-item" style="display: none;">
+                            
+                        </div>
+
+
 
                         <div id="content-constituency-grammar" class="content-item" style="display: none;"></div>
                         <div id="content-dependency-grammar" class="content-item" style="display: none;"></div>

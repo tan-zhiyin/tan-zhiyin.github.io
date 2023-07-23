@@ -1,0 +1,41 @@
+Based on Learning Approach
+
+a. Supervised Learning: These algorithms are trained using labeled data, i.e., a dataset where the target outcome is known. During the training phase, the model makes predictions and adjusts its weights based on the error it makes, striving to minimize it over iterations. Once trained, it can be used to predict outcomes on new, unseen data. Examples of supervised learning algorithms include Linear Regression, Decision Trees, Random Forests, and Support Vector Machines.
+
+b. Unsupervised Learning: Unlike supervised learning, unsupervised learning algorithms are used with datasets without a known outcome or target variable. These algorithms discover hidden patterns or data groupings without the need for human intervention. Examples include Clustering techniques like K-means, Hierarchical clustering, and Dimensionality Reduction techniques like Principal Component Analysis (PCA).
+
+c. Semi-Supervised Learning: Semi-supervised learning sits between supervised and unsupervised learning. It's used when a majority of the data is unlabeled, and a small portion is labeled. These algorithms try to make the most out of this small amount of labeled data to improve the learning accuracy.
+
+d. Reinforcement Learning: Reinforcement learning algorithms learn to perform an action from experience. These algorithms learn by trial and error, and they choose an action in each state based on the reward of the state-action pair. Q-Learning and Deep Q Network are examples of reinforcement learning.
+
+Based on Model Output
+
+a. Classification: These are predictive modeling problems where the outcome to be predicted is a categorical variable. Binary (two-class) classification and multiclass classification (more than two classes) are two common forms of classification problems. Logistic Regression, Decision Trees, and Naive Bayes are examples of classification algorithms.
+
+b. Regression: Regression predictive modeling is the task of approximating a mapping function from input variables to a continuous output variable. Examples include Linear Regression, Polynomial Regression, and Support Vector Regression.
+
+Based on the Model’s Approach
+
+a. Generative Models: These models learn the joint probability distribution of the input and output data and are able to generate new data instances. They can generate data similar to the ones they have been trained on. Examples include Naive Bayes, Generative Adversarial Networks (GANs), and certain types of autoencoders.
+
+b. Discriminative Models: Discriminative models learn the decision boundary between classes and make decisions based on the given class boundary. They cannot generate new instances of data. Examples include Logistic Regression, Support Vector Machines, and most types of Neural Networks.
+
+Based on Model Structure
+
+a. Linear Models: Linear models assume a linear relationship between the input variables and the single output variable. If the relationship is not naturally linear, the data can often be transformed to linearize it. Examples include Linear Regression, Linear Discriminant Analysis, and Linear Support Vector Machines.
+
+b. Non-Linear Models: These models represent more complex relationships by considering higher-degree polynomial features or using non-linear activation functions. Examples include Decision Trees, Kernel SVM, Neural Networks, and RBF Neural Networks.
+
+Based on Learning Paradigm
+
+a. Batch Learning (Offline Learning): In this approach, the machine learning algorithm learns from the entire dataset at once. After training, the model is deployed to make predictions, but it does not learn anymore; to update it, we need to train a new model with the complete dataset.
+
+b. Online Learning: In online learning, the learning step is continuous, and the model updates itself as it receives new data. It's suitable when we have a continuous flow of data coming in and we need to adapt to change rapidly or autonomously.
+
+c. Active Learning: In active learning, the algorithm can interactively query the user (or some other information source) to obtain the desired outputs at new data points.
+
+Based on Instance Dependence
+
+a. Instance-Based Learning: Instance-based learning algorithms work on the assumption that similar instances have similar output values. The algorithms store the training instances and learn a similarity function from them. When asked to make a prediction, they use the similarity function to find the most similar instances to the new one and combine their output values to make a prediction. k-Nearest Neighbors is an example of this type of learning.
+
+b. Model-Based Learning: In contrast, model-based learning algorithms learn a model of the data and use that model to make predictions. They summarize the data into a set of model parameters. Examples include Linear Regression, Decision Trees, etc.
