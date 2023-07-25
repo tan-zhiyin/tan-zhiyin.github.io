@@ -184,7 +184,8 @@
                 font-size: 1.8rem;  /* font size of the text*/
                 font-weight: bold;
                 text-decoration: none;  /* Removes the underline from the text */
-                text-wrap: inherit;
+                white-space: normal; /* Allow the text to wrap to the next line */
+                word-wrap: break-word; /* Break the word if it's too long to fit */
                 transition: all 0.5s ease-in 0s;
             }
 
@@ -210,6 +211,10 @@
 
             .menubox.active {
                 background-color: rgb(243, 241, 249);
+            }
+
+            .bolded { 
+                font-weight: bold; 
             }
 
             @media screen and (max-width: 1000px) {
