@@ -27,12 +27,18 @@
     min-height: 3em;
     width: inherit;
     height: 300px;
-    box-shadow: 2px 5px 13px rgb(179 178 194);
+    box-shadow: 0px 4px 5px rgba(179, 178, 194, 0.3);
+    transition: box-shadow .25s;
     margin-top: 0em;
     margin-bottom: 0em;
     padding: 8px;
     overflow: hidden;}
   
+  .card:hover {
+    box-shadow: 0px 2px 15px rgba(179, 178, 194, 0.5);
+    box-sizing: border-box;
+  }
+
   .card > .card-title{
     display: grid;
     height: inherit;
