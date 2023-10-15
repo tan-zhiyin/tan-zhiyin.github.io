@@ -1,73 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-  <title>CV</title>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #000;
-        background-color: #fff;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        }
-
-    header {
-    text-align: center;
-    border-bottom: 1px solid #000;
-    padding-bottom: 10px;
-    }
-
-    h1 {
-    font-size: 1.5em;
-    margin: 0px 0 10px;
-    }
-
-    h2 {
-    font-size: 1em;
-    margin: 10px 0 10px;
-    }
-
-    h3 {
-    font-size: 0.8em;
-    margin: 4px 0 0px;
-    }
-
-    p {
-    font-size: 0.8em;
-    line-height: 1.2em;
-    margin: 2px 0 10px;
-    }
-
-    section {
-    border-bottom: 1px solid #000;
-    padding-bottom: 10px;
-    }
-
-    button {
-    display: block;
-    margin: 20px auto;
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    cursor: pointer;
-    }
-
-  </style>
-</head>
-<body>
-  <div id="cv">
-    <header>
-      <h1>Zhiyin Tan</h1>
-      <p>Email: <a href="mailto:your.email@example.com">zhiyin121@gmail.com</a></p>
-      <!-- <p>Phone: +1 123 456 7890</p> -->
+ 
+      <header>
+        <h1>Zhiyin Tan</h1>
+        <p>Email: <a href="mailto:your.email@example.com">zhiyin121@gmail.com</a></p>
+        <!-- <p>Phone: +1 123 456 7890</p> -->
     </header>
-    
+      
     <section>
       <h2>Education</h2>
       <div>
@@ -148,26 +85,4 @@
       </div>
     -->
     </section>
-    
-
   </div>
-  
-  <button onclick="downloadPDF()">Download as PDF</button>
-
-  <script>
-    function downloadPDF() {
-        const element = document.getElementById("cv");
-        
-        const opt = {
-            margin: 0.5,
-            filename: "CV.pdf",
-            image: { type: "jpeg", quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
-        };
-
-        html2pdf().set(opt).from(element).save();
-    }
-  </script>
-</body>
-</html>

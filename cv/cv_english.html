@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cv.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <title>Zhiyin Tan's Curriculum Vitae</title>
+  </head>
+
+  <body>
+    <div class="download">
+      <button onclick="downloadPDF()">
+          <span style="display:grid; grid-template-columns: 15px 98px; column-gap: 3px; padding: 0 10px;">
+              <img src="../pic/printer.png" alt="printer" style="width: 15px;">
+              &nbsp Download PDF
+          </span>
+      </button>
+    </div>
+
+    <div class="content">
+      <div class="left_content">
+
+        <div class="one_block" id="name">
+          <h2>Zhiyin Tan</h2>
+          <h4>NLP Researcher</h4>
+        </div>
+
+        <div class="one_block" id="workExperiment">
+          <h3 class="title">Work Experience</h3>
+
+          <div class="one_entry">
+            <h5>R&D NLU Computational Linguist</h5>
+            <h5 class="organization">Cerence Inc., Aachen, Germany 10/2020 - 09/2022</h5>
+            <p>Advanced dialogue systems through expert natural language understanding, optimizing unstructured data processing.</p>
+            <ul>
+              <li>Boosted intent accuracy by 10% with strategic linguistic & architectural enhancements.</li>
+              <li>Designed a sophisticated annotation tool using WPF, streamlining data labeling through user-friendly click-to-link functionalities and rapid-access use-case tags.</li>
+            </ul>
+          </div>
+
+          <div class="one_entry">
+            <h5>Marketing Data Analyst Intern</h5>
+            <h5 class="organization">Tinno Mobile Corp., Shenzhen, China 07/2019 - 08/2019</h5>
+            <p>Enhanced competitor insights to drive strategic marketing.</p>
+            <ul>
+              <li>Spearheaded the automation of data scraping with Python, elevating the team to real-time competitor intelligence.</li>
+              <li>Amplified product positioning through incisive market analytics. </li>
+            </ul>
+          </div>
+
+          <div class="one_entry">
+            <h5>Teaching Assistant</h5>
+            <h5 class="organization">University of Macau, Macao, China 01/2017 - 05/2017</h5>
+            <p>Supported academic processes and facilitated teaching initiatives.</p>
+            <ul>
+              <li>Prepared class materials, facilitated group discussions, graded assignments, tutoring.</li>
+              <li>Assisted with publicity and planning for multiple large-scale academic conferences, overseeing design, printing, event coordination, and guest reception.</li>
+            </ul>
+          </div>
+
+          <div class="one_entry">
+            <h5>Research Analyst Intern</h5>
+            <h5 class="organization">e-Research & Solutions, Macao, China 12/2016 - 06/2017</h5>
+            <p>Derived actionable insights from structured and unstructured data, focusing on public sentiment, ratings, and reviews.</p>
+            <ul>
+              <li>Enhanced sentiment analysis to improve precise classification performance.</li>
+              <li>Composed the introductory chapter to "Data Mining" & assisted in documentation.</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="one_block" id="Publications">
+          <h3  class="title">Publications</h3>
+
+          <div class="one_entry" style="letter-spacing: -0.6px;">
+            <a href="https://ui.adsabs.harvard.edu/WIESP/2023/">
+              <h5 class="publication_metedata">
+                Changxu Duan, Zhiyin Tan, Sabine Bartsch.
+                "LATEX Rainbow: Universal LATEX to PDF Document Semantic & Layout Annotation Framework".
+              </h5>
+              <h5 class="publication_metedata_other">
+                In Proceedings of the second Workshop on Information Extraction from Scientific Publications 
+                at IJCNLP-AACL 2023, Bali, Indonesia, 
+                Association for Computational Linguistics,
+                November 2023.
+              </h5>
+            </a>
+          </div>
+
+          <div class="one_entry" style="letter-spacing: -0.4px;">
+            <a href="https://ai.ntu.edu.tw/mlss2021/post/" target="_blank">
+              <h5 class="publication_metedata">
+                Zhiyin Tan.
+                "Text-based Personality Prediction".
+              </h5>
+              <h5 class="publication_metedata_other">
+                Poster presented at the Machine Learning Summer Schools, 
+                August 2021.
+              </h5>
+            </a>
+          </div>
+
+          <div class="one_entry" style="letter-spacing: -0.78px;">
+            <a href="https://cantonese.arts.ubc.ca/wicl-4/" target="_blank">
+              <h5 class="publication_metedata">
+                Zhiyin Tan. 
+                "The Use of Cantonese Discourse Markers by Legislative Council Members in Hong Kong & Macau". 
+              </h5>
+              <h5 class="publication_metedata_other">
+                Presented at the fourth Workshop on Innovations in Cantonese Linguistics
+                at the University of British Columbia, Vancouver, Canada,
+                June 2018.
+              </h5>
+            </a>
+          </div>  
+        </div>
+
+        <div class="one_block" id="Projects">
+          <h3 class="title">Projects</h3>
+          <div class="one_entry" style="letter-spacing: -0.6px;">
+            <h5 class="publication_metedata">
+              Zhiyin Tan.
+              "Applied Contrastive Learning to Fine-grained Entity Type Classification".
+            </h5>
+            <h5 class="publication_metedata_other">
+              Master's Thesis, University of Stuttgart,
+              March 2023.
+            </h5>
+            <p>
+              An exploration into leveraging contrastive learning for enhancing entity type classification in texts.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right_content">
+
+        <div class="one_block" id="contact" style="background-color: #b9b9b9;">
+          <div class="plain_text" id="location">
+            <img src="../pic/cv_location.png" alt="location">
+            <p>Darmstadt, Hessen, Germany</p>
+          </div>
+          <div class="plain_text" id="linkedin">
+              <img src="../pic/linkedin.png" alt="linkedin">
+              <a href="https://www.linkedin.com/in/zhiyin-tan/">
+                <p>/in/zhiyin-tan/</p>
+              </a>
+          </div>
+          <div class="plain_text" id="website">
+              <img src="../pic/github_icon.ico" alt="website" style="filter: brightness(0);">
+              <a href="https://zhiyintan.github.io/">
+                <p>zhiyintan.github.io</p>
+              </a>
+          </div>
+
+          <div class="plain_text" id="email">
+            <img src="../pic/email.png" alt="email">
+            <p>zhiyin.tan@foxmail.com</p>
+          </div>
+        </div>
+
+        <div class="one_block" id="education">
+          <h3 class="title">Education</h3>
+          <div class="one_entry">
+            <h5>M.Sc. <br> Computational Linguistics</h5>
+            <p class="organization">University of Stuttgart <br> "IBM Female Mentoring Program"</p>
+            <p class="date">11/2018 - 03/2023</p>
+          </div>
+
+          <div class="one_entry">
+            <h5>M.A. <br> Chinese Linguistics</h5>
+            <p class="organization">University of Macau <br>"Excellent Master's Thesis"</p>
+            <p class="date">09/2016 - 11/2018</p>
+          </div>
+         
+          <div class="one_entry">
+            <h5>B.A. <br> Chinese Language & Literature</h5>
+            <p class="organization">Wuyi University
+              <br>Top 2% "Outstanding Student Leader" 
+              <br>Top 6% "Scholarship"
+              <!--<br>Top 10% "Outstanding Graduate"-->
+            </p>
+            <p class="date">09/2012 - 06/2016</p>
+          </div>
+        </div>
+
+
+        <div class="one_block" id="others">
+          <div class="one_entry" id="expertise">
+            <h3 class="title">Expertise</h3>
+            <ul>
+              <li>Natural Language Processing</li>
+              <li>Machine Learning Architectures</li>
+              <li>Deep Learning Architectures</li>
+              <li>Data Analysis & Visualization</li>
+              <li>Corpus Building</li>
+              <li>Knowledge Graphs</li>
+              <li>Sociolinguistics</li>
+              <li>Academic Writing</li>
+            </ul>
+            <div style="border-bottom: 1px solid white; margin: 15px 0 0 0;"></div>
+          </div>
+
+          <div class="one_entry" id="skills">
+            <h3 class="title">Skills</h3>
+            <ul>
+              <li>Python | PyTorch</li>
+              <li>NLTK | spaCy | WordNet | Gensim</li>
+              <li>Pandas | Numpy | scikit-learn</li>
+              <li>Matplotlib | Seaborn</li>
+              <li>SQL | PostgreSQL</li>
+              <li>SPARQL | Neo4j</li>
+              <li>Git</li>
+              <li>Team Collaboration</li>
+              <li>Effective Presentations</li>
+            </ul>
+            <div style="border-bottom: 1px solid white; margin: 15px 0 0 0;"></div>
+          </div>
+
+          <div class="one_entry" id="languages">
+            <h3 class="title">Languages</h3>
+            <ul>
+              <li>Chinese Cantonese Native</li>
+              <li>Chinese Mandarin Native</li>
+              <li>English C1</li>
+              <li>German B1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+
+<script>
+  function downloadPDF() {
+    var links = document.querySelectorAll('.content a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].style.lineHeight = '1rem';
+    }
+
+    var element = document.querySelector('.content');
+    html2pdf(element, {
+        margin: 0,
+        filename: 'Zhiyin_Tan_CV.pdf',
+        image: { type: 'png', quality: 0.98 },
+        enableLinks: true,
+        html2canvas: { scale: 2, logging: true, dpi: 100, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+    });
+    }
+</script>
