@@ -1,0 +1,90 @@
+.site-main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0px;
+    padding: 40px 0;
+}
+
+.kg_menu_list {
+    border-right: 1px solid rgb(126, 126, 126);
+    padding: 0 30px 0 0;
+    margin: 0;
+}
+
+.kg_menu {
+    display: grid;
+    grid-template-columns: 15px auto;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-top: 1px solid rgb(126, 126, 126);
+    padding: 6px 0 7px 0;
+    margin: 0;
+    cursor: pointer; 
+}
+
+.kg_sub_menu {
+    display: none;
+    padding: 5px 0 15px 15px;
+    font-weight: 300;
+    cursor: pointer; 
+}
+
+.kg_sub_menu h5 {
+    margin: 0 0 4px 0;
+}
+
+.rotated {
+    transform: translate(-20%, 20%) rotate(90deg);
+    transition: transform 0.2s;
+}
+
+.content {
+    padding: 0 0 0 30px;
+}
+
+table {
+    padding:10px 0;
+    margin: 0;
+}
+
+th, td {
+    text-align: left;
+    font-size: 1.3rem;
+    padding: 0 5px;
+}
+
+table th {
+    border-bottom: 1px solid rgb(126, 126, 126); /* First row border styling */
+}
+
+table tr:nth-child(odd) td {
+    background-color: transparent; /* Odd row styling (no background color) */
+}
+
+table tr:nth-child(even) td {
+    background-color: lightgray; /* Even row styling (light gray background) */
+}
+
+table tr td:not(:last-child) {
+    border-right: 1px solid rgb(126, 126, 126); /* All cells except last in each row have a left border */
+}
+
+table tr:last-child td {
+    border-bottom: 1px solid rgb(126, 126, 126); /* Last row has a black bottom border */
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .site-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        row-gap: 30px;
+    }
+
+    .content {
+        padding: 0;
+    }
+}

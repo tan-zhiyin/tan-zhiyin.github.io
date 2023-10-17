@@ -9,12 +9,14 @@
 
         <meta property="og:image" content="https://www.icloud.com/iclouddrive/0OuJofHg8h4NTxXeb0weLM3ng#Little_fox's_back-big" />
         <meta property="og:description" content="Zhiyin Tan's fairyland">
-        <meta property="og:title" content="Zhiyin's Fairyland" />
+        <meta property="og:title" content="Zhiyin Tan" />
         <meta property="og:type" content="website" />    
 
         <link rel="Shortcut Icon" href="../pic/little_fox_round.ico" type="image/x-icon">
 
         <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/knowledge_graph.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../js/csi.js"></script>
     </head>
 
@@ -25,11 +27,45 @@
             <main class="site-kg-main">
                 <div id="start" class="site-kg-content">
                     <h1 class="site-title"> Knowledge Graph </h1>
+                    <div class="site-main">
+                        <div class="kg_menu_list">
+                            <div class="kg_menu" data-file="fundamental.html"><span>▸</span><h4>Fundamental</h4></div>
+                            <div class="kg_sub_menu">
+                                <h5 data-section="basics">Basics</h5>
+                                <h5 data-section="graph_types">Graph Types</h5>
+                                <h5 data-section="logical_foundations">Logical Foundations</h5>
+                            </div>
+                        
+                            <div class="kg_menu" data-file="database.html"><span>▸</span><h4>Knowledge Base</h4></div>
+                            <div class="kg_sub_menu">
+                                <h5 data-section="kb_concepts">Concepts</h5>
+                                <h5 data-section="kb_database">Database</h5>
+                            </div>
+
+                            <div class="kg_menu"><span>▸</span><h4>Knowledge Representation</h4></div>
+                            <div class="kg_sub_menu">
+                                <h5>Concepts</h5>
+                                <h5>Ontologies</h5>
+                                <h5>Standards</h5>
+                            </div>
+
+                            <div class="kg_menu"><span>▸</span><h4>Researches & Challenges</h4></div>
+                            <div class="kg_sub_menu">
+                                <h5>Concepts</h5>
+                                <h5>Ontologies</h5>
+                                <h5>Standards</h5>
+                            </div>
+
+                        </div>
+                        <div class="content">
+
+                        </div>
+                    </div>
                 </div>
                 <div style="display:block; z-index: 1000; position: fixed;
                     right: 5vw;bottom: 20%; opacity: 0.8; margin: 0;">
                     <a href="#start">
-                        <img class="to-top" src="../pic/top-arrow_square.ico">
+                        <img class="to-top" src="../pic/top-arrow_square.ico"  alt="to-top">
                     </a>
                 </div> 
             </main>
@@ -37,4 +73,46 @@
             <footer data-include="../tool/footer.html"></footer>
         </div>
     </body>
+    <script>
+        $(document).ready(function() {
+            $('.kg_menu').click(function() {
+                // Find the corresponding content div for the clicked .one_procedure div
+                var contentDiv = $(this).next('.kg_sub_menu');
+                var arrowSpan = $(this).find('span');
+
+                // If the content div is already visible, hide it, otherwise, show it and hide others
+                if (contentDiv.is(':visible')) {
+                    contentDiv.hide();
+                    arrowSpan.removeClass('rotated');
+                } else {
+                    // Hide all content divs and remove rotated class from all arrows
+                    $('.kg_sub_menu').hide();
+                    $('.kg_menu span').removeClass('rotated');
+                    // Show the corresponding content div and rotate the arrow
+                    contentDiv.show();
+                    arrowSpan.addClass('rotated');
+                }
+            });
+
+
+            $('.kg_sub_menu h5[data-section]').click(function() {
+                // Get the section and filename from data attributes
+                var section = $(this).data('section');
+                var file = $(this).closest('.kg_sub_menu').prev('.kg_menu').data('file');
+
+                // Fetch the content of the external file
+                $.get('./kg/' + file, function(data) {
+                    // Convert the string data to a jQuery object
+                    var content = $(data);
+                    // Find the desired section within the fetched content
+                    var sectionContent = content.filter('.' + section);
+                    // Empty previous content and append new content to the .content div
+                    $('.content').empty().append(sectionContent);
+                });
+            });
+
+            // ... (your existing code for .kg_menu click handling)
+        });
+
+    </script>
 </html>

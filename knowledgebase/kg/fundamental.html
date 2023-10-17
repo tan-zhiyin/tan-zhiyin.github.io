@@ -1,0 +1,169 @@
+<div class="basics">
+    <h3>Fundamental Basic</h3>
+    <table style="width:100%">
+        <tr>
+          <th>Element</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>Node</td>
+          <td>Represents an entity in a graph</td>
+          <td>Person, City, Organization</td>
+        </tr>
+        <tr>
+          <td>Edge</td>
+          <td>Represents a relationship between two nodes</td>
+          <td>"Is a friend of", "Is located in"</td>
+        </tr>
+        <tr>
+            <td>Weight</td>
+            <td>Indicates the strength or value of a relationship</td>
+            <td>Distance, friendship score</td>
+        </tr>
+        <tr>
+            <td>Path</td>
+            <td>A sequence of nodes connected by edges</td>
+            <td>Route from City A to City B</td>
+        </tr>
+        <tr>
+            <td>Degree</td>
+            <td>Number of edges connected to a node</td>
+            <td>Degree of a person in a social network</td>
+        </tr>
+    </table>
+</div>
+
+<div class="graph_types">
+    <h3>Graph Types</h3>
+    <table style="width:100%">
+        <tr>
+          <th>Type of Graph</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Use-case</th>
+        </tr>
+        <tr>
+          <td>Directed</td>
+          <td>Edges have a direction indicating a one-way relationship</td>
+          <td>Twitter Following</td>
+          <td>Social networks, Web crawlers</td>
+        </tr>
+        <tr>
+          <td>Undirected</td>
+          <td>Edges have no direction, indicating mutual relationships</td>
+          <td>Facebook Friendship</td>
+          <td>Friendships, Network topologies</td>
+        </tr>
+
+        <tr>
+          <td>Weighted</td>
+          <td>Edges have weights to signify importance or strength</td>
+          <td>Roads with distances</td>
+          <td>Route optimizations, recommendation systems</td>
+        </tr>
+        <tr>
+          <td>Unweighted</td>
+          <td>All edges are uniform and don't have any weights</td>
+          <td>Simple connections</td>
+          <td>Basic connectivity patterns</td>
+        </tr>
+
+        <tr>
+          <td>Cyclic</td>
+          <td>Contains at least one cycle</td>
+          <td>Circular workflow</td>
+          <td>Workflow systems, State diagrams</td>
+        </tr>
+        <tr>
+          <td>Acyclic</td>
+          <td>No cycles present</td>
+          <td>Tree structures</td>
+          <td>Hierarchies, Taxonomies</td>
+        </tr>
+    </table>
+</div>
+
+<div class="logical_foundations">
+    <h3>Logical Foundations</h3>
+    <table style="width:100%">
+        <tr>
+          <th>Concept</th>
+          <th>Description</th>
+          <th>Pros/Cons</th>
+          <th>Use-case</th>
+        </tr>
+        <tr>
+          <td>Open-World Assumption (OWA)</td>
+          <td>Assumes information may be incomplete and there may be unknown truths, the unstated information does not imply fault.</td>
+          <td>Pros: Flexible, accommodates new information. <br>Cons: Can be complex.</td>
+          <td>Semantic web, OWL</td>
+        </tr>
+        <tr>
+          <td>Closed-World Assumption (CWA)</td>
+          <td>Assumes information is complete and anything unstated is false.</td>
+          <td>Pros: Simpler, deterministic. <br>Cons: Inflexible.</td>
+          <td>Databases</td>
+        </tr>
+
+        <tr>
+          <td>Monotonicity</td>
+          <td>Deriving new facts won't invalidate previous facts.</td>
+          <td>Pros: Stable, predictable reasoning. <br>Cons: Cannot handle change or contradiction well.</td>
+          <td>Mathematical theorems, classical logic systems.</td>
+        </tr>
+        <tr>
+          <td>Non-monotonicity</td>
+          <td>New information can invalidate previous conclusions.</td>
+          <td>Pros: Adaptive, realistic. <br>Cons: Complex, unpredictable.</td>
+          <td></td>
+        </tr>
+    </table>
+
+    <table style="width:100%">
+        <tr>
+            <th>Concept</th>
+            <th>Description</th>
+            <th>Pros/Cons</th>
+            <th>Use-case</th>
+        </tr>
+        <tr>
+          <td>First-order Logic</td>
+          <td>Allows quantified variables over objects.</td>
+          <td>Pros: Expressive, well-understood. <br>Cons: Complexity.</td>
+          <td>Representing real-world scenarios in AI.</td>
+        </tr>
+        <tr>
+          <td>Second-order Logic</td>
+          <td>Extends first-order logic to include quantification over properties.</td>
+          <td>Pros: More expressive. <br>Cons: Higher complexity.</td>
+          <td>Higher-order, more complex mathematical and AI reasoning.</td>
+        </tr>
+
+        <tr>
+            <td>Predicate Logic</td>
+            <td>Uses predicates to deal with objects and their relationships.</td>
+            <td>Pros: Expressive. <br>Cons: Complexity.</td>
+            <td>Formalizing facts, database querying, rules in AI, AI reasoning.</td>
+          </tr>
+          <tr>
+            <td>Propositional Logic</td>
+            <td>Deals with propositions which are either true or false.</td>
+            <td>Pros: Simplicity, ease of evaluation. <br>Cons: Limited expressiveness.</td>
+            <td>Basic logic circuits, simple decision-making systems.</td>
+        </tr>
+
+        <tr>
+            <td>Inference</td>
+            <td>Deriving new facts or conclusions from existing knowledge.</td>
+            <td>Pros: Essential for reasoning. <br>Cons: Can be computationally intensive.</td>
+            <td>Automated theorem proving, diagnostic systems.</td>
+          </tr>
+          <tr>
+            <td>Entailment</td>
+            <td>A relationship where a set of statements logically implies another.</td>
+            <td>Pros: Fundamental for logical reasoning. <br>Cons: Complexity in evaluation.</td>
+            <td>Proving logical consequences in formal verification.</td>
+        </tr>
+    </table>
+</div>
