@@ -74,7 +74,19 @@ table tr:last-child td {
     border-bottom: 1px solid rgb(126, 126, 126); /* Last row has a black bottom border */
 }
 
+.content li, .content p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    list-style-type: none;
+    position: relative;
+}
 
+.content li::before {
+    content: '•';
+    position: absolute;
+    left: -2rem;
+    font-size: 2rem;
+}
 
 @media screen and (max-width: 1000px) {
     .site-main {
