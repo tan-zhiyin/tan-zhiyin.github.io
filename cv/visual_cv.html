@@ -184,7 +184,7 @@
                 width: auto;
             }
             .cv-container .profile .user-contact li::before {
-                content: "";
+                content: "";
                 font-size: 80%;
                 line-height: 100%;
             }
@@ -395,6 +395,8 @@
             }
             li {
                 text-align: -webkit-match-parent;
+                list-style-type: none;
+                position: unset;
             }
 
             @media screen and (min-width: 768px), print{
@@ -430,7 +432,7 @@
     </head>
 
     <body>
-        <!--
+        
         <div class="download">
         <button onclick="downloadPDF()">
             <span style="display:grid; grid-template-columns: 15px 98px; column-gap: 3px; padding: 0 10px;">
@@ -438,7 +440,7 @@
                 &nbsp Download PDF
             </span>
         </button>
-        </div>-->
+        </div>
 
         <div class="cv-container">
             <div class="cv-content">
@@ -465,23 +467,23 @@
                         <ul class="user-contact">
                             <li class="locality" data-bind="location">
                                 <span class="sc-14dqbwa-1 ckiabK">
-                                <span class="sc-14dqbwa-3 eCPwxA" style="outline: transparent dashed 0px;outline-offset: 3px;transition-behavior: normal;transition-duration: 0.2s;transition-timing-function: ease;transition-property: outline;transition-delay: v(--editor-transition-delay);min-width: 1em;">
-                                    Hannover, Lower Saxony, Germany
-                                </span>
-                            </span></li><li class="phone empty" data-bind="phone">
-                                <span class="sc-14dqbwa-1 ckiabK">
-                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                    <span class="sc-14dqbwa-3 eCPwxA" style="outline: transparent dashed 0px;outline-offset: 3px;transition-behavior: normal;transition-duration: 0.2s;transition-timing-function: ease;transition-property: outline;transition-delay: v(--editor-transition-delay);min-width: 1em;">
+                                        Hannover, Lower Saxony, Germany
+                                    </span>
                                 </span>
                             </li>
                             <li class="email" data-bind="email">
-                                <a href="mailto:zhiyin.tanh@gmail.com">zhiyin.tan@l3s.de</a>
+                                <img class="icon" src="../pic/email.png" alt="github link" style="width:0.8em; margin-right:0.5em; filter: grayscale(100%) brightness(1.2) contrast(0.2);">
+                                <a href="mailto:zhiyin.tan@l3s.de">zhiyin.tan@l3s.de</a>
                             </li>
                         </ul>
                         <ul class="user-websites" data-bind="websites">
                             <li class="sc-g6thkz-4 jGelDG website linkedin">
+                                <img class="icon" src="../pic/linkedin.png" alt="github link" style="width:0.85em; margin-right:0.5em;filter: grayscale(100%) brightness(1.2) contrast(0.9);">
                                 <a href="https://www.linkedin.com/in/zhiyin-tan/" rel="noreferrer nofollow" target="_blank">linkedin.com/in/zhiyin-tan/</a>
                             </li>
                             <li class="sc-g6thkz-4 jGelDG website github">
+                                <img class="icon" src="../pic/github_icon.ico" alt="github link" style="width:0.9em; margin-right:0.5em;">
                                 <a href="https://zhiyintan.github.io/" rel="noreferrer nofollow" target="_blank">zhiyintan.github.io/</a>
                             </li>
                         </ul>
@@ -497,7 +499,23 @@
                     </article>
                 </section>
 
-                <div class="columns">
+                <section data-bind="sections" id="dated_stories" class="dated_story">
+                    <header class="">
+                        <h3 class="header-text" data-bind="label">
+                            <span class="sc-14dqbwa-1 ckiabK">
+                                <span class="sc-14dqbwa-3 eCPwxA">Objectives</span>
+                            </span>
+                        </h3>
+                    </header>
+                    <div data-bind="add-article"></div>
+                    <article data-bind="contents" class="">
+                        <p style="line-height: 1.5em;">
+                            With a strong foundation in semantic web technologies, including SPARQL, OWL, and RDF, honed through a knowledge graph course and practical experience in my master's thesis on knowledge graph entity type prediction, I aim to deepen my expertise at ISWS. My background, further enriched by constructing databases with DBpedia and Wikidata, positions me to contribute significantly to ISWS while enhancing my research skills for my ongoing PhD in knowledge graphs and language models.
+                        </p>
+                    </article>
+                </section>
+
+                <div class="columns" style="margin-top: 3.5em;">
                     <div class="main">
                         <section id="positions" class="dated_story">
                             <header class="">
@@ -881,8 +899,8 @@
                                         </p>
                                         <div>
                                             <div>
-                                                <span style="font-style: oblique 50deg;">Changxu Duan, Zhiyin Tan, Sabine Bartsch - </span>
-                                                <span style="background-color: initial;" data-mce-style="background-color: initial;">A framework for annotating LaTex format PDF file.</span>
+                                                <span style="font-style: italic;">Changxu Duan, Zhiyin Tan, Sabine Bartsch</span>
+                                                <span style="background-color: initial;" data-mce-style="background-color: initial;"> - A framework for annotating LaTex format PDF file.</span>
                                             </div>
                                         </div>
                                         <p>
@@ -1027,11 +1045,7 @@
                             </div>
                         </div>
                     </article>
-                    
-                    <p>
-                        <strong></strong><br>
-                        <strong></strong><br>
-                    </p>
+                
 
                     <article data-bind="contents" class="">
                         <div class="article-headings">
@@ -1279,23 +1293,17 @@
 </html>
 
 <script>
-  function downloadPDF() {
-    var links = document.querySelectorAll('.content a');
-    for (var i = 0; i < links.length; i++) {
-        links[i].style.lineHeight = '1rem';
+    function downloadPDF() {
+        var element = document.querySelector('.cv-container'); // Ensure this selector matches the content you want to download
+
+        var opt = {
+        margin: [10, 0],
+        filename: 'Zhiyin_Tan_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(element).save();
     }
-
-    var element = document.querySelector('.content');
-
-    var opt = {
-      margin: 0,
-      filename: 'Zhiyin_Tan_CV.pdf',
-      image: { type: 'png', quality: 0.98 },
-      enableLinks: true,
-      html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
-      jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-    };
-    
-    html2pdf().set(opt).from(element).save();
-  }
 </script>
