@@ -89,7 +89,7 @@
                 display: initial;
             }
             .enwhcu {
-                background-image: url(https://assets.visualcv.com/assets/3378990/IMG_5388_green_cv.png);
+                background-image: url(../pic/avatar_green_round_small.png);
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -121,6 +121,9 @@
 
             .cv-container .columns {
                 min-height: auto;
+            }
+            .cv-container .columns + section {
+                margin-top: 2em;
             }
             .cv-container .main {
                 padding-right: 2%;
@@ -217,6 +220,7 @@
                 opacity: 1 !important;
                 padding: 3em 6%;
             }
+
             .cv-container .dated_story .article-headings {
                 display: grid;
                 grid-template-columns: 1fr auto;
@@ -248,7 +252,7 @@
                 margin-bottom: 1.3em;
             }
             h1, h2, h3, h4, h5 {
-                line-height: 1.1rem;
+                line-height: 1.2rem;
                 font-weight: 450;
                 padding: 0;
                 margin: 0;
@@ -290,7 +294,7 @@
             }
             .cv-container h3 {
                 color: rgb(119, 119, 119);
-                font-family: Raleway, "Noto Sans", sans-serif;
+                /*font-family: Raleway, "Noto Sans", sans-serif;*/
                 font-size: 150%;
                 font-weight: normal;
                 margin-top: 0px;
@@ -367,6 +371,8 @@
             p {
                 display: block;
                 min-height: 1em;
+                font-size: 0.8rem;
+                text-align: left;
                 margin-block-start: 1em;
                 margin-block-end: 1em;
                 margin-inline-start: 0px;
@@ -424,6 +430,7 @@
     </head>
 
     <body>
+        <!--
         <div class="download">
         <button onclick="downloadPDF()">
             <span style="display:grid; grid-template-columns: 15px 98px; column-gap: 3px; padding: 0 10px;">
@@ -431,7 +438,7 @@
                 &nbsp Download PDF
             </span>
         </button>
-        </div>
+        </div>-->
 
         <div class="cv-container">
             <div class="cv-content">
@@ -459,7 +466,7 @@
                             <li class="locality" data-bind="location">
                                 <span class="sc-14dqbwa-1 ckiabK">
                                 <span class="sc-14dqbwa-3 eCPwxA" style="outline: transparent dashed 0px;outline-offset: 3px;transition-behavior: normal;transition-duration: 0.2s;transition-timing-function: ease;transition-property: outline;transition-delay: v(--editor-transition-delay);min-width: 1em;">
-                                    Hannover, Lower Saxony,  Germany
+                                    Hannover, Lower Saxony, Germany
                                 </span>
                             </span></li><li class="phone empty" data-bind="phone">
                                 <span class="sc-14dqbwa-1 ckiabK">
@@ -480,14 +487,16 @@
                         </ul>
                     </article>
                 </section>
+
                 <section id="summary">
                     <header>
-                    <h3 class="header-text" data-bind="label"></h3>
-                </header>
-                <article data-bind="content">
-                    <p data-bind="description"></p>
-                </article>
+                        <h3 class="header-text" data-bind="label"></h3>
+                    </header>
+                    <article data-bind="content">
+                        <p data-bind="description"></p>
+                    </article>
                 </section>
+
                 <div class="columns">
                     <div class="main">
                         <section id="positions" class="dated_story">
@@ -532,7 +541,7 @@
                                     </a>
                                     <div class="sc-12gbvxr-0 fELIRn mce-container empty">
                                         <div id="tiny-react_622126728201710503201040" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
-                                            <p><br></p>
+                                            <p>- Contributed to the Hybrint project by implementing a knowledge graph for agricultural scientific articles.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -747,7 +756,7 @@
                                     </h5>
                                     <div class="sc-12gbvxr-0 fELIRn mce-container">
                                         <div id="tiny-react_599433413251710503201045" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
-                                            <p><span>Knowledge Graph, LLM</span></p>
+                                            <p><span>Knowledge Graph, Semantic Web, Large Language Model</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -796,12 +805,12 @@
                                     <h6 class="date-range">
                                         <span data-bind="start_date" class="">
                                             <span class="sc-14dqbwa-1 ckiabK">
-                                                <span class="sc-14dqbwa-3 eCPwxA">2016.09</span>
+                                                <span class="sc-14dqbwa-3 eCPwxA">09.2016</span>
                                             </span>
                                         </span>
                                         <span data-bind="end_date" class="">
                                             <span class="sc-14dqbwa-1 ckiabK">
-                                                <span class="sc-14dqbwa-3 eCPwxA">2018.10</span>
+                                                <span class="sc-14dqbwa-3 eCPwxA">10.2018</span>
                                             </span>
                                         </span>
                                     </h6>
@@ -867,24 +876,25 @@
                                 <div class="sc-12gbvxr-0 fELIRn mce-container">
                                     <div id="tiny-react_682661759281710503201047" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
                                         <p>
-                                            <strong>LATEX Rainbow: Universal LATEX to PDF Document Semantic & Layout Annotation Framework, 11.2023, <a href="https://aclanthology.org/2023.wiesp-1.0.pdf" data-mce-href="https://aclanthology.org/2023.wiesp-1.0.pdf">WIESP 2023</a></strong>
+                                            <strong>LATEX Rainbow: Universal LATEX to PDF Document Semantic & Layout Annotation Framework, 11.2023, <a href="https://aclanthology.org/2023.wiesp-1.0.pdf" data-mce-href="https://aclanthology.org/2023.wiesp-1.0.pdf">WIESP, IJCNLP-AACL 2023</a></strong>
                                             <strong></strong>
                                         </p>
                                         <div>
                                             <div>
-                                                <span style="background-color: initial;" data-mce-style="background-color: initial;">A framework for annotating LaTex format PDF file&nbsp;</span>
+                                                <span style="font-style: oblique 50deg;">Changxu Duan, Zhiyin Tan, Sabine Bartsch - </span>
+                                                <span style="background-color: initial;" data-mce-style="background-color: initial;">A framework for annotating LaTex format PDF file.</span>
                                             </div>
                                         </div>
                                         <p>
                                             <strong></strong><br>
                                         </p>
                                         <p>
-                                            <strong>Text-based Personality Prediction, 2021 08, <a href="https://ai.ntu.edu.tw/mlss2021/" data-mce-href="https://ai.ntu.edu.tw/mlss2021/">MLSS 2021</a></strong>
+                                            <strong>Text-based Personality Prediction, 08.2021, <a href="https://ai.ntu.edu.tw/mlss2021/" data-mce-href="https://ai.ntu.edu.tw/mlss2021/">MLSS 2021</a></strong>
                                             <strong></strong>
                                         </p>
                                         <div>
                                             <div>
-                                                <span>A dataset of 22,647 anonymous posts tagged with the author's MBTI type was developed and used to </span><span style="background-color: initial;" data-mce-style="background-color: initial;">train the DistilBERT model, yielding an average accuracy of 73.25% for binary classification&nbsp;</span>
+                                                <span>Individual Work - A dataset of 22,647 anonymous posts tagged with the author's MBTI type was developed and used to </span><span style="background-color: initial;" data-mce-style="background-color: initial;">train the DistilBERT model, yielding an average accuracy of 73.25% for binary classification&nbsp;</span>
                                                 <span style="background-color: initial;" data-mce-style="background-color: initial;">in each of four dimensions.</span>
                                             </div>
                                         </div>
@@ -892,21 +902,21 @@
                                             <strong></strong><br>
                                         </p>
                                         <p>
-                                            <strong>The use of Cantonese Discourse Markers by Legislative Council Members in Hong Kong and Macau, 2018.06,&nbsp;<a href="https://cantonese.arts.ubc.ca/wicl-4/" data-mce-href="https://cantonese.arts.ubc.ca/wicl-4/">WICL-4</a></strong>
+                                            <strong>The use of Cantonese Discourse Markers by Legislative Council Members in Hong Kong and Macau, 06.2018,&nbsp;<a href="https://cantonese.arts.ubc.ca/wicl-4/" data-mce-href="https://cantonese.arts.ubc.ca/wicl-4/">WICL-4</a></strong>
                                         </p>
                                         <p>
-                                            <span>- Develop a 360,000-word Cantonese corpus.</span>
+                                            <span>Individual Work - Develop a 360,000-word Cantonese corpus.</span>
                                         </p>
                                         <p>
-                                            <span>- Use a sociolinguistic approach (SPSS) to explore the relationship between the use of Cantonese discourse markers and the social background (gender, age, education, etc.) of the speakers (<a href="https://cantonese.arts.ubc.ca/files/2018/06/Conference_program_ebooklet.pdf#page=24" data-mce-href="https://cantonese.arts.ubc.ca/files/2018/06/Conference_program_ebooklet.pdf#page=24">link to abstract</a>). </span>
+                                            <span>Use a sociolinguistic approach (SPSS) to explore the relationship between the use of Cantonese discourse markers and the social background (gender, age, education, etc.) of the speakers (<a href="https://cantonese.arts.ubc.ca/files/2018/06/Conference_program_ebooklet.pdf#page=24" data-mce-href="https://cantonese.arts.ubc.ca/files/2018/06/Conference_program_ebooklet.pdf#page=24">link to abstract</a>). </span>
                                             <span>
                                             </span>
                                         </p>
                                         <p><br></p>
                                         <p>
-                                            <strong>A Comparative Study of Mandarin Pitch Range in Northern and Central Taiwan, 2017.08, <a href="http://homepage.ntu.edu.tw/~gilntu/Introduction.html" data-mce-href="http://homepage.ntu.edu.tw/~gilntu/Introduction.html">NTU Summer Research Program</a></strong>
+                                            <strong>A Comparative Study of Mandarin Pitch Range in Northern and Central Taiwan, 08.2017, <a href="http://homepage.ntu.edu.tw/~gilntu/Introduction.html" data-mce-href="http://homepage.ntu.edu.tw/~gilntu/Introduction.html">NTU Summer Research Program</a></strong>
                                         </p>
-                                        <p>- Analyzed phonetic data of single words from 3 men and 3 women with Praat, revealed Taiwanese Mandarin in Taipei and Taichung can be distinguished by pitch range.</p>
+                                        <p>Individual Work - Analyzed phonetic data of single words from 3 men and 3 women with Praat, revealed Taiwanese Mandarin in Taipei and Taichung can be distinguished by pitch range.</p>
                                     </div>
                                 </div>
                             </article>
@@ -930,6 +940,7 @@
                                 </div>
                             </article>
                         </section>-->
+                        
                         <div data-bind="add-sidebar-section-btn" class="">
                             <span class="sc-14dqbwa-1 ckiabK">
                                 <span class="sc-14dqbwa-3 eCPwxA"></span>
@@ -937,6 +948,331 @@
                         </div>
                     </div>
                 </div>
+
+                <section data-bind="sections" id="dated_stories" class="dated_story">
+                    <header class="">
+                        <h3 class="header-text" data-bind="label">
+                            <span class="sc-14dqbwa-1 ckiabK">
+                                <span class="sc-14dqbwa-3 eCPwxA">Project Experience</span>
+                            </span>
+                        </h3>
+                    </header>
+                    <div data-bind="add-article"></div>
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA"> Applied Contrastive Learning to Fine-grained Entity Type Classification</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">07.2021</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">03.2023</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="empty">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_80815798111710512789746" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- Master thesis</p>
+                                    <p>- <span>Utilized SPARQL to extract artificial product entity data from DBpedia, and associated types and properties from Wikidata.</span></p>
+                                    <p>- <span>Evaluated and enhanced performance using models including CNN, LSTM, BERT, ALBERT, and RoBERTa through Contrastive Learning.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">Deep Learning Graph-based Dependency Parser</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">12.2020</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">03.2021</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="empty">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_274486109121710512789747" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- Take the chu-Liu-Edmonds algorithm as the baseline, Bi-LSTM model and Deep Biaffine Attention as the boosting model. The accuracy was obtained on English and German datasets with UAS 87.1%, LAS 85% and UAS 85.9%, LAS 81.9% respectively.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <p>
+                        <strong></strong><br>
+                        <strong></strong><br>
+                    </p>
+
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">Predicting Author's Personality by Text</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">07.2020</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">09.2020</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="empty">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_162295648131710512789748" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- Crawl user comments and user self-tagged personality MBTI tags from personality type forums, collecting a total of 22,422 texts.</p>
+                                    <p>- Four binary Bi-LSTM models are used for replacing one sixteen classification model to achieve an average accuracy of 20%.</p>
+                                    <p>- Using BERT as a pre-trained model, obtained f1 31% for the 16 classification models, f1 70% for the four binary classification models.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">Optimizing Reinforcement Learning Policies with Emotion Signals </span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">04.2020</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">07.2020</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="empty">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_133066094141710512789749" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- Optimizing RL policies by capture emotion signals from the logs&nbsp; file of rule-based simulator-system conversations in the dialogue system.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">Twitter Sentiment Analysis with Ordered Neuron LSTM</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">04.2019</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">07.2019</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="empty">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_765666581151710512789750" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- Build eight classification models using Naïve Bayes and Ordered Neuron LSTM with Stance Sentiment Emotion Corpus (SSEC) as training and testing data respectively, obtain an average accuracy of 60%.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">Language Learning Chatbot</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">12.2018</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">01.2019</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="empty">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_438514660161710512789751" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- Using Django (HTML, CSS, JS, Python) implement a webpage application allows users to learn the basic vocabulary in Arabic, Chinese and German.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section data-bind="sections" id="dated_stories_LB93Gz7YRi" class="dated_story" style="margin-top: 4em;">
+                    <header class="">
+                        <h3 class="header-text" data-bind="label">
+                            <span class="sc-14dqbwa-1 ckiabK">
+                                <span class="sc-14dqbwa-3 eCPwxA">Program</span>
+                            </span>
+                        </h3>
+                    </header>
+                    <div data-bind="add-article"></div>
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">AITalents Competition - Empowering Business with AI Technology</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">11.2020</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">01.2021</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">TechQuartier</span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_942086057171710512789752" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p style="text-align: left;" data-mce-style="text-align: left;">- Collaborate with AI company SONEAN on a real-time platform for using AI technology to improve the efficiency of machine supply chain operations.</p>
+                                    <p style="text-align: left;" data-mce-style="text-align: left;">- Propose a global intelligent business system solution for building partnership networks and ESG indices for each entity:</p>
+                                    <p style="padding-left: 40px; text-align: left;" data-mce-style="padding-left: 40px; text-align: left;">- Establish real-time crawling of business news and news for real-time tagging of environmental, social, and government (ESG) signal indices and sentiment indices for each company entity to facilitate the selection of suppliers by buyers.<br>- Use docker and Neo4j to display company network graphs on the web to show competitors' partnership networks and suppliers' various indices in real time.</p>
+                                    <p style="text-align: left;" data-mce-style="text-align: left;">- Personal responsibility:</p>
+                                    <p style="padding-left: 40px; text-align: left;" data-mce-style="padding-left: 40px; text-align: left;">- Write Python code for crawling news and business reports and building a sentiment analysis system.</p>
+                                    <p style="padding-left: 40px; text-align: left;" data-mce-style="padding-left: 40px; text-align: left;">- Build graphs and write Cypher code for Neo4j queries.</p>
+                                    <p style="padding-left: 40px; text-align: left;" data-mce-style="padding-left: 40px; text-align: left;">- Create an animated <a href="https://drive.google.com/file/d/1xvjeeSQzin5JVMWyw_VWS6PZo1eOSglz/view" data-mce-href="https://drive.google.com/file/d/1xvjeeSQzin5JVMWyw_VWS6PZo1eOSglz/view">Pitching video</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article data-bind="contents" class="">
+                        <div class="article-headings">
+                            <h4 data-bind="title" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">IBM Female Mentoring Program</span>
+                                </span>
+                            </h4>
+                            <h6 class="date-range">
+                                <span data-bind="start_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">04.2020</span>
+                                    </span>
+                                </span>
+                                <span data-bind="end_date" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">12.2020</span>
+                                    </span>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="article-body">
+                            <h5 data-bind="organization" class="">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">IBM &amp; University of Stuttgart</span>
+                                </span>
+                            </h5>
+                            <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                <div id="tiny-react_673921356181710512789753" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                    <p>- A nine-month training program for twelve selected female students in computer science-related disciplines on topics including AI, data science and technology consulting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section data-bind="sections" id="text_story_awWP4ht7hZ" class="text_story" style="margin-top: 4em;">
+                    <header class="">
+                        <h3 class="header-text" data-bind="label">
+                            <span class="sc-14dqbwa-1 ckiabK">
+                                <span class="sc-14dqbwa-3 eCPwxA">Other Skills</span>
+                            </span>
+                        </h3>
+                    </header>
+                    <article data-bind="content" class="">
+                        <div class="sc-12gbvxr-0 fELIRn mce-container">
+                            <div id="tiny-react_42666599191710512789753" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                <p>- Graphic Design, Painting (&gt;20 years), Presentation (<span style="text-decoration: underline;" data-mce-style="text-decoration: underline;"><a href="https://drive.google.com/file/d/1xoTmkGaNkJjeQNG4ZoxZqtHm35oUz2Xp/view?usp=sharing" target="_blank" data-mce-href="https://drive.google.com/file/d/1xoTmkGaNkJjeQNG4ZoxZqtHm35oUz2Xp/view?usp=sharing" rel="noopener">Demo video</a></span>).</p>
+                                <p>- News Interview (5 years).</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
             </div>
         </div>
     </body>
@@ -950,13 +1286,16 @@
     }
 
     var element = document.querySelector('.content');
-    html2pdf(element, {
-        margin: 0,
-        filename: 'Zhiyin_Tan_CV.pdf',
-        image: { type: 'png', quality: 0.98 },
-        enableLinks: true,
-        html2canvas: { scale: 2, logging: true, dpi: 100, letterRendering: true },
-        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-    });
-    }
+
+    var opt = {
+      margin: 0,
+      filename: 'Zhiyin_Tan_CV.pdf',
+      image: { type: 'png', quality: 0.98 },
+      enableLinks: true,
+      html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+      jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+    };
+    
+    html2pdf().set(opt).from(element).save();
+  }
 </script>
