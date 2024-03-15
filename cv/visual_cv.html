@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/cv.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+        <title>Zhiyin Tan's Curriculum Vitae</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap&amp;text=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap&amp;text=Noto Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&amp;display=swap&amp;text=Roboto Slab" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body, input, textarea {
+                -webkit-font-smoothing: subpixel-antialiased;
+            }
+            body, input, textarea {
+                font-family: "Inter Variable", sans-serif;
+                font-synthesis: none;
+                font-synthesis-weight: none;
+                font-synthesis-style: none;
+                font-synthesis-small-caps: none;
+                -webkit-font-smoothing: subpixel-antialiased;
+            }
+
+            html, body {
+                min-height: 100%;
+            }
+            html a {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+            a {
+                color: rgb(62, 148, 228);
+                cursor: pointer;
+                transition: color 0.2s linear 0s;
+            }
+            body {
+                -webkit-font-smoothing: subpixel-antialiased;
+                overscroll-behavior: none;
+                display: block;
+                height: 100vh;
+                min-width: 1000px;
+                font-family: "Inter Variable", sans-serif;
+                font-synthesis: none;
+                transition: margin 250ms ease 0s;
+                margin: 0px auto 10px;
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+            }
+
+            .cv-container {
+                opacity: 1 !important;
+                box-sizing: border-box;
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                font-family: "Roboto Slab", "Noto Sans", sans-serif;
+                font-size: 13px;
+                position: relative;
+                display: block;
+                margin: 0;
+                min-height: 400px;
+                max-width: 1020px;
+            }
+            .cv-container .profile .user-contact li, .cv-container .profile .user-websites li {
+                font-size: 95%;
+                display: inline-flex;
+                -webkit-box-align: baseline;
+                align-items: baseline;
+                -webkit-box-pack: center;
+                justify-content: center;
+                margin-bottom: 0.6em;
+                margin-right: 1em;
+            }
+            .cv-container .user-thumb {
+                border: 1px solid rgb(204, 204, 204);
+                margin-bottom: 0px;
+                padding: 4px;
+            }
+            .profile .user-thumb, .profile .css-crop, .profile .image-placeholder {
+                border-radius: 50%;
+            }
+            .profile .user-thumb {
+                height: 115px;
+                margin: 0px auto 1.3em;
+                width: 115px;
+            }
+            .eCPwxA.eCPwxA {
+                display: initial;
+            }
+            .enwhcu {
+                background-image: url(https://assets.visualcv.com/assets/3378990/IMG_5388_green_cv.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+                position: relative;
+                width: 100%;
+            }
+            .eCPwxA {
+                outline: transparent dashed 0px;
+                outline-offset: 3px;
+                transition-behavior: normal;
+                transition-duration: 0.2s;
+                transition-timing-function: ease;
+                transition-property: outline;
+                transition-delay: var(--editor-transition-delay);
+                min-width: 1em;
+            }
+            .columns {
+                display: flex;
+                flex-wrap: nowrap;
+                -webkit-box-pack: center;
+                justify-content: center;
+                min-height: 100vh;
+                width: 100%;
+            }
+            .cv-container a, .cv-container [data-bind="email"] span span, .cv-container a[data-bind="organization_url"] span span, .cv-container a[data-bind="link_url"] span span, .cv-container .website [contenteditable], .cv-container .website a {
+                color: rgb(101, 172, 226);
+            }
+
+            .cv-container .columns {
+                min-height: auto;
+            }
+            .cv-container .main {
+                padding-right: 2%;
+            }
+            .cv-container .sidebar {
+                padding-left: 2%;
+            }
+            .cv-container section {
+                display: block;
+                position: relative;
+                overflow-wrap: break-word;
+                margin-bottom: 2em;
+            }
+            .cv-container section header {
+                border-bottom: 1px solid rgb(204, 204, 204);
+                text-align: left;
+                margin-bottom: 0.52em;
+            }
+            .cv-container section .date-range [data-bind="end_date"]::before {
+                content: " - ";
+            }
+            .cv-container .profile {
+                margin-bottom: 1em;
+            }
+            .cv-container .profile .vcard {
+                text-align: center;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+            .cv-container .profile .user-contact {
+                margin-top: 0.5em;
+            }
+            .cv-container .profile .user-contact, .cv-container .profile .user-websites {
+                text-align: center;
+            }
+            
+            .cv-container .user-contact li, .cv-container .user-websites li {
+                font-size: 90%;
+                line-height: 97%;
+                overflow-wrap: break-word;
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                margin-bottom: 0.9em;
+            }
+            .cv-container .profile .user-contact li, .cv-container .profile .user-websites li {
+                font-size: 95%;
+                display: inline-flex;
+                -webkit-box-align: baseline;
+                align-items: baseline;
+                -webkit-box-pack: center;
+                justify-content: center;
+                margin-bottom: 0.6em;
+            }
+            .cv-container .profile .user-contact li:first-child::before {
+                content: "";
+                min-width: unset;
+                width: auto;
+            }
+            .cv-container .profile .user-contact li::before {
+                content: "";
+                font-size: 80%;
+                line-height: 100%;
+            }
+            .cv-container .profile .user-contact li::before, .cv-container .profile .user-websites li::before {
+                color: rgb(204, 204, 204);
+                opacity: 1;
+                -webkit-box-align: baseline;
+                align-items: baseline;
+                -webkit-box-pack: center;
+                justify-content: center;
+                min-width: 1.9em;
+                width: 1.9em;
+            }
+            .cv-container .user-contact li::before, .cv-container .user-websites li::before {
+                font-family: Icons;
+                font-size: 107%;
+                line-height: 90%;
+                opacity: 0.3;
+                -webkit-box-pack: start;
+                justify-content: flex-start;
+                display: inline-flex;
+            }
+            .cv-container .user-contact, .cv-container .user-websites {
+                list-style: none;
+            }
+            .cv-container .profile .user-websites li {
+                -webkit-box-align: center;
+                align-items: center;
+                margin-right: 0.6em;
+            }
+            
+            .cv-container .cv-content {
+                opacity: 1 !important;
+                padding: 3em 6%;
+            }
+            .cv-container .dated_story .article-headings {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-areas:
+                    "title"
+                    "dates";
+                gap: 0px;
+            }
+            .article-headings h4 {
+                grid-area: title; /* Assuming you want the title in the first column */
+            }
+
+            .article-headings .date-range {
+                grid-area: dates; /* Assuming you want the dates in the second column */
+                justify-self: end; /* Align dates to the end (right) of the second column */
+            }
+            .cv-container .dated_story .article-headings h6 {
+                grid-area: dates;
+            }
+            .cv-container section.dated_story h6 {
+                margin-bottom: 0.5em;
+            }
+            .cv-container .dated_story h6 {
+                white-space: nowrap;
+                margin: 0px 0px calc(0.18em);
+            }
+            .cv-container article {
+                display: block;
+                margin-bottom: 1.3em;
+            }
+            h1, h2, h3, h4, h5 {
+                line-height: 1.1rem;
+                font-weight: 450;
+                padding: 0;
+                margin: 0;
+            }
+            
+            h1 {
+                display: block;
+                font-size: 2em;
+                margin-block-start: 0.67em;
+                margin-block-end: 0.67em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            .cv-container h1 {
+                color: rgb(119, 119, 119);
+                font-family: Raleway, "Noto Sans", sans-serif;
+                font-size: 300%;
+                font-weight: normal;
+                margin-bottom: 0.1em;
+                margin-top: 0px;
+            }
+            .cv-container h2 {
+                color: rgb(99, 99, 97);
+                font-family: Raleway, "Noto Sans", sans-serif;
+                font-size: 150%;
+                font-weight: bold;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            h2 {
+                display: block;
+                font-size: 1.5em;
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            .cv-container h3 {
+                color: rgb(119, 119, 119);
+                font-family: Raleway, "Noto Sans", sans-serif;
+                font-size: 150%;
+                font-weight: normal;
+                margin-top: 0px;
+                margin-bottom: 2px;
+            }
+            h3 {
+                display: block;
+                font-size: 1.17em;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            .cv-container h4 {
+                color: rgb(0, 0, 0);
+                font-family: "Roboto Slab", "Noto Sans", sans-serif;
+                font-size: 110%;
+                margin: 0px 0px calc(0.18em);
+            }
+            h4 {
+                display: block;
+                margin-block-start: 1.33em;
+                margin-block-end: 1.33em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            .cv-container h5 {
+                color: rgb(99, 99, 97);
+                font-family: Raleway, "Noto Sans", sans-serif;
+                font-weight: bold;
+                font-size: 110%;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            h5 {
+                display: block;
+                font-size: 0.83em;
+                margin-block-start: 1.67em;
+                margin-block-end: 1.67em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            .cv-container h6 {
+                color: rgb(99, 99, 97);
+                font-family: Raleway, "Noto Sans", sans-serif;
+                font-size: 110%;
+            }
+            .cv-container .dated_story .article-headings h6 {
+                grid-area: dates;
+            }
+            .cv-container section.dated_story h6 {
+                margin-bottom: 0.5em;
+            }
+            .cv-container .dated_story h6 {
+                white-space: nowrap;
+                margin: 0px 0px calc(0.18em);
+            }
+            h6 {
+                display: block;
+                font-size: 0.67em;
+                margin-block-start: 2.33em;
+                margin-block-end: 2.33em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+            }
+            .cv-container p {
+                margin-top: 0px;
+                margin-bottom: 0.35em;
+            }
+            p {
+                display: block;
+                min-height: 1em;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                margin-top: 0px;
+                margin-bottom: 0.35em;
+                margin: 0 0 10px;
+            }
+            ul {
+                display: block;
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            li {
+                text-align: -webkit-match-parent;
+            }
+
+            @media screen and (min-width: 768px), print{
+                .cv-container .dated_story .article-headings {
+                    grid-template-columns: 1fr auto;
+                    grid-template-areas: "title dates";
+                
+                }
+            
+                .main {
+                    width: calc(50%);
+                }
+                
+                .sidebar {
+                    width: 50%;
+                }
+            
+                .cv-container .profile .user-contact li, .cv-container .profile .user-websites li {
+                    -webkit-box-pack: start;
+                    justify-content: flex-start;
+                }
+            
+                .cv-container .dated_story h6 {
+                    text-align: right;
+                }
+                
+            }
+            :-webkit-any(article, aside, nav, section) h1 {
+                margin-block-start: 0.5em;
+                margin-block-end: 0.5em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="download">
+        <button onclick="downloadPDF()">
+            <span style="display:grid; grid-template-columns: 15px 98px; column-gap: 3px; padding: 0 10px;">
+                <img src="../pic/printer.png" alt="printer" style="width: 15px;">
+                &nbsp Download PDF
+            </span>
+        </button>
+        </div>
+
+        <div class="cv-container">
+            <div class="cv-content">
+                <section class="profile">
+                    <article class="vcard">
+                        <div class="sc-1v58mjp-11 gKfIps user-thumb">
+                            <div class="sc-1v58mjp-0 enwhcu css-crop" role="figure">
+                            </div>
+                            <div class="sc-1v58mjp-4 gyGyWl overlay"></div>
+                        </div>
+                        
+                        <div class="user-title">
+                            <h1 class="full-name" data-bind="full_name">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">Tan, Zhiyin</span>
+                                </span>
+                            </h1>
+                            <h2 class="title" data-bind="headline">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 eCPwxA">NLP &amp; Knowledge Graph Researcher</span>
+                                </span>
+                            </h2>
+                        </div>
+                        <ul class="user-contact">
+                            <li class="locality" data-bind="location">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                <span class="sc-14dqbwa-3 eCPwxA" style="outline: transparent dashed 0px;outline-offset: 3px;transition-behavior: normal;transition-duration: 0.2s;transition-timing-function: ease;transition-property: outline;transition-delay: v(--editor-transition-delay);min-width: 1em;">
+                                    Hannover, Lower Saxony,  Germany
+                                </span>
+                            </span></li><li class="phone empty" data-bind="phone">
+                                <span class="sc-14dqbwa-1 ckiabK">
+                                    <span class="sc-14dqbwa-3 ftLIkH"></span>
+                                </span>
+                            </li>
+                            <li class="email" data-bind="email">
+                                <a href="mailto:zhiyin.tanh@gmail.com">zhiyin.tan@l3s.de</a>
+                            </li>
+                        </ul>
+                        <ul class="user-websites" data-bind="websites">
+                            <li class="sc-g6thkz-4 jGelDG website linkedin">
+                                <a href="https://www.linkedin.com/in/zhiyin-tan/" rel="noreferrer nofollow" target="_blank">linkedin.com/in/zhiyin-tan/</a>
+                            </li>
+                            <li class="sc-g6thkz-4 jGelDG website github">
+                                <a href="https://zhiyintan.github.io/" rel="noreferrer nofollow" target="_blank">zhiyintan.github.io/</a>
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+                <section id="summary">
+                    <header>
+                    <h3 class="header-text" data-bind="label"></h3>
+                </header>
+                <article data-bind="content">
+                    <p data-bind="description"></p>
+                </article>
+                </section>
+                <div class="columns">
+                    <div class="main">
+                        <section id="positions" class="dated_story">
+                            <header class="">
+                                <h3 class="header-text" data-bind="label">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">Work Experience</span>
+                                    </span>
+                                </h3>
+                            </header>
+
+                            <div data-bind="add-article"></div>
+
+                            <article data-bind="contents" class="">
+                                <div class="article-headings">
+                                    <h4 data-bind="title" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">Research Assistant </span>
+                                        </span>
+                                    </h4>
+                                
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">02.2024</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">current</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <a data-bind="organization_url" target="_blank" rel="nofollow" href="https://www.l3s.de/" class="">
+                                        <h5 data-bind="organization" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">L3S Research Center, Leibniz University Hannover</span>
+                                            </span>
+                                        </h5>
+                                    </a>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container empty">
+                                        <div id="tiny-react_622126728201710503201040" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p><br></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article data-bind="contents" class="">
+                                <div class="article-headings">
+                                    <h4 data-bind="title" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">R&amp;D NLU Language Specialist</span>
+                                        </span>
+                                    </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">10.2020</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">09.2022</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                
+                                <div class="article-body">
+                                    <a data-bind="organization_url" target="_blank" rel="nofollow" href="https://www.cerence.com/" class="">
+                                        <h5 data-bind="organization" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">Cerence, Remote</span>
+                                            </span>
+                                        </h5>
+                                    </a>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                        <div id="tiny-react_641521464211710503201041" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p>- Processing unstructured data (intents &amp; slots annotation, syntax &amp; discourse correction and diversity, ASR annotations) used for dialogue system training and testing, and analysing errors to improve intent and slot recognition accuracy by 10%. </p>
+                                            <p>- Significantly increase the speed of annotating new data by developing an annotation tool using Windows Presentation Foundation (WPF).&nbsp; It assembles multiple reference files on a single page with click-to-link and obtains the required tags with clickable use cases replacing manually typing the tags.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article data-bind="contents" class="">
+                                <div class="article-headings">
+                                    <h4 data-bind="title" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">Marketing Data Analyst - Intern </span>
+                                        </span>
+                                    </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">07.2019</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">08.2019</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <a data-bind="organization_url" target="_blank" rel="nofollow" href="http://www.tinno.com/homepage?lang=en" class="">
+                                        <h5 data-bind="organization" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">TINNO Mobile/Wiko Mobile, China</span>
+                                            </span>
+                                        </h5>
+                                    </a>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                        <div id="tiny-react_340418508221710503201042" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p>- Create the potential for marketing departments to move from purely manual collection of competitors' product and sales information to real-time automated information scraping by leaving a set of data scraping Python code and workflows.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article data-bind="contents" class="">
+                                <div class="article-headings">
+                                    <h4 data-bind="title" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">Teaching Assistant </span>
+                                        </span>
+                                    </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">01.2017</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">05.2017</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <a data-bind="organization_url" target="_blank" rel="nofollow" href="https://fah.um.edu.mo/" class="">
+                                        <h5 data-bind="organization" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">University of Macao, Macao</span>
+                                            </span>
+                                        </h5>
+                                    </a>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                        <div id="tiny-react_617519906231710503201043" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p>- Prepare teaching materials, organize classroom group discussions, provide feedback.</p>
+                                            <p>- Assist in organizing several large-scale academic confluence for greater than 100 participants, and fully responsible for publicity planning (<a href="https://fah.um.edu.mo/news/news-chinese/tenth-cross-strait-symposium-on-modern-chinese-language-held-at-um/" target="_blank" data-mce-href="https://fah.um.edu.mo/news/news-chinese/tenth-cross-strait-symposium-on-modern-chinese-language-held-at-um/" rel="noopener">The 10th Cross-Strait Symposium on Modern Chinese Language</a>, <a href="http://www.chinalanguage.net/enshow.asp?id=618" target="_blank" data-mce-href="http://www.chinalanguage.net/enshow.asp?id=618" rel="noopener">ULS15&amp;SDP2</a>, etc.). </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article data-bind="contents" class="">
+                                <div class="article-headings">
+                                    <h4 data-bind="title" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">Research Analyst - Intern</span>
+                                        </span>
+                                    </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">12.2016</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">06.2017</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <a data-bind="organization_url" target="_blank" rel="nofollow" href="http://www.e-research-solutions.com/" class="">
+                                        <h5 data-bind="organization" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">E-Research &amp; Solutions, Macao</span>
+                                            </span>
+                                        </h5>
+                                    </a>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                        <div id="tiny-react_914421932241710503201044" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p>- <span>Analyzed social media text data to gauge public opinion, emphasizing the enhancement of granularity in sentiment analysis model classifications.</span></p>
+                                            <p>- Write opinion analysis reports for delivery to clients, participation in competitions, and write brochures "Data Mining".</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section id="positions" class="dated_story">
+                            <header class="">
+                                <h3 class="header-text" data-bind="label">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">Language</span>
+                                    </span>
+                                </h3>
+                            </header>
+
+                            <div data-bind="add-article"></div>
+
+                            <article data-bind="contents" class="">
+                                <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                    <div id="tiny-react_962100923291710503201047" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                        <p>- Mandarin (Native), Cantonese (Native)</p>
+                                        <p>- English (C1), German (A2)</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                    
+                    <div class="sidebar">
+                        <section data-bind="sidebar_sections" id="degrees" class="dated_story">
+                            <header class="">
+                                <h3 class="header-text" data-bind="label">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">Education</span>
+                                    </span>
+                                </h3>
+                            </header>
+                            <div data-bind="add-article"></div>
+                                <article data-bind="contents" class="">
+                                    <div class="article-headings">
+                                        <h4 data-bind="title" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">Ph.D. Computer Science</span>
+                                            </span>
+                                        </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">02.2024</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">current</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <h5 data-bind="organization" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">Leibniz University Hannover</span>
+                                        </span>
+                                    </h5>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                        <div id="tiny-react_599433413251710503201045" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p><span>Knowledge Graph, LLM</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article data-bind="contents" class="">
+                                    <div class="article-headings">
+                                        <h4 data-bind="title" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">M.Sc. Computational Linguistics</span>
+                                            </span>
+                                        </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">10.2018</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">03.2023</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <h5 data-bind="organization" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">University of Stuttgart</span>
+                                        </span>
+                                    </h5>
+                                    <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                        <div id="tiny-react_599433413251710503201045" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                            <p><span>Natural Language Processing, Machine Learning, Knowledge Graph</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article data-bind="contents" class="">
+                                <div class="article-headings">
+                                    <h4 data-bind="title" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">M.A. Chinese Linguistics</span>
+                                        </span>
+                                    </h4>
+                                    <h6 class="date-range">
+                                        <span data-bind="start_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">2016.09</span>
+                                            </span>
+                                        </span>
+                                        <span data-bind="end_date" class="">
+                                            <span class="sc-14dqbwa-1 ckiabK">
+                                                <span class="sc-14dqbwa-3 eCPwxA">2018.10</span>
+                                            </span>
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="article-body">
+                                    <h5 data-bind="organization" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">University of Macau</span>
+                                        </span>
+                                    </h5>
+                                <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                    <div id="tiny-react_670742970261710503201046" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                        <p>"Excellent Master's Thesis", &nbsp;Teaching Assistant <span>(Scholarship)</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </article>
+                        
+                            <article data-bind="contents" class="">
+                            <div class="article-headings">
+                                <h4 data-bind="title" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">B.A. Chinese Language and Literature (Education)</span>
+                                    </span>
+                                </h4>
+                                <h6 class="date-range">
+                                    <span data-bind="start_date" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">09.2012</span>
+                                        </span>
+                                    </span>
+                                    <span data-bind="end_date" class="">
+                                        <span class="sc-14dqbwa-1 ckiabK">
+                                            <span class="sc-14dqbwa-3 eCPwxA">06.2016</span>
+                                        </span>
+                                    </span>
+                                </h6>
+                            </div>
+                            <div class="article-body">
+                                <h5 data-bind="organization" class="">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">Wuyi University</span>
+                                    </span>
+                                </h5>
+                                <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                    <div id="tiny-react_82143086271710503201046" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                        <p>Outstanding Graduate (Top 10%), Outstanding Student Leaders (Top 2%), Second-class Scholarship (Top 6%). </p>
+                                    </div>
+                                </div>
+                            </div>
+                            </article>
+                        </section>
+                
+                        <section data-bind="sidebar_sections" id="text_story" class="text_story">
+                            <header class="">
+                                <h3 class="header-text" data-bind="label">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">Publication</span>
+                                    </span>
+                                </h3>
+                            </header>
+                            <article data-bind="content" class="">
+                                <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                    <div id="tiny-react_682661759281710503201047" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                        <p>
+                                            <strong>LATEX Rainbow: Universal LATEX to PDF Document Semantic & Layout Annotation Framework, 11.2023, <a href="https://aclanthology.org/2023.wiesp-1.0.pdf" data-mce-href="https://aclanthology.org/2023.wiesp-1.0.pdf">WIESP 2023</a></strong>
+                                            <strong></strong>
+                                        </p>
+                                        <div>
+                                            <div>
+                                                <span style="background-color: initial;" data-mce-style="background-color: initial;">A framework for annotating LaTex format PDF file&nbsp;</span>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <strong></strong><br>
+                                        </p>
+                                        <p>
+                                            <strong>Text-based Personality Prediction, 2021 08, <a href="https://ai.ntu.edu.tw/mlss2021/" data-mce-href="https://ai.ntu.edu.tw/mlss2021/">MLSS 2021</a></strong>
+                                            <strong></strong>
+                                        </p>
+                                        <div>
+                                            <div>
+                                                <span>A dataset of 22,647 anonymous posts tagged with the author's MBTI type was developed and used to </span><span style="background-color: initial;" data-mce-style="background-color: initial;">train the DistilBERT model, yielding an average accuracy of 73.25% for binary classification&nbsp;</span>
+                                                <span style="background-color: initial;" data-mce-style="background-color: initial;">in each of four dimensions.</span>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <strong></strong><br>
+                                        </p>
+                                        <p>
+                                            <strong>The use of Cantonese Discourse Markers by Legislative Council Members in Hong Kong and Macau, 2018.06,&nbsp;<a href="https://cantonese.arts.ubc.ca/wicl-4/" data-mce-href="https://cantonese.arts.ubc.ca/wicl-4/">WICL-4</a></strong>
+                                        </p>
+                                        <p>
+                                            <span>- Develop a 360,000-word Cantonese corpus.</span>
+                                        </p>
+                                        <p>
+                                            <span>- Use a sociolinguistic approach (SPSS) to explore the relationship between the use of Cantonese discourse markers and the social background (gender, age, education, etc.) of the speakers (<a href="https://cantonese.arts.ubc.ca/files/2018/06/Conference_program_ebooklet.pdf#page=24" data-mce-href="https://cantonese.arts.ubc.ca/files/2018/06/Conference_program_ebooklet.pdf#page=24">link to abstract</a>). </span>
+                                            <span>
+                                            </span>
+                                        </p>
+                                        <p><br></p>
+                                        <p>
+                                            <strong>A Comparative Study of Mandarin Pitch Range in Northern and Central Taiwan, 2017.08, <a href="http://homepage.ntu.edu.tw/~gilntu/Introduction.html" data-mce-href="http://homepage.ntu.edu.tw/~gilntu/Introduction.html">NTU Summer Research Program</a></strong>
+                                        </p>
+                                        <p>- Analyzed phonetic data of single words from 3 men and 3 women with Praat, revealed Taiwanese Mandarin in Taipei and Taichung can be distinguished by pitch range.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                        <!--
+                        <section data-bind="sidebar_sections" id="text_story_C9bLSacp2p" class="text_story">
+                            <header class="">
+                                <h3 class="header-text" data-bind="label">
+                                    <span class="sc-14dqbwa-1 ckiabK">
+                                        <span class="sc-14dqbwa-3 eCPwxA">Language</span>
+                                    </span>
+                                </h3>
+                            </header>
+                            
+                            <article data-bind="content" class="">
+                                <div class="sc-12gbvxr-0 fELIRn mce-container">
+                                    <div id="tiny-react_962100923291710503201047" class="mce-content-body mce-content-readonly" spellcheck="true" contenteditable="false">
+                                        <p>- Mandarin (Native), Cantonese (Native)</p>
+                                        <p>- English (C1), German (A2)</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>-->
+                        <div data-bind="add-sidebar-section-btn" class="">
+                            <span class="sc-14dqbwa-1 ckiabK">
+                                <span class="sc-14dqbwa-3 eCPwxA"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+  function downloadPDF() {
+    var links = document.querySelectorAll('.content a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].style.lineHeight = '1rem';
+    }
+
+    var element = document.querySelector('.content');
+    html2pdf(element, {
+        margin: 0,
+        filename: 'Zhiyin_Tan_CV.pdf',
+        image: { type: 'png', quality: 0.98 },
+        enableLinks: true,
+        html2canvas: { scale: 2, logging: true, dpi: 100, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+    });
+    }
+</script>
